@@ -25,6 +25,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "922ba2d9-369f-4940-aba6-9f2331f1f1c1"
+      }
+    },
+    "owner": "kir-dev"
   }
 }
