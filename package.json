@@ -6,10 +6,13 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "lint": "eslint \"./**/*.ts?(x)\" --fix",
+    "lint:check": "eslint \"./**/*.ts?(x)\"",
+    "prettier": "prettier --write \"**/*.(ts|tsx)\"",
+    "prettier:check": "prettier --check \"**/*.(ts|tsx)\""
   },
   "dependencies": {
-    "expo": "~49.0.15",
+    "expo": "~49.0.21",
     "expo-status-bar": "~1.6.0",
     "react": "18.2.0",
     "react-native": "0.72.6"
@@ -17,6 +20,13 @@
   "devDependencies": {
     "@babel/core": "^7.20.0",
     "@types/react": "~18.2.14",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "prettier": "^3.1.1",
     "typescript": "^5.1.3"
   },
   "private": true
