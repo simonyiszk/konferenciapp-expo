@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="331e921e-6e37-4012-a2d8-d534c4073a3d" name="Changes" comment="feat: prettier &amp; eslint">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="331e921e-6e37-4012-a2d8-d534c4073a3d" name="Changes" comment="feat: readme with setup">
+      <change afterPath="$PROJECT_DIR$/.run/Start on iOS.run.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +45,7 @@
     "node.js.selected.package.standard": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "yarn",
+    "npm.android.executor": "Run",
     "npm.ios.executor": "Run",
     "npm.lint.executor": "Run",
     "npm.prettier:check.executor": "Run",
@@ -67,17 +69,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.ios">
-    <configuration name="ios" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="ios" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="npm.Start on Android">
     <configuration name="lint" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -98,9 +90,16 @@
       <envs />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="npm.Start on iOS" />
+      <item itemvalue="npm.Start on Android" />
+      <item itemvalue="npm.lint" />
+      <item itemvalue="npm.prettier:check" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.ios" />
+        <item itemvalue="npm.Start on Android" />
+        <item itemvalue="npm.Start on iOS" />
         <item itemvalue="npm.prettier:check" />
         <item itemvalue="npm.lint" />
       </list>
@@ -122,7 +121,7 @@
       <option name="presentableId" value="Default" />
       <updated>1702930738751</updated>
       <workItem from="1702930739800" duration="1052000" />
-      <workItem from="1702931804768" duration="2270000" />
+      <workItem from="1702931804768" duration="2585000" />
     </task>
     <task id="LOCAL-00001" summary="feat: eas link">
       <option name="closed" value="true" />
@@ -140,7 +139,23 @@
       <option name="project" value="LOCAL" />
       <updated>1702932508383</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat: idea settings">
+      <option name="closed" value="true" />
+      <created>1702934255592</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1702934255592</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat: readme with setup">
+      <option name="closed" value="true" />
+      <created>1702934263267</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1702934263267</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,6 +187,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: eas link" />
     <MESSAGE value="feat: prettier &amp; eslint" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: prettier &amp; eslint" />
+    <MESSAGE value="feat: idea settings" />
+    <MESSAGE value="feat: readme with setup" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: readme with setup" />
   </component>
 </project>
