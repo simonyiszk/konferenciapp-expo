@@ -2,6 +2,7 @@
   "expo": {
     "name": "KonferenciApp",
     "slug": "konferenciapp",
+    "scheme": "konferenciapp",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon-rounded.png",
@@ -29,6 +30,7 @@
         "projectId": "922ba2d9-369f-4940-aba6-9f2331f1f1c1"
       }
     },
-    "owner": "kir-dev"
+    "owner": "kir-dev",
+    "plugins": ["expo-router"]
   }
 }
