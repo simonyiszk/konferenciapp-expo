@@ -1,7 +1,7 @@
 import { useFonts } from 'expo-font';
 import { Slot, SplashScreen } from 'expo-router';
 import { useEffect } from 'react';
-import { SafeAreaView } from 'react-native';
+import { SafeAreaView, View } from 'react-native';
 
 export default function MainLayout() {
   const [loaded, error] = useFonts({
@@ -22,7 +22,9 @@ export default function MainLayout() {
 
   return (
     <SafeAreaView className='bg-slate-100 min-h-screen'>
-      <Slot />
+      <View className='mx-5'>
+        <Slot />
+      </View>
     </SafeAreaView>
   );
 }

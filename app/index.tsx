@@ -1,13 +1,14 @@
-import { View } from 'react-native';
-
-import { StyledText } from '../components/base/text';
+import { Header } from '../components/common/header';
+import { Subtitle } from '../components/common/subtitle';
+import { Title } from '../components/common/title';
 
 interface HomePageProps {}
 
 export default function HomePage({}: HomePageProps) {
   return (
-    <View>
-      <StyledText className='text-red-500 ml-5'>Hello there!</StyledText>
-    </View>
+    <Header>
+      <Title>Hello there!</Title>
+      <Subtitle>General Kenobi!</Subtitle>
+    </Header>
   );
 }

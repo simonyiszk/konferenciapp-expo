@@ -12,6 +12,7 @@
     "prettier:check": "prettier --check \"**/*.(ts|tsx)\""
   },
   "dependencies": {
+    "@expo/vector-icons": "^13.0.0",
     "clsx": "^2.1.0",
     "expo": "~49.0.21",
     "expo-constants": "~14.4.2",
