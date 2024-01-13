@@ -1,12 +1,12 @@
 import { Header } from '../components/common/header';
 import { Title } from '../components/common/title';
 
-interface HomePageProps {}
+interface MapPageProps {}
 
-export default function HomePage({}: HomePageProps) {
+export default function MapPage({}: MapPageProps) {
   return (
     <Header>
-      <Title>Simonyi Konferencia</Title>
+      <Title>Programterv</Title>
     </Header>
   );
 }

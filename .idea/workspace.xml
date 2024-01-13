@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6d7b732-9947-49ba-a6cc-183b650e0a79" name="Changes" comment="feat: native wind and font install">
-      <change afterPath="$PROJECT_DIR$/components/common/header.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/common/subtitle.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/common/title.tsx" afterDir="false" />
+    <list default="true" id="f6d7b732-9947-49ba-a6cc-183b650e0a79" name="Changes" comment="feat: basic header">
+      <change afterPath="$PROJECT_DIR$/app/map.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/schedule.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theme/colors.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/_layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.tsx" afterDir="false" />
@@ -33,21 +33,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/balint/Kir-Dev/konferenciapp/assets/fonts",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "yarn",
-    "prettierjs.PrettierConfiguration.Package": "/Users/balint/Kir-Dev/konferenciapp/node_modules/prettier",
-    "ts.external.directory.path": "/Users/balint/Kir-Dev/konferenciapp/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/balint/Kir-Dev/konferenciapp/app&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/balint/Kir-Dev/konferenciapp/node_modules/prettier&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/balint/Kir-Dev/konferenciapp/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -59,8 +59,12 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$/assets/fonts" />
       <recent name="$PROJECT_DIR$/assets" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/index" />
     </key>
   </component>
   <component name="RunManager" selected="npm.Start on iOS">
@@ -102,7 +106,8 @@
       <updated>1703175161739</updated>
       <workItem from="1703175164020" duration="2449000" />
       <workItem from="1703338948396" duration="597000" />
-      <workItem from="1705158459033" duration="5863000" />
+      <workItem from="1705158459033" duration="11162000" />
+      <workItem from="1705169649878" duration="1032000" />
     </task>
     <task id="LOCAL-00003" summary="feat: added expo router">
       <option name="closed" value="true" />
@@ -120,7 +125,23 @@
       <option name="project" value="LOCAL" />
       <updated>1705163392079</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat: basic header">
+      <option name="closed" value="true" />
+      <created>1705164371678</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1705164371678</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feat: basic header">
+      <option name="closed" value="true" />
+      <created>1705164381469</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1705164381469</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -143,6 +164,7 @@
     <MESSAGE value="chore: prebuild gitignore" />
     <MESSAGE value="feat: added expo router" />
     <MESSAGE value="feat: native wind and font install" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: native wind and font install" />
+    <MESSAGE value="feat: basic header" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: basic header" />
   </component>
 </project>
