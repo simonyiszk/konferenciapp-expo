@@ -21,8 +21,6 @@ interface ScheduleListItemProps {
 export function ScheduleListItem({ schedule }: ScheduleListItemProps) {
   const startTime = format(new Date(schedule.start), 'HH:mm');
   const endTime = format(new Date(schedule.end), 'HH:mm');
-  const isCurrent = isScheduleCurrent(schedule);
-  const isUpcoming = isScheduleUpcoming(schedule);
   return (
     <Pressable className='rounded-xl bg-white flex-row p-3 items-center shadow-md shadow-slate-500/30'>
       <Image source={{ uri: schedule.presenterImage }} className='rounded-full h-14 w-14' />
