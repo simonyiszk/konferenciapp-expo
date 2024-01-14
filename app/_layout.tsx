@@ -1,10 +1,12 @@
-import { Feather } from '@expo/vector-icons';
 import { useFonts } from 'expo-font';
 import { SplashScreen, Tabs } from 'expo-router';
 import { useEffect } from 'react';
-import { Platform, SafeAreaView, View } from 'react-native';
+import { Platform, SafeAreaView } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
+import { TabbarBackground } from '../components/tabbar/tabbar-background';
+import { TabbarIcon } from '../components/tabbar/tabbar-icon';
+import { TabbarLabel } from '../components/tabbar/tabbar-label';
 import { colors } from '../theme/colors';
 
 export default function MainLayout() {
@@ -38,11 +40,12 @@ export default function MainLayout() {
         screenOptions={{
           headerShown: false,
           tabBarActiveTintColor: colors.primary['500'],
-          tabBarBackground: () => <View className='shadow-md shadow-slate-500/30 w-full h-full bg-white rounded-xl' />,
+          tabBarLabel: TabbarLabel,
+          tabBarBackground: TabbarBackground,
           tabBarStyle: {
             borderTopWidth: 0,
             marginHorizontal: 10,
-            paddingBottom: 15,
+            paddingBottom: 10,
             paddingTop: 10,
             height: 70,
             marginBottom: 10,
@@ -74,8 +77,4 @@ export default function MainLayout() {
       </Tabs>
     </SafeAreaView>
   );
-}
-
-function TabbarIcon({ focused, name }: { focused: boolean; name: React.ComponentProps<typeof Feather>['name'] }) {
-  return <Feather name={name} size={30} color={focused ? colors.primary['500'] : 'gray'} />;
 }
