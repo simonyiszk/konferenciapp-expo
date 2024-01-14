@@ -38,7 +38,7 @@ export default function MainLayout() {
         screenOptions={{
           headerShown: false,
           tabBarActiveTintColor: colors.primary['500'],
-          tabBarBackground: () => <View className='shadow-md shadow-slate-500/30 w-full h-full bg-white rounded-lg' />,
+          tabBarBackground: () => <View className='shadow-md shadow-slate-500/30 w-full h-full bg-white rounded-xl' />,
           tabBarStyle: {
             borderTopWidth: 0,
             marginHorizontal: 10,
