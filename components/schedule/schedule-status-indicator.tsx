@@ -2,15 +2,15 @@ import { View } from 'react-native';
 
 import { ScheduleEvent } from '../../types/schedule-event.type';
 import { cn } from '../../utils/common.utils';
-import { isScheduleCurrent, isScheduleUpcoming } from '../../utils/schedule.utils';
+import { isScheduleEventCurrent, isScheduleEventUpcoming } from '../../utils/schedule.utils';
 
 interface ScheduleStatusIndicatorProps {
   event: ScheduleEvent;
 }
 
 export function ScheduleStatusIndicator({ event }: ScheduleStatusIndicatorProps) {
-  const isCurrent = isScheduleCurrent(event);
-  const isUpcoming = isScheduleUpcoming(event);
+  const isCurrent = isScheduleEventCurrent(event);
+  const isUpcoming = isScheduleEventUpcoming(event);
   return (
     <View
       className={cn('p-1 rounded-full', {

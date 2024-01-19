@@ -1,8 +1,6 @@
-import { FlatList } from 'react-native';
-
 import { Header } from '../components/common/header';
 import { Title } from '../components/common/title';
-import { ScheduleItem } from '../components/schedule/schedule-item';
+import { ScheduleList } from '../components/schedule/schedule-list';
 import { useSchedule } from '../hooks/use-schedule';
 
 interface SchedulePageProps {}
@@ -14,11 +12,7 @@ export default function SchedulePage({}: SchedulePageProps) {
       <Header>
         <Title>Programterv</Title>
       </Header>
-      <FlatList
-        data={data ?? []}
-        className='flex-grow px-5'
-        renderItem={(listInfo) => <ScheduleItem event={listInfo.item} />}
-      />
+      <ScheduleList schedule={data ?? []} />
     </>
   );
 }

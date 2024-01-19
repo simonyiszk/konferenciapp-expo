@@ -3,7 +3,7 @@ import { Image, Pressable, View } from 'react-native';
 
 import { ScheduleEvent } from '../../types/schedule-event.type';
 import { cn } from '../../utils/common.utils';
-import { isSchedulePast } from '../../utils/schedule.utils';
+import { isScheduleEventPast } from '../../utils/schedule.utils';
 import { StyledText } from '../base/text';
 import { ScheduleStatusIndicator } from './schedule-status-indicator';
 
@@ -14,7 +14,7 @@ interface ScheduleItem {
 export function ScheduleItem({ event }: ScheduleItem) {
   const startTime = format(new Date(event.start), 'HH:mm');
   const endTime = format(new Date(event.end), 'HH:mm');
-  const isPast = isSchedulePast(event);
+  const isPast = isScheduleEventPast(event);
   return (
     <Pressable
       className={cn('mb-5 rounded-xl bg-white flex-row p-3 items-center shadow-md shadow-slate-500/10', {
