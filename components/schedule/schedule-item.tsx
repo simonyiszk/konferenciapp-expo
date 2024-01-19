@@ -1,4 +1,5 @@
 import { format } from 'date-fns';
+import { useState } from 'react';
 import { Image, Pressable, View } from 'react-native';
 
 import { ScheduleEvent } from '../../types/schedule-event.type';
@@ -12,13 +13,17 @@ interface ScheduleItem {
 }
 
 export function ScheduleItem({ event }: ScheduleItem) {
+  const [isPressed, setIsPressed] = useState(false);
   const startTime = format(new Date(event.start), 'HH:mm');
   const endTime = format(new Date(event.end), 'HH:mm');
   const isPast = isScheduleEventPast(event);
   return (
     <Pressable
+      onPressIn={() => setIsPressed(true)}
+      onPressOut={() => setIsPressed(false)}
       className={cn('mb-5 rounded-xl bg-white flex-row p-3 items-center shadow-md shadow-slate-500/10', {
         'opacity-50': isPast,
+        'bg-slate-50': isPressed && !isPast,
       })}
     >
       <Image source={{ uri: event.presenterImage }} className='rounded-full h-14 w-14' />
