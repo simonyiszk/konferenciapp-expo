@@ -40,6 +40,7 @@ export default function MainLayout() {
             paddingBottom: Platform.OS === 'android' ? bottom + 10 : undefined,
           }}
           screenOptions={{
+            unmountOnBlur: true,
             headerShown: false,
             tabBarActiveTintColor: colors.primary['500'],
             tabBarLabel: TabbarLabel,
