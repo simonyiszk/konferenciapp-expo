@@ -2,6 +2,8 @@ import { format } from 'date-fns';
 import { Image, Pressable, View } from 'react-native';
 
 import { ScheduleEvent } from '../../types/schedule-event.type';
+import { cn } from '../../utils/common.utils';
+import { isSchedulePast } from '../../utils/schedule.utils';
 import { StyledText } from '../base/text';
 import { ScheduleStatusIndicator } from './schedule-status-indicator';
 
@@ -12,8 +14,13 @@ interface ScheduleItem {
 export function ScheduleItem({ event }: ScheduleItem) {
   const startTime = format(new Date(event.start), 'HH:mm');
   const endTime = format(new Date(event.end), 'HH:mm');
+  const isPast = isSchedulePast(event);
   return (
-    <Pressable className='mb-5 rounded-xl bg-white flex-row p-3 items-center shadow-md shadow-slate-500/10'>
+    <Pressable
+      className={cn('mb-5 rounded-xl bg-white flex-row p-3 items-center shadow-md shadow-slate-500/10', {
+        'opacity-50': isPast,
+      })}
+    >
       <Image source={{ uri: event.presenterImage }} className='rounded-full h-14 w-14' />
       <View className='flex-col gap-2 flex-1 mx-2'>
         <StyledText className='text-xl' numberOfLines={1}>
