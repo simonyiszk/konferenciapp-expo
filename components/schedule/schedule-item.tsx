@@ -1,7 +1,8 @@
 import { format } from 'date-fns';
-import { useRouter } from 'expo-router';
+import { useNavigation } from 'expo-router';
 import { useState } from 'react';
 import { Image, Pressable, View } from 'react-native';
+import { NativeStackNavigationProp } from 'react-native-screens/native-stack';
 
 import { ScheduleEvent } from '../../types/schedule-event.type';
 import { cn } from '../../utils/common.utils';
@@ -14,14 +15,13 @@ interface ScheduleItem {
 }
 
 export function ScheduleItem({ event }: ScheduleItem) {
-  const router = useRouter();
+  const router = useNavigation<NativeStackNavigationProp<{ 'schedule-details': { id: string } }>>();
   const [isPressed, setIsPressed] = useState(false);
   const startTime = format(new Date(event.start), 'HH:mm');
   const endTime = format(new Date(event.end), 'HH:mm');
   const isPast = isScheduleEventPast(event);
   const onPress = () => {
-    router.push({ pathname: 'schedule' });
-    router.push({ pathname: 'schedule/details', params: { id: event.id } });
+    router.navigate('schedule-details', { id: event.id });
   };
   return (
     <Pressable

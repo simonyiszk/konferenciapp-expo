@@ -19,7 +19,6 @@ export default function TabsLayout() {
         paddingRight: right,
       }}
       screenOptions={{
-        unmountOnBlur: true,
         headerShown: false,
         tabBarActiveTintColor: colors.primary['500'],
         tabBarLabel: TabbarLabel,

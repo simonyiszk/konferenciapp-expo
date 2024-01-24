@@ -4,16 +4,17 @@ import { Title } from '../../../components/common/title';
 import { ScheduleList } from '../../../components/schedule/schedule-list';
 import { useSchedule } from '../../../hooks/use-schedule';
 
-interface SchedulePageProps {}
+interface HomePageProps {}
 
-export default function SchedulePage({}: SchedulePageProps) {
+export default function HomePage({}: HomePageProps) {
   const { data } = useSchedule();
+
   return (
     <Screen>
       <Header>
-        <Title>Programterv</Title>
+        <Title>Simonyi Konferencia</Title>
       </Header>
-      <ScheduleList schedule={data ?? []} />
+      <ScheduleList schedule={data ?? []} filterToCurrent filterToUpcoming />
     </Screen>
   );
 }
