@@ -6,6 +6,7 @@ import { StyledText } from '../base/text';
 import { Header } from '../common/header';
 import { Subtitle } from '../common/subtitle';
 import { Title } from '../common/title';
+import { FavoriteButton } from './favorite-button';
 
 interface ScheduleDetailsPageProps {
   id: string;
@@ -25,6 +26,7 @@ export function ScheduleDetailsPage({ id }: ScheduleDetailsPageProps) {
         </Subtitle>
       </Header>
       <StyledText className='mx-5 text-xl'>{data?.description}</StyledText>
+      <FavoriteButton eventId={id} />
     </Screen>
   );
 }

@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import { View } from 'react-native';
 
 import { queryClient } from '../config/query-client.config';
+import { FavoriteEventsProvider } from '../contexts/favorite-events.context';
 
 export default function MainLayout() {
   const [loaded, error] = useFonts({
@@ -25,9 +26,11 @@ export default function MainLayout() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <View className='bg-slate-100 min-h-screen'>
-        <Slot />
-      </View>
+      <FavoriteEventsProvider>
+        <View className='bg-slate-100 min-h-screen'>
+          <Slot />
+        </View>
+      </FavoriteEventsProvider>
     </QueryClientProvider>
   );
 }
