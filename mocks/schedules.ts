@@ -4,6 +4,7 @@ import { ScheduleEvent } from '../types/schedule-event.type';
 
 export const schedule: ScheduleEvent[] = [
   {
+    id: '1',
     title: 'Korábbi esemény valamilyen hosszú címmel',
     presenter: 'Valamilyen Előadó Hosszú Névvel Ráadásul',
     presenterImage: 'https://picsum.photos/200',
@@ -14,6 +15,7 @@ export const schedule: ScheduleEvent[] = [
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl eget aliquam ultrices, nunc nisl aliquet nunc, vitae aliquam nisl',
   },
   {
+    id: '2',
     title: 'Jelenlegi esemény valamilyen hosszú címmel',
     presenter: 'Valamilyen Előadó Hosszú Névvel Ráadásul',
     presenterImage: 'https://picsum.photos/200',
@@ -24,6 +26,7 @@ export const schedule: ScheduleEvent[] = [
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl eget aliquam ultrices, nunc nisl aliquet nunc, vitae aliquam nisl',
   },
   {
+    id: '3',
     title: 'Következő esemény valamilyen hosszú címmel',
     presenter: 'Valamilyen Előadó Hosszú Névvel Ráadásul',
     presenterImage: 'https://picsum.photos/200',
@@ -34,6 +37,7 @@ export const schedule: ScheduleEvent[] = [
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl eget aliquam ultrices, nunc nisl aliquet nunc, vitae aliquam nisl',
   },
   {
+    id: '4',
     title: 'Későbbi esemény valamilyen hosszú címmel',
     presenter: 'Valamilyen Előadó Hosszú Névvel Ráadásul',
     presenterImage: 'https://picsum.photos/200',
