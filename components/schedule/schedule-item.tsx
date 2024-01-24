@@ -1,4 +1,5 @@
 import { format } from 'date-fns';
+import { useRouter } from 'expo-router';
 import { useState } from 'react';
 import { Image, Pressable, View } from 'react-native';
 
@@ -13,12 +14,18 @@ interface ScheduleItem {
 }
 
 export function ScheduleItem({ event }: ScheduleItem) {
+  const router = useRouter();
   const [isPressed, setIsPressed] = useState(false);
   const startTime = format(new Date(event.start), 'HH:mm');
   const endTime = format(new Date(event.end), 'HH:mm');
   const isPast = isScheduleEventPast(event);
+  const onPress = () => {
+    router.push({ pathname: 'schedule' });
+    router.push({ pathname: 'schedule/details', params: { id: event.id } });
+  };
   return (
     <Pressable
+      onPress={onPress}
       onPressIn={() => setIsPressed(true)}
       onPressOut={() => setIsPressed(false)}
       className={cn('mb-5 rounded-xl bg-white flex-row p-3 items-center shadow-md shadow-slate-500/10', {

@@ -1,7 +1,7 @@
-import { Header } from '../components/common/header';
-import { Title } from '../components/common/title';
-import { ScheduleList } from '../components/schedule/schedule-list';
-import { useSchedule } from '../hooks/use-schedule';
+import { Header } from '../../../components/common/header';
+import { Title } from '../../../components/common/title';
+import { ScheduleList } from '../../../components/schedule/schedule-list';
+import { useSchedule } from '../../../hooks/use-schedule';
 
 interface SchedulePageProps {}
 

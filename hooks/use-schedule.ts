@@ -10,7 +10,7 @@ export function useSchedule() {
   });
 }
 
-const delay = 2000;
+const delay = 0;
 
 function getSchedule(): Promise<ScheduleEvent[]> {
   return new Promise((resolve) => {
