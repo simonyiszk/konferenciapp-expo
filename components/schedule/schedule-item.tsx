@@ -1,5 +1,5 @@
 import { format } from 'date-fns';
-import { router, useNavigation, useRouter } from 'expo-router';
+import { useNavigation } from 'expo-router';
 import { useState } from 'react';
 import { Image, Pressable, View } from 'react-native';
 import { NativeStackNavigationProp } from 'react-native-screens/native-stack';
