@@ -1,23 +1,25 @@
 import { AntDesign } from '@expo/vector-icons';
+import { addMinutes, addSeconds } from 'date-fns';
 import { useMemo } from 'react';
 import { Pressable } from 'react-native';
 
 import { useFavoriteEvents } from '../../contexts/favorite-events.context';
+import { ScheduleEvent } from '../../types/schedule-event.type';
 
 interface FavoriteButtonProps {
-  eventId: string;
+  event: ScheduleEvent;
 }
 
-export function FavoriteButton({ eventId }: FavoriteButtonProps) {
+export function FavoriteButton({ event }: FavoriteButtonProps) {
   const { isFavoriteEvent, addFavoriteEvent, removeFavoriteEvent } = useFavoriteEvents();
 
-  const isFavorite = useMemo(() => isFavoriteEvent(eventId), [eventId, isFavoriteEvent]);
+  const isFavorite = useMemo(() => isFavoriteEvent(event.id), [event, isFavoriteEvent]);
 
   const onPress = () => {
     if (isFavorite) {
-      removeFavoriteEvent(eventId);
+      removeFavoriteEvent(event.id);
     } else {
-      addFavoriteEvent(eventId);
+      addFavoriteEvent(event);
     }
   };
 

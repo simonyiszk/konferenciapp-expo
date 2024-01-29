@@ -17,10 +17,10 @@ export class FavoriteEventStorageService {
     }
   }
 
-  static async addFavoriteEvent(eventId: string): Promise<void> {
+  static async addFavoriteEvent(favorite: FavoriteEvent): Promise<void> {
     try {
       const favoriteEvents = await this.listFavoriteEvents();
-      const newFavoriteEvents = [...favoriteEvents, { eventId }];
+      const newFavoriteEvents = [...favoriteEvents, favorite];
       await this.saveFavoriteEvents(newFavoriteEvents);
     } catch (error) {
       console.log(error);

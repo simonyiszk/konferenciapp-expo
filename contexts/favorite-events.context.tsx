@@ -1,12 +1,14 @@
 import { createContext, PropsWithChildren, useContext, useEffect, useState } from 'react';
 
 import { FavoriteEventStorageService } from '../services/favorite-event.service';
+import { NotificationService } from '../services/notification.service';
 import { FavoriteEvent } from '../types/favorite-event.type';
+import { ScheduleEvent } from '../types/schedule-event.type';
 
 type FavoriteEventsContextType =
   | {
       favoriteEvents: FavoriteEvent[];
-      addFavoriteEvent: (eventId: string) => void;
+      addFavoriteEvent: (event: ScheduleEvent) => void;
       removeFavoriteEvent: (eventId: string) => void;
       isFavoriteEvent: (eventId: string) => boolean;
     }
@@ -17,14 +19,18 @@ const FavoriteEventsContext = createContext<FavoriteEventsContextType>(undefined
 export function FavoriteEventsProvider({ children }: PropsWithChildren) {
   const [favoriteEvents, setFavoriteEvents] = useState<FavoriteEvent[]>([]);
 
-  function addFavoriteEvent(eventId: string) {
-    setFavoriteEvents((prev) => [...prev, { eventId }]);
-    FavoriteEventStorageService.addFavoriteEvent(eventId);
+  async function addFavoriteEvent(event: ScheduleEvent) {
+    const notificationId = await NotificationService.scheduleEventNotification(event);
+    const favoriteEvent = { eventId: event.id, notificationId };
+    setFavoriteEvents((prev) => [...prev, favoriteEvent]);
+    FavoriteEventStorageService.addFavoriteEvent(favoriteEvent);
   }
 
   function removeFavoriteEvent(eventId: string) {
+    const favoriteEvent = favoriteEvents.find((item) => item.eventId === eventId);
     setFavoriteEvents((prev) => prev.filter((item) => item.eventId !== eventId));
     FavoriteEventStorageService.removeFavoriteEvent(eventId);
+    NotificationService.removeScheduledNotification(favoriteEvent?.notificationId);
   }
 
   function isFavoriteEvent(eventId: string) {
