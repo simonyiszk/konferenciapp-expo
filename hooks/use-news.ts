@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 
-import {NewsEvent} from "../types/news-event.type";
-import {news} from "../mocks/news";
+import { news } from '../mocks/news';
+import { NewsEvent } from '../types/news-event.type';
 
 export function useNews() {
   return useQuery<NewsEvent[]>({

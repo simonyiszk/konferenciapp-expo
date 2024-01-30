@@ -3,9 +3,9 @@ import { useState } from 'react';
 import { Pressable, View } from 'react-native';
 import { NativeStackNavigationProp } from 'react-native-screens/native-stack';
 
+import { NewsEvent } from '../../types/news-event.type';
 import { cn } from '../../utils/common.utils';
 import { StyledText } from '../base/text';
-import { NewsEvent } from '../../types/news-event.type';
 
 interface NewsItem {
   event: NewsEvent;

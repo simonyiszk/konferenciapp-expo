@@ -1,8 +1,8 @@
+import { useNewsItem } from '../../hooks/use-news-item';
 import { Screen } from '../base/screen';
 import { StyledText } from '../base/text';
 import { Header } from '../common/header';
 import { Title } from '../common/title';
-import { useNewsItem } from '../../hooks/use-news-item';
 
 interface NewsDetailsPageProps {
   id: string;

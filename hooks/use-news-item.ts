@@ -1,4 +1,4 @@
-import {useNews} from "./use-news";
+import { useNews } from './use-news';
 
 export function useNewsItem(id: string) {
   const { data, ...rest } = useNews();

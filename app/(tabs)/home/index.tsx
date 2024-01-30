@@ -1,12 +1,13 @@
+import React from 'react';
+import { View } from 'react-native';
+
 import { Screen } from '../../../components/base/screen';
 import { Header } from '../../../components/common/header';
+import { Menutitle } from '../../../components/common/menutitle';
 import { Title } from '../../../components/common/title';
+import { NewsList } from '../../../components/news/news-list';
 import { ScheduleList } from '../../../components/schedule/schedule-list';
 import { useSchedule } from '../../../hooks/use-schedule';
-import { View } from 'react-native';
-import React from 'react';
-import { Menutitle } from '../../../components/common/menutitle';
-import { NewsList } from '../../../components/news/news-list';
 import { news } from '../../../mocks/news';
 
 interface HomePageProps {}
