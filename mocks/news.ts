@@ -3,12 +3,12 @@ import { NewsEvent } from '../types/news-event.type';
 export const news: NewsEvent[] = [
   {
     id: '0',
-    title: 'ur mother',
-    description: 'lol',
+    title: 'Great news',
+    description: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...',
   },
   {
     id: '1',
-    title: 'asd',
-    description: 'ekekekekekekekekekekekekekekekekekekekeekkekekeekekekkekekekekekekekekekekekeke',
+    title: 'Even greater very great news',
+    description: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...',
   },
 ];
