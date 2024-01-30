@@ -26,7 +26,7 @@ export function ScheduleDetailsPage({ id }: ScheduleDetailsPageProps) {
         </Subtitle>
       </Header>
       <StyledText className='mx-5 text-xl'>{data?.description}</StyledText>
-      <FavoriteButton eventId={id} />
+      <FavoriteButton event={data} />
     </Screen>
   );
 }

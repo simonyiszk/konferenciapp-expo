@@ -4,9 +4,11 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { TabbarBackground } from '../../components/tabbar/tabbar-background';
 import { TabbarIcon } from '../../components/tabbar/tabbar-icon';
 import { TabbarLabel } from '../../components/tabbar/tabbar-label';
+import { useNotificationObserver } from '../../hooks/use-notification-observer';
 import { colors } from '../../theme/colors';
 
 export default function TabsLayout() {
+  useNotificationObserver();
   const { top, bottom, left, right } = useSafeAreaInsets();
   return (
     <Tabs
