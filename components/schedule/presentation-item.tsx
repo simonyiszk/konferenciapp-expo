@@ -4,27 +4,27 @@ import { useState } from 'react';
 import { Image, Pressable, View } from 'react-native';
 import { NativeStackNavigationProp } from 'react-native-screens/native-stack';
 
-import { useFavoriteEvents } from '../../contexts/favorite-events.context';
-import { ScheduleEvent } from '../../types/schedule-event.type';
+import { useFavoritePresentations } from '../../contexts/favorite-presentations.context';
+import { PresentationDto } from '../../types/conference-api.type';
 import { cn } from '../../utils/common.utils';
-import { isScheduleEventPast } from '../../utils/schedule.utils';
+import { isPresentationPast } from '../../utils/presentation.utils';
 import { StyledText } from '../base/text';
-import { ScheduleStatusIndicator } from './schedule-status-indicator';
+import { PresentationStatusIndicator } from './presentation-status-indicator';
 
-interface ScheduleItem {
-  event: ScheduleEvent;
+interface PresentationItemProps {
+  presentation: PresentationDto;
 }
 
-export function ScheduleItem({ event }: ScheduleItem) {
-  const { isFavoriteEvent } = useFavoriteEvents();
-  const router = useNavigation<NativeStackNavigationProp<{ 'schedule-details': { id: string } }>>();
+export function PresentationItem({ presentation }: PresentationItemProps) {
+  const { isFavoritePresentation } = useFavoritePresentations();
+  const router = useNavigation<NativeStackNavigationProp<{ 'presentation-details': { id: string } }>>();
   const [isPressed, setIsPressed] = useState(false);
-  const startTime = format(new Date(event.start), 'HH:mm');
-  const endTime = format(new Date(event.end), 'HH:mm');
-  const isPast = isScheduleEventPast(event);
-  const isFavorite = isFavoriteEvent(event.id);
+  const startTime = format(new Date(presentation.startTime), 'HH:mm');
+  const endTime = format(new Date(presentation.endTime), 'HH:mm');
+  const isPast = isPresentationPast(presentation);
+  const isFavorite = isFavoritePresentation(presentation.slug);
   const onPress = () => {
-    router.navigate('schedule-details', { id: event.id });
+    router.navigate('presentation-details', { id: presentation.slug });
   };
   return (
     <Pressable
@@ -37,14 +37,14 @@ export function ScheduleItem({ event }: ScheduleItem) {
         'border-yellow-500 border-r-4': isFavorite,
       })}
     >
-      <Image source={{ uri: event.presenterImage }} className='rounded-full h-14 w-14' />
+      <Image source={{ uri: presentation.presenter.pictureUrl }} className='rounded-full h-14 w-14' />
       <View className='flex-col gap-2 flex-1 mx-2'>
         <StyledText className='text-xl' numberOfLines={1}>
-          {event.title}
+          {presentation.title}
         </StyledText>
         <View className='flex-row overflow-hidden'>
           <StyledText className='text-slate-500 flex-shrink' numberOfLines={1}>
-            {event.presenter}
+            {presentation.presenter.name}
           </StyledText>
           <StyledText className='text-slate-500' numberOfLines={1}>
             {' '}
@@ -52,7 +52,7 @@ export function ScheduleItem({ event }: ScheduleItem) {
           </StyledText>
         </View>
       </View>
-      <ScheduleStatusIndicator event={event} />
+      <PresentationStatusIndicator presentation={presentation} />
     </Pressable>
   );
 }

@@ -2,23 +2,23 @@ import { AntDesign } from '@expo/vector-icons';
 import { useMemo } from 'react';
 import { Pressable } from 'react-native';
 
-import { useFavoriteEvents } from '../../contexts/favorite-events.context';
-import { ScheduleEvent } from '../../types/schedule-event.type';
+import { useFavoritePresentations } from '../../contexts/favorite-presentations.context';
+import { PresentationDto } from '../../types/conference-api.type';
 
 interface FavoriteButtonProps {
-  event: ScheduleEvent;
+  presentation: PresentationDto;
 }
 
-export function FavoriteButton({ event }: FavoriteButtonProps) {
-  const { isFavoriteEvent, addFavoriteEvent, removeFavoriteEvent } = useFavoriteEvents();
+export function FavoriteButton({ presentation }: FavoriteButtonProps) {
+  const { isFavoritePresentation, addFavoritePresentation, removeFavoritePresentation } = useFavoritePresentations();
 
-  const isFavorite = useMemo(() => isFavoriteEvent(event.id), [event, isFavoriteEvent]);
+  const isFavorite = useMemo(() => isFavoritePresentation(presentation.slug), [presentation, isFavoritePresentation]);
 
   const onPress = () => {
     if (isFavorite) {
-      removeFavoriteEvent(event.id);
+      removeFavoritePresentation(presentation.slug);
     } else {
-      addFavoriteEvent(event);
+      addFavoritePresentation(presentation);
     }
   };
 

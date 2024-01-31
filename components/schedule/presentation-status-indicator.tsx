@@ -1,16 +1,16 @@
 import { View } from 'react-native';
 
-import { ScheduleEvent } from '../../types/schedule-event.type';
+import { PresentationDto } from '../../types/conference-api.type';
 import { cn } from '../../utils/common.utils';
-import { isScheduleEventCurrent, isScheduleEventUpcoming } from '../../utils/schedule.utils';
+import { isPresentationCurrent, isPresentationUpcoming } from '../../utils/presentation.utils';
 
-interface ScheduleStatusIndicatorProps {
-  event: ScheduleEvent;
+interface PresentationStatusIndicatorProps {
+  presentation: PresentationDto;
 }
 
-export function ScheduleStatusIndicator({ event }: ScheduleStatusIndicatorProps) {
-  const isCurrent = isScheduleEventCurrent(event);
-  const isUpcoming = isScheduleEventUpcoming(event);
+export function PresentationStatusIndicator({ presentation }: PresentationStatusIndicatorProps) {
+  const isCurrent = isPresentationCurrent(presentation);
+  const isUpcoming = isPresentationUpcoming(presentation);
   return (
     <View
       className={cn('p-1 rounded-full', {

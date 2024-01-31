@@ -40,3 +40,5 @@ ios
 .idea
 .idea/workspace.xml
 
+.env
+

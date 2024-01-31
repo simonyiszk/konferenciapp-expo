@@ -1,6 +1,6 @@
 import { format } from 'date-fns';
 
-import { useScheduleItem } from '../../hooks/use-schedule-item';
+import { usePresentation } from '../../hooks/use-presentation';
 import { Screen } from '../base/screen';
 import { StyledText } from '../base/text';
 import { Header } from '../common/header';
@@ -9,24 +9,24 @@ import { Title } from '../common/title';
 import { FavoriteButton } from './favorite-button';
 
 interface ScheduleDetailsPageProps {
-  id: string;
+  slug: string;
 }
 
-export function ScheduleDetailsPage({ id }: ScheduleDetailsPageProps) {
-  const { data } = useScheduleItem(id);
+export function PresentationDetailsPage({ slug }: ScheduleDetailsPageProps) {
+  const { data } = usePresentation(slug);
   if (!data) return <></>;
-  const startDate = format(new Date(data.start), 'HH:mm');
-  const endDate = format(new Date(data.end), 'HH:mm');
+  const startDate = format(new Date(data.startTime), 'HH:mm');
+  const endDate = format(new Date(data.endTime), 'HH:mm');
   return (
     <Screen>
       <Header>
         <Title>{data?.title}</Title>
         <Subtitle>
-          {data?.location} • {startDate} - {endDate}
+          {data?.room} • {startDate} - {endDate}
         </Subtitle>
       </Header>
       <StyledText className='mx-5 text-xl'>{data?.description}</StyledText>
-      <FavoriteButton event={data} />
+      <FavoriteButton presentation={data} />
     </Screen>
   );
 }
