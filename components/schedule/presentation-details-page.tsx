@@ -2,6 +2,7 @@ import { format } from 'date-fns';
 
 import { usePresentation } from '../../hooks/use-presentation';
 import { Screen } from '../base/screen';
+import { ScrollContent } from '../base/scroll-content';
 import { StyledText } from '../base/text';
 import { Header } from '../common/header';
 import { Subtitle } from '../common/subtitle';
@@ -25,7 +26,9 @@ export function PresentationDetailsPage({ slug }: ScheduleDetailsPageProps) {
           {data?.room} • {startDate} - {endDate}
         </Subtitle>
       </Header>
-      <StyledText className='mx-5 text-xl'>{data?.description}</StyledText>
+      <ScrollContent>
+        <StyledText className='text-xl'>{data?.description}</StyledText>
+      </ScrollContent>
       <FavoriteButton presentation={data} />
     </Screen>
   );
