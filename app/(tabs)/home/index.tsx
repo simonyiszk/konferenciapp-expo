@@ -9,8 +9,8 @@ import { Separator } from '../../../components/common/separator';
 import { Title } from '../../../components/common/title';
 import { HomeNewsList } from '../../../components/news/layouts/home-news-list';
 import { NewsItemSkeletonList } from '../../../components/news/layouts/news-item-skeleton-list';
-import { PresentationItemSkeleton } from '../../../components/schedule/elements/presentation-item-skeleton';
 import { HomePresentationList } from '../../../components/schedule/layouts/home-presentation-list';
+import { PresentationItemSkeletonList } from '../../../components/schedule/layouts/presentation-item-skeleton-list';
 import { useConference } from '../../../hooks/use-conference';
 import { useNews } from '../../../hooks/use-news';
 
@@ -24,7 +24,7 @@ export default function HomePage() {
       </Header>
       <ScrollContent>
         <SectionTitle>Előadások</SectionTitle>
-        {conference.isLoading && [0, 1].map((i) => <PresentationItemSkeleton key={i} />)}
+        {conference.isLoading && <PresentationItemSkeletonList />}
         {conference.isError && <ErrorMessage>Nem sikerült betölteni az előadásokat</ErrorMessage>}
         {!conference.isError && !conference.isLoading && (
           <HomePresentationList presentations={conference.data?.presentations ?? []} />
