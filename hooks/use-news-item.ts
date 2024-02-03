@@ -1,7 +1,10 @@
-import { useNews } from './use-news';
+import { useQuery } from '@tanstack/react-query';
+
+import { NewsService } from '../services/news.service';
 
 export function useNewsItem(id: string) {
-  const { data, ...rest } = useNews();
-  const item = data?.find((item) => item.id === id);
-  return { data: item, ...rest };
+  return useQuery({
+    queryKey: ['news', id],
+    queryFn: () => NewsService.getNewsItemData(id),
+  });
 }

@@ -3,19 +3,19 @@ import { useState } from 'react';
 import { Pressable, View } from 'react-native';
 import { NativeStackNavigationProp } from 'react-native-screens/native-stack';
 
-import { NewsEvent } from '../../types/news-event.type';
+import { NewsItemDto } from '../../types/news-api.type';
 import { cn } from '../../utils/common.utils';
 import { StyledText } from '../base/text';
 
-interface NewsItem {
-  event: NewsEvent;
+interface NewsItemProps {
+  newsItem: NewsItemDto;
 }
 
-export function NewsItem({ event }: NewsItem) {
+export function NewsItem({ newsItem }: NewsItemProps) {
   const router = useNavigation<NativeStackNavigationProp<{ 'news-details': { id: string } }>>();
   const [isPressed, setIsPressed] = useState(false);
   const onPress = () => {
-    router.navigate('news-details', { id: event.id });
+    router.navigate('news-details', { id: newsItem.url });
   };
   return (
     <Pressable
@@ -28,7 +28,7 @@ export function NewsItem({ event }: NewsItem) {
     >
       <View className='flex-col gap-2 flex-1 mx-2'>
         <StyledText className='text-xl' numberOfLines={1}>
-          {event.title}
+          {newsItem.title}
         </StyledText>
       </View>
     </Pressable>

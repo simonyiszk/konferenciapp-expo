@@ -10,13 +10,13 @@ import { NewsList } from '../../../components/news/news-list';
 import { PresentationItemSkeleton } from '../../../components/schedule/presentation-item-skeleton';
 import { PresentationList } from '../../../components/schedule/presentation-list';
 import { useConference } from '../../../hooks/use-conference';
-import { news } from '../../../mocks/news';
+import { useNews } from '../../../hooks/use-news';
 
 interface HomePageProps {}
 
 export default function HomePage({}: HomePageProps) {
   const conference = useConference();
-
+  const news = useNews();
   return (
     <Screen>
       <Header>
@@ -30,7 +30,7 @@ export default function HomePage({}: HomePageProps) {
       )}
       <Separator className='mx-5' />
       <SectionTitle>Hírek</SectionTitle>
-      <NewsList news={news} />
+      {news.data && <NewsList news={news.data.news} />}
     </Screen>
   );
 }
