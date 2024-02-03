@@ -2,8 +2,8 @@ import { AntDesign } from '@expo/vector-icons';
 import { useMemo } from 'react';
 import { Pressable } from 'react-native';
 
-import { useFavoritePresentations } from '../../contexts/favorite-presentations.context';
-import { PresentationDto } from '../../types/conference-api.type';
+import { useFavoritePresentations } from '../../../contexts/favorite-presentations.context';
+import { PresentationDto } from '../../../types/conference-api.type';
 
 interface FavoriteButtonProps {
   presentation: PresentationDto;

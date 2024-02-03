@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
 
-import { PresentationDto } from '../../types/conference-api.type';
-import { isPresentationCurrent, isPresentationUpcoming } from '../../utils/presentation.utils';
-import { StyledText } from '../base/text';
-import { PresentationItem } from './presentation-item';
+import { PresentationDto } from '../../../types/conference-api.type';
+import { isPresentationCurrent, isPresentationUpcoming } from '../../../utils/presentation.utils';
+import { StyledText } from '../../base/text';
+import { PresentationItem } from '../elements/presentation-item';
 
 interface HomePresentationListProps {
   presentations: PresentationDto[];

@@ -4,8 +4,8 @@ import { Screen } from '../../../components/base/screen';
 import { ErrorMessage } from '../../../components/common/error-message';
 import { Header } from '../../../components/common/header';
 import { Title } from '../../../components/common/title';
-import { PresentationItemSkeleton } from '../../../components/schedule/presentation-item-skeleton';
-import { PresentationList } from '../../../components/schedule/presentation-list';
+import { PresentationItemSkeleton } from '../../../components/schedule/elements/presentation-item-skeleton';
+import { PresentationList } from '../../../components/schedule/layouts/presentation-list';
 import { useConference } from '../../../hooks/use-conference';
 
 export default function PresentationListPage() {

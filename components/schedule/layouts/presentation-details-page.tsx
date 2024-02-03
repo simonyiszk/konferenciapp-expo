@@ -1,13 +1,13 @@
 import { format } from 'date-fns';
 
-import { usePresentation } from '../../hooks/use-presentation';
-import { Screen } from '../base/screen';
-import { ScrollContent } from '../base/scroll-content';
-import { StyledText } from '../base/text';
-import { Header } from '../common/header';
-import { Subtitle } from '../common/subtitle';
-import { Title } from '../common/title';
-import { FavoriteButton } from './favorite-button';
+import { usePresentation } from '../../../hooks/use-presentation';
+import { Screen } from '../../base/screen';
+import { ScrollContent } from '../../base/scroll-content';
+import { StyledText } from '../../base/text';
+import { Header } from '../../common/header';
+import { Subtitle } from '../../common/subtitle';
+import { Title } from '../../common/title';
+import { FavoriteButton } from '../elements/favorite-button';
 
 interface ScheduleDetailsPageProps {
   slug: string;

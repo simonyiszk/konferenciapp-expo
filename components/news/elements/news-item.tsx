@@ -3,10 +3,10 @@ import { useState } from 'react';
 import { Pressable, PressableProps } from 'react-native';
 import { NativeStackNavigationProp } from 'react-native-screens/native-stack';
 
-import { NewsItemDto } from '../../types/news-api.type';
-import { cn } from '../../utils/common.utils';
-import { formatHu } from '../../utils/date.utils';
-import { StyledText } from '../base/text';
+import { NewsItemDto } from '../../../types/news-api.type';
+import { cn } from '../../../utils/common.utils';
+import { formatHu } from '../../../utils/date.utils';
+import { StyledText } from '../../base/text';
 
 interface NewsItemProps extends Omit<PressableProps, 'onPress' | 'onPressIn' | 'onPressOut'> {
   newsItem: NewsItemDto;

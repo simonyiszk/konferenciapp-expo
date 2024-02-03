@@ -1,7 +1,7 @@
 import { FlatList } from 'react-native';
 
-import { NewsItemDto } from '../../types/news-api.type';
-import { NewsItem } from './news-item';
+import { NewsItemDto } from '../../../types/news-api.type';
+import { NewsItem } from '../elements/news-item';
 
 interface NewsListProps {
   news: NewsItemDto[];

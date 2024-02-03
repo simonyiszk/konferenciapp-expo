@@ -4,11 +4,11 @@ import { useState } from 'react';
 import { Image, Pressable, View } from 'react-native';
 import { NativeStackNavigationProp } from 'react-native-screens/native-stack';
 
-import { useFavoritePresentations } from '../../contexts/favorite-presentations.context';
-import { PresentationDto } from '../../types/conference-api.type';
-import { cn } from '../../utils/common.utils';
-import { isPresentationPast } from '../../utils/presentation.utils';
-import { StyledText } from '../base/text';
+import { useFavoritePresentations } from '../../../contexts/favorite-presentations.context';
+import { PresentationDto } from '../../../types/conference-api.type';
+import { cn } from '../../../utils/common.utils';
+import { isPresentationPast } from '../../../utils/presentation.utils';
+import { StyledText } from '../../base/text';
 import { PresentationStatusIndicator } from './presentation-status-indicator';
 
 interface PresentationItemProps {

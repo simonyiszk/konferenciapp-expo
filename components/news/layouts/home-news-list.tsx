@@ -1,6 +1,6 @@
-import { NewsItemDto } from '../../types/news-api.type';
-import { StyledText } from '../base/text';
-import { NewsItem } from './news-item';
+import { NewsItemDto } from '../../../types/news-api.type';
+import { StyledText } from '../../base/text';
+import { NewsItem } from '../elements/news-item';
 
 interface HomeNewsListProps {
   news: NewsItemDto[];

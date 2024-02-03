@@ -7,9 +7,10 @@ import { Header } from '../../../components/common/header';
 import { SectionTitle } from '../../../components/common/sectiontitle';
 import { Separator } from '../../../components/common/separator';
 import { Title } from '../../../components/common/title';
-import { HomeNewsList } from '../../../components/news/home-news-list';
-import { HomePresentationList } from '../../../components/schedule/home-presentation-list';
-import { PresentationItemSkeleton } from '../../../components/schedule/presentation-item-skeleton';
+import { HomeNewsList } from '../../../components/news/layouts/home-news-list';
+import { NewsItemSkeletonList } from '../../../components/news/layouts/news-item-skeleton-list';
+import { PresentationItemSkeleton } from '../../../components/schedule/elements/presentation-item-skeleton';
+import { HomePresentationList } from '../../../components/schedule/layouts/home-presentation-list';
 import { useConference } from '../../../hooks/use-conference';
 import { useNews } from '../../../hooks/use-news';
 
@@ -30,6 +31,7 @@ export default function HomePage() {
         )}
         <Separator />
         <SectionTitle>Hírek</SectionTitle>
+        {news.isLoading && <NewsItemSkeletonList />}
         {news.data && <HomeNewsList news={news.data.news} />}
       </ScrollContent>
     </Screen>
