@@ -1,5 +1,6 @@
+import { Feather } from '@expo/vector-icons';
 import { useNavigation } from 'expo-router';
-import { PressableProps } from 'react-native';
+import { PressableProps, View } from 'react-native';
 import { NativeStackNavigationProp } from 'react-native-screens/native-stack';
 
 import { NewsItemDto } from '../../../types/news-api.type';
@@ -17,7 +18,13 @@ export function NewsItem({ newsItem, ...props }: NewsItemProps) {
     router.navigate('news-details', { id: newsItem.url });
   };
   return (
-    <ItemCard onPress={onPress} {...props}>
+    <ItemCard className='space-y-2' onPress={onPress} {...props}>
+      {newsItem.highlighted && (
+        <View className='flex-row space-x-1 items-center'>
+          <Feather name='alert-circle' size={15} color='#ef4444' />
+          <StyledText className='text-red-500'>Kiemelt</StyledText>
+        </View>
+      )}
       <StyledText className='text-xl' numberOfLines={2}>
         {newsItem.title}
       </StyledText>
