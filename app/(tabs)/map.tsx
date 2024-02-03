@@ -5,9 +5,7 @@ import { Header } from '../../components/common/header';
 import { Title } from '../../components/common/title';
 import { Map } from '../../components/map/map';
 
-interface MapPageProps {}
-
-export default function MapPage({}: MapPageProps) {
+export default function MapPage() {
   return (
     <Screen>
       <Header>

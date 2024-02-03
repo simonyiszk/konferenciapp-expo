@@ -1,11 +1,15 @@
-import { ScrollView, View, ViewProps } from 'react-native';
+import { ScrollView, ScrollViewProps } from 'react-native';
 
 import { cn } from '../../utils/common.utils';
 
-export function ScrollContent({ className, ...props }: ViewProps) {
+export function ScrollContent({ className, ...props }: ScrollViewProps) {
   return (
-    <ScrollView>
-      <View className={cn('mx-5 pb-40', className)} {...props} />
-    </ScrollView>
+    <ScrollView
+      className={cn('px-5 pt-5', className)}
+      contentContainerStyle={{
+        paddingBottom: 130,
+      }}
+      {...props}
+    ></ScrollView>
   );
 }

@@ -1,8 +1,8 @@
 import { View } from 'react-native';
 
-import { PresentationDto } from '../../types/conference-api.type';
-import { cn } from '../../utils/common.utils';
-import { isPresentationCurrent, isPresentationUpcoming } from '../../utils/presentation.utils';
+import { PresentationDto } from '../../../types/conference-api.type';
+import { cn } from '../../../utils/common.utils';
+import { isPresentationCurrent, isPresentationUpcoming } from '../../../utils/presentation.utils';
 
 interface PresentationStatusIndicatorProps {
   presentation: PresentationDto;

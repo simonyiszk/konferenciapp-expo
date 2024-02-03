@@ -1,8 +1,8 @@
 import { FlatList } from 'react-native';
 
-import { PresentationDto } from '../../types/conference-api.type';
-import { StyledText } from '../base/text';
-import { PresentationItem } from './presentation-item';
+import { PresentationDto } from '../../../types/conference-api.type';
+import { StyledText } from '../../base/text';
+import { PresentationItem } from '../elements/presentation-item';
 
 interface PresentationListProps {
   presentations: PresentationDto[];
@@ -14,8 +14,9 @@ export function PresentationList({ presentations }: PresentationListProps) {
   }
   return (
     <FlatList
+      contentContainerStyle={{ paddingBottom: 130 }}
       data={presentations}
-      className='flex-grow px-5'
+      className='px-5 pt-5'
       renderItem={(listInfo) => <PresentationItem presentation={listInfo.item} />}
     />
   );
