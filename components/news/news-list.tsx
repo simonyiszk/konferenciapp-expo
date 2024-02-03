@@ -1,14 +1,12 @@
 import { FlatList } from 'react-native';
 
-import { NewsEvent } from '../../types/news-event.type';
+import { NewsItemDto } from '../../types/news-api.type';
 import { NewsItem } from './news-item';
 
 interface NewsListProps {
-  news: NewsEvent[];
+  news: NewsItemDto[];
 }
 
 export function NewsList({ news }: NewsListProps) {
-  return (
-    <FlatList data={news} className='flex-grow px-5' renderItem={(listInfo) => <NewsItem event={listInfo.item} />} />
-  );
+  return <FlatList data={news} className='px-5' renderItem={(listInfo) => <NewsItem newsItem={listInfo.item} />} />;
 }

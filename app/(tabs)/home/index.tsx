@@ -1,30 +1,41 @@
 import React from 'react';
-import { View } from 'react-native';
+import { ScrollView, View } from 'react-native';
 
 import { Screen } from '../../../components/base/screen';
+import { ErrorMessage } from '../../../components/common/error-message';
 import { Header } from '../../../components/common/header';
 import { SectionTitle } from '../../../components/common/sectiontitle';
+import { Separator } from '../../../components/common/separator';
 import { Title } from '../../../components/common/title';
-import { NewsList } from '../../../components/news/news-list';
-import { ScheduleList } from '../../../components/schedule/schedule-list';
-import { useSchedule } from '../../../hooks/use-schedule';
-import { news } from '../../../mocks/news';
+import { HomeNewsList } from '../../../components/news/home-news-list';
+import { HomePresentationList } from '../../../components/schedule/home-presentation-list';
+import { PresentationItemSkeleton } from '../../../components/schedule/presentation-item-skeleton';
+import { useConference } from '../../../hooks/use-conference';
+import { useNews } from '../../../hooks/use-news';
 
 interface HomePageProps {}
 
 export default function HomePage({}: HomePageProps) {
-  const { data } = useSchedule();
-
+  const conference = useConference();
+  const news = useNews();
   return (
     <Screen>
       <Header>
         <Title>Simonyi Konferencia</Title>
       </Header>
-      <SectionTitle>Előadások</SectionTitle>
-      <ScheduleList schedule={data ?? []} filterToCurrent filterToUpcoming />
-      <View className='w-20 h-1 rounded-full bg-slate-300 mx-5 my-5' />
-      <SectionTitle>Hírek</SectionTitle>
-      <NewsList news={news} />
+      <ScrollView className='px-5'>
+        <View className='mb-40'>
+          <SectionTitle>Előadások</SectionTitle>
+          {conference.isLoading && [0, 1].map((i) => <PresentationItemSkeleton key={i} />)}
+          {conference.isError && <ErrorMessage>Nem sikerült betölteni az előadásokat</ErrorMessage>}
+          {!conference.isError && !conference.isLoading && (
+            <HomePresentationList presentations={conference.data?.presentations ?? []} />
+          )}
+          <Separator />
+          <SectionTitle>Hírek</SectionTitle>
+          {news.data && <HomeNewsList news={news.data.news} />}
+        </View>
+      </ScrollView>
     </Screen>
   );
 }

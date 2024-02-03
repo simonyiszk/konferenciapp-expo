@@ -30,6 +30,12 @@
         "projectId": "922ba2d9-369f-4940-aba6-9f2331f1f1c1"
       }
     },
+    "updates": {
+      "url": "https://u.expo.dev/922ba2d9-369f-4940-aba6-9f2331f1f1c1"
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
     "owner": "kir-dev",
     "plugins": ["expo-router"],
     "notification": {

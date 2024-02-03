@@ -3,6 +3,7 @@ import { useNavigation } from 'expo-router';
 import { Pressable, View, ViewProps } from 'react-native';
 
 import { cn } from '../../utils/common.utils';
+import { Separator } from './separator';
 
 interface HeaderProps extends ViewProps {}
 
@@ -17,7 +18,7 @@ export function Header({ children, className, ...props }: HeaderProps) {
         </Pressable>
       )}
       {children}
-      <View className='w-20 h-1 rounded-full bg-slate-300' />
+      <Separator className='my-0' />
     </View>
   );
 }
