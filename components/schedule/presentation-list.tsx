@@ -12,10 +12,12 @@ export function PresentationList({ presentations }: PresentationListProps) {
   if (presentations.length === 0) {
     return <StyledText className='mx-5 text-center my-10'>Nincs megjeleníthető előadás.</StyledText>;
   }
+  const multipliedPresentations = presentations.concat(presentations).concat(presentations);
   return (
     <FlatList
-      data={presentations}
-      className='flex-grow px-5'
+      contentContainerStyle={{ paddingBottom: 130 }}
+      data={multipliedPresentations}
+      className='flex-grow px-5 pt-5'
       renderItem={(listInfo) => <PresentationItem presentation={listInfo.item} />}
     />
   );

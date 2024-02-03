@@ -11,7 +11,7 @@ export function Header({ children, className, ...props }: HeaderProps) {
   const navigation = useNavigation();
   const showBackButton = navigation.canGoBack();
   return (
-    <View className={cn('space-y-5 mx-5 mb-5', className)} {...props}>
+    <View className={cn('space-y-5 mx-5', className)} {...props}>
       {showBackButton && (
         <Pressable onPress={navigation.goBack}>
           <Feather name='arrow-left' size={30} color='#d45b7e' />

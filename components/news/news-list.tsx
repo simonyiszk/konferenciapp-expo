@@ -8,5 +8,12 @@ interface NewsListProps {
 }
 
 export function NewsList({ news }: NewsListProps) {
-  return <FlatList data={news} className='px-5' renderItem={(listInfo) => <NewsItem newsItem={listInfo.item} />} />;
+  return (
+    <FlatList
+      contentContainerStyle={{ paddingBottom: 130 }}
+      data={news}
+      className='flex-grow px-5 pt-5'
+      renderItem={(listInfo) => <NewsItem newsItem={listInfo.item} />}
+    />
+  );
 }

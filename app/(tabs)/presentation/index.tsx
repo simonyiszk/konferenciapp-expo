@@ -8,9 +8,7 @@ import { PresentationItemSkeleton } from '../../../components/schedule/presentat
 import { PresentationList } from '../../../components/schedule/presentation-list';
 import { useConference } from '../../../hooks/use-conference';
 
-interface PresentationListPageProps {}
-
-export default function PresentationListPage({}: PresentationListPageProps) {
+export default function PresentationListPage() {
   const { data, isError, isLoading } = useConference();
   return (
     <Screen>
