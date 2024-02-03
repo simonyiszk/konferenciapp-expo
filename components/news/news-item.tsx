@@ -1,17 +1,17 @@
 import { useNavigation } from 'expo-router';
 import { useState } from 'react';
-import { Pressable, View } from 'react-native';
+import { Pressable, PressableProps, View } from 'react-native';
 import { NativeStackNavigationProp } from 'react-native-screens/native-stack';
 
 import { NewsItemDto } from '../../types/news-api.type';
 import { cn } from '../../utils/common.utils';
 import { StyledText } from '../base/text';
 
-interface NewsItemProps {
+interface NewsItemProps extends Omit<PressableProps, 'onPress' | 'onPressIn' | 'onPressOut'> {
   newsItem: NewsItemDto;
 }
 
-export function NewsItem({ newsItem }: NewsItemProps) {
+export function NewsItem({ newsItem, className, ...props }: NewsItemProps) {
   const router = useNavigation<NativeStackNavigationProp<{ 'news-details': { id: string } }>>();
   const [isPressed, setIsPressed] = useState(false);
   const onPress = () => {
@@ -22,9 +22,14 @@ export function NewsItem({ newsItem }: NewsItemProps) {
       onPress={onPress}
       onPressIn={() => setIsPressed(true)}
       onPressOut={() => setIsPressed(false)}
-      className={cn('mb-5 rounded-xl bg-white flex-row p-3 items-center shadow-md shadow-slate-500/10', {
-        'bg-slate-50': isPressed,
-      })}
+      className={cn(
+        'mb-5 rounded-xl bg-white flex-row p-3 items-center shadow-md shadow-slate-500/10',
+        {
+          'bg-slate-50': isPressed,
+        },
+        className
+      )}
+      {...props}
     >
       <View className='flex-col gap-2 flex-1 mx-2'>
         <StyledText className='text-xl' numberOfLines={1}>
