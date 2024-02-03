@@ -9,6 +9,7 @@ import { cn } from '../../../utils/common.utils';
 import { isPresentationPast } from '../../../utils/presentation.utils';
 import { ItemCard } from '../../base/item-card';
 import { StyledText } from '../../base/text';
+import { ItemHighlight } from '../../common/item-highlight';
 import { PresentationStatusIndicator } from './presentation-status-indicator';
 
 interface PresentationItemProps extends Omit<PressableProps, 'onPress' | 'onPressIn' | 'onPressOut'> {
@@ -31,7 +32,6 @@ export function PresentationItem({ presentation, className, ...props }: Presenta
         'flex-row items-center',
         {
           'opacity-50': isPast,
-          'border-yellow-500 border-r-4': isFavorite,
         },
         className
       )}
@@ -54,6 +54,7 @@ export function PresentationItem({ presentation, className, ...props }: Presenta
         </View>
       </View>
       <PresentationStatusIndicator presentation={presentation} />
+      {isFavorite && <ItemHighlight className='bg-yellow-500' />}
     </ItemCard>
   );
 }

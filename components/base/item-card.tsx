@@ -20,7 +20,7 @@ export function ItemCard({ className, onPressIn, onPressOut, ...props }: Pressab
       onPressIn={handlePressIn}
       onPressOut={handlePressOut}
       className={cn(
-        'mb-5 rounded-xl bg-white p-3 shadow-md shadow-slate-500/10',
+        'mb-5 rounded-xl bg-white p-3 shadow-md shadow-slate-500/10 relative overflow-hidden',
         {
           'bg-slate-50': isPressed,
         },
