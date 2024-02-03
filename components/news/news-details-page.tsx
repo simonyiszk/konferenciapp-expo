@@ -19,9 +19,7 @@ export function NewsDetailsPage({ id }: NewsDetailsPageProps) {
         {isLoading && <SkeletonRectangle className='h-10' />}
         {data.title && <Title>{data.title}</Title>}
       </Header>
-      {(error || true) && (
-        <ErrorMessage>Hiba történt a hír betöltése közben. Lehet, hogy ez a hír nem is létezik?</ErrorMessage>
-      )}
+      {error && <ErrorMessage>Hiba történt a hír betöltése közben. Lehet, hogy ez a hír nem is létezik?</ErrorMessage>}
       <StyledText className='mx-5 text-xl'>{data?.content}</StyledText>
     </Screen>
   );
