@@ -1,5 +1,6 @@
 import { Link } from 'expo-router';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { Screen } from '../../../components/base/screen';
 import { ErrorMessage } from '../../../components/common/error-message';
@@ -12,10 +13,11 @@ import { useConference } from '../../../hooks/use-conference';
 
 export default function PresentationListPage() {
   const { data, isError, isLoading } = useConference();
+  const { t } = useTranslation();
   return (
     <Screen analyticsScreenName='presentation'>
       <Header>
-        <Title>Programterv</Title>
+        <Title>{t('presentations.title')}</Title>
       </Header>
       <Link href='/presentation/favorite-presentations' asChild>
         <StyledButton variant='outline' rightIcon='arrow-right' className='mt-4 mx-5'>
@@ -24,7 +26,7 @@ export default function PresentationListPage() {
       </Link>
       {isLoading && <PresentationItemSkeletonList />}
       {!isError && !isLoading && <PresentationList presentations={data?.presentations ?? []} />}
-      {isError && <ErrorMessage>Nem sikerült betölteni az előadásokat</ErrorMessage>}
+      {isError && <ErrorMessage>{t('presentations.error')}</ErrorMessage>}
     </Screen>
   );
 }
