@@ -1,11 +1,11 @@
 import { Redirect } from 'expo-router';
 import { useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
+
+import i18n from '../services/i18-next';
 
 export default function App() {
-  const { i18n } = useTranslation();
   useEffect(() => {
-    i18n.changeLanguage('hu');
+    i18n.changeLanguage('en');
   });
 
   return <Redirect href='/(tabs)/home' />;
