@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next';
+
 import { useNewsItem } from '../../../hooks/use-news-item';
 import { Screen } from '../../base/screen';
 import { ScrollContent } from '../../base/scroll-content';
@@ -14,6 +16,8 @@ interface NewsDetailsPageProps {
 
 export function NewsDetailsPage({ id }: NewsDetailsPageProps) {
   const { data, error, isLoading } = useNewsItem(id);
+  const { t } = useTranslation();
+  if (!data) return <Screen />;
   return (
     <Screen analyticsScreenName={`news/${id}`}>
       <Header>
@@ -21,9 +25,7 @@ export function NewsDetailsPage({ id }: NewsDetailsPageProps) {
         {data?.title && <Title>{data.title}</Title>}
       </Header>
       <ScrollContent>
-        {error && (
-          <ErrorMessage>Hiba történt a hír betöltése közben. Lehet, hogy ez a hír nem is létezik?</ErrorMessage>
-        )}
+        {error && <ErrorMessage>{t('news.error')}</ErrorMessage>}
         {isLoading && <SkeletonParagraph />}
         <StyledText className='text-xl'>{data?.content}</StyledText>
       </ScrollContent>

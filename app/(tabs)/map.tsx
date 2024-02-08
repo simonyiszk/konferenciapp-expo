@@ -1,4 +1,5 @@
 import { ReactNativeZoomableViewWithGestures } from '@openspacelabs/react-native-zoomable-view';
+import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 
 import { Screen } from '../../components/base/screen';
@@ -10,6 +11,7 @@ import { MapResources } from '../../content/map-resources.content';
 import { MapResource } from '../../types/map.type';
 
 export default function MapPage() {
+  const { t } = useTranslation();
   const [selectedResource, setSelectedResource] = useState<MapResource>();
 
   const onSelectedResource = (id: string) => {
@@ -20,7 +22,7 @@ export default function MapPage() {
   return (
     <Screen analyticsScreenName='map'>
       <Header>
-        <Title>Térkép</Title>
+        <Title>{t('tabbar.map')}</Title>
       </Header>
       <ReactNativeZoomableViewWithGestures initialZoom={0.5} maxZoom={2} contentHeight={1332} contentWidth={846}>
         <Map selectedResource={selectedResource?.id} onSelectedResource={onSelectedResource} />

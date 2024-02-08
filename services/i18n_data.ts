@@ -12,10 +12,16 @@ export const resources = {
         newsTitle: 'News',
         error: 'Unable load presentations',
         empty: 'No presentations available.',
+        noNews: 'No news available',
       },
       persentations: {
         title: 'Schedule',
         error: 'Unable load presentations',
+        empty: 'No presentations available.',
+      },
+      news: {
+        highlight: 'Highlight',
+        error: "Encountered an error while loading the news. Perhaps it doesn't exist?",
       },
     },
   },
@@ -32,10 +38,16 @@ export const resources = {
         newsTitle: 'Hírek',
         error: 'Nem sikerült betölteni az előadásokat',
         empty: 'Nincs megjeleníthető előadás.',
+        noNews: 'Nincs megjeleníthető hír.',
       },
       persentations: {
         title: 'Programterv',
         error: 'Nem sikerült betölteni az előadásokat',
+        empty: 'Nincs megjeleníthető előadás.',
+      },
+      news: {
+        highlight: 'Kiemelt',
+        error: 'Hiba történt a hír betöltése közben. Lehet, hogy ez a hír nem is létezik?',
       },
     },
   },
