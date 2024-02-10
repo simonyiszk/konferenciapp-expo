@@ -1,5 +1,3 @@
-import { format } from 'date-fns';
-
 import { usePresentation } from '../../../hooks/use-presentation';
 import { Screen } from '../../base/screen';
 import { ScrollContent } from '../../base/scroll-content';
@@ -17,8 +15,6 @@ interface ScheduleDetailsPageProps {
 
 export function PresentationDetailsPage({ slug }: ScheduleDetailsPageProps) {
   const { data, isLoading } = usePresentation(slug);
-  const startDate = data ? format(new Date(data.startTime), 'HH:mm') : '';
-  const endDate = data ? format(new Date(data.endTime), 'HH:mm') : '';
   return (
     <Screen>
       <Header>
@@ -27,14 +23,14 @@ export function PresentationDetailsPage({ slug }: ScheduleDetailsPageProps) {
           <>
             <Title>{data?.title}</Title>
             <Subtitle>
-              {data?.room} • {startDate} - {endDate}
+              {data.room} • {data.startTime} - {data.endTime}
             </Subtitle>
           </>
         )}
       </Header>
       <ScrollContent>
         {isLoading && <SkeletonParagraph />}
-        {data && <StyledText className='text-xl'>{data?.description}</StyledText>}
+        {data && <StyledText className='text-xl'>{data.description}</StyledText>}
       </ScrollContent>
       {data && <FavoriteButton presentation={data} />}
     </Screen>

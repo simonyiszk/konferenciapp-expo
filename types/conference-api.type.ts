@@ -41,8 +41,8 @@ export type PresentationDto = {
   title: string;
   room: string;
   language: string;
-  startTime: Date;
-  endTime: Date;
+  startTime: string;
+  endTime: string;
   description: string;
   questionsUrl: string;
   presenter: PresenterDto;
