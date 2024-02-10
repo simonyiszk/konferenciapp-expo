@@ -20,7 +20,7 @@ export function PresentationDetailsPage({ slug }: ScheduleDetailsPageProps) {
   const endTime = ConferenceService.getFormattedTimestamp(data?.endTime ?? '');
   return (
     <Screen>
-      <Header>
+      <Header corner={data ? <FavoriteButton presentation={data} /> : undefined}>
         {isLoading && <SkeletonTitle />}
         {data && (
           <>
@@ -36,7 +36,6 @@ export function PresentationDetailsPage({ slug }: ScheduleDetailsPageProps) {
         {isLoading && <SkeletonParagraph />}
         {data && <StyledText className='text-xl'>{data.description}</StyledText>}
       </ScrollContent>
-      {data && <FavoriteButton presentation={data} />}
     </Screen>
   );
 }

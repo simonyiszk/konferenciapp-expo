@@ -23,11 +23,8 @@ export function FavoriteButton({ presentation }: FavoriteButtonProps) {
   };
 
   return (
-    <Pressable
-      className='absolute right-5 bottom-36 shadow-md shadow-slate-500/30 p-5 bg-white rounded-xl'
-      onPress={onPress}
-    >
-      <AntDesign name={isFavorite ? 'star' : 'staro'} color={isFavorite ? 'orange' : 'gray'} size={30} />
+    <Pressable onPress={onPress}>
+      <AntDesign name={isFavorite ? 'star' : 'staro'} color={isFavorite ? '#eab308' : 'gray'} size={30} />
     </Pressable>
   );
 }
