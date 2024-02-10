@@ -1,4 +1,5 @@
 import { usePresentation } from '../../../hooks/use-presentation';
+import { ConferenceService } from '../../../services/conference.service';
 import { Screen } from '../../base/screen';
 import { ScrollContent } from '../../base/scroll-content';
 import { StyledText } from '../../base/text';
@@ -15,6 +16,8 @@ interface ScheduleDetailsPageProps {
 
 export function PresentationDetailsPage({ slug }: ScheduleDetailsPageProps) {
   const { data, isLoading } = usePresentation(slug);
+  const startTime = ConferenceService.getFormattedTimestamp(data?.startTime ?? '');
+  const endTime = ConferenceService.getFormattedTimestamp(data?.endTime ?? '');
   return (
     <Screen>
       <Header>
@@ -23,7 +26,7 @@ export function PresentationDetailsPage({ slug }: ScheduleDetailsPageProps) {
           <>
             <Title>{data?.title}</Title>
             <Subtitle>
-              {data.room} • {data.startTime} - {data.endTime}
+              {data.room} • {startTime} - {endTime}
             </Subtitle>
           </>
         )}

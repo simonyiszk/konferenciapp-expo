@@ -3,6 +3,7 @@ import { Image, PressableProps, View } from 'react-native';
 import { NativeStackNavigationProp } from 'react-native-screens/native-stack';
 
 import { useFavoritePresentations } from '../../../contexts/favorite-presentations.context';
+import { ConferenceService } from '../../../services/conference.service';
 import { PresentationDto } from '../../../types/conference-api.type';
 import { cn } from '../../../utils/common.utils';
 import { isPresentationPast } from '../../../utils/presentation.utils';
@@ -20,6 +21,8 @@ export function PresentationItem({ presentation, className, ...props }: Presenta
   const router = useNavigation<NativeStackNavigationProp<{ 'presentation-details': { id: string } }>>();
   const isPast = isPresentationPast(presentation);
   const isFavorite = isFavoritePresentation(presentation.slug);
+  const startTime = ConferenceService.getFormattedTimestamp(presentation.startTime);
+  const endTime = ConferenceService.getFormattedTimestamp(presentation.endTime);
   const onPress = () => {
     router.navigate('presentation-details', { id: presentation.slug });
   };
@@ -46,7 +49,7 @@ export function PresentationItem({ presentation, className, ...props }: Presenta
           </StyledText>
           <StyledText className='text-slate-500' numberOfLines={1}>
             {' '}
-            • {presentation.startTime} - {presentation.endTime}
+            • {startTime} - {endTime}
           </StyledText>
         </View>
       </View>

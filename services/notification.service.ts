@@ -25,6 +25,10 @@ export class NotificationService {
 
   static async scheduleEventNotification(presentation: PresentationDto) {
     await this.registerForPushNotifications();
+    if (!presentation.startTime) {
+      console.log('Event start time is not defined, not scheduling notification');
+      return;
+    }
     if (!this.notificationEnabled) {
       console.log('Notification permission not granted, not scheduling notification');
       return;
