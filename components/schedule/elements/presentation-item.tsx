@@ -1,4 +1,3 @@
-import { format } from 'date-fns';
 import { useNavigation } from 'expo-router';
 import { Image, PressableProps, View } from 'react-native';
 import { NativeStackNavigationProp } from 'react-native-screens/native-stack';
@@ -19,8 +18,6 @@ interface PresentationItemProps extends Omit<PressableProps, 'onPress' | 'onPres
 export function PresentationItem({ presentation, className, ...props }: PresentationItemProps) {
   const { isFavoritePresentation } = useFavoritePresentations();
   const router = useNavigation<NativeStackNavigationProp<{ 'presentation-details': { id: string } }>>();
-  const startTime = format(new Date(presentation.startTime), 'HH:mm');
-  const endTime = format(new Date(presentation.endTime), 'HH:mm');
   const isPast = isPresentationPast(presentation);
   const isFavorite = isFavoritePresentation(presentation.slug);
   const onPress = () => {
@@ -49,7 +46,7 @@ export function PresentationItem({ presentation, className, ...props }: Presenta
           </StyledText>
           <StyledText className='text-slate-500' numberOfLines={1}>
             {' '}
-            • {startTime} - {endTime}
+            • {presentation.startTime} - {presentation.endTime}
           </StyledText>
         </View>
       </View>
