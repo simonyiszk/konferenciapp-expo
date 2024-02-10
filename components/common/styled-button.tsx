@@ -1,5 +1,6 @@
 import { Feather } from '@expo/vector-icons';
-import { Pressable, PressableProps } from 'react-native';
+import { forwardRef } from 'react';
+import { Pressable, PressableProps, View } from 'react-native';
 
 import { colors } from '../../theme/colors';
 import { cn } from '../../utils/common.utils';
@@ -24,26 +25,33 @@ interface StyledButtonProps extends Omit<PressableProps, 'children'> {
   variant?: keyof typeof buttonStyles;
 }
 
-export function StyledButton({ className, children, variant = 'primary', ...props }: StyledButtonProps) {
-  return (
-    <Pressable
-      className={cn(
-        buttonStyles[variant],
-        'rounded-md',
-        'px-4',
-        'py-2',
-        'shadow-md items-center justify-center flex-row space-x-2',
-        className
-      )}
-      {...props}
-    >
-      {props.leftIcon && (
-        <Feather name={props.leftIcon} size={24} color={variant === 'primary' ? 'white' : colors.primary['500']} />
-      )}
-      <StyledText className={cn(textStyles[variant], 'font-raleway-bold text-center text-lg')}>{children}</StyledText>
-      {props.rightIcon && (
-        <Feather name={props.rightIcon} size={24} color={variant === 'primary' ? 'white' : colors.primary['500']} />
-      )}
-    </Pressable>
-  );
-}
+const StyledButton = forwardRef<View, StyledButtonProps>(
+  ({ children, variant = 'primary', leftIcon, rightIcon, className, ...props }, ref) => {
+    return (
+      <Pressable
+        className={cn(
+          buttonStyles[variant],
+          'rounded-md',
+          'px-4',
+          'py-2',
+          'shadow-md items-center justify-center flex-row space-x-2',
+          className
+        )}
+        ref={ref}
+        {...props}
+      >
+        {leftIcon && (
+          <Feather name={leftIcon} size={24} color={variant === 'primary' ? 'white' : colors.primary['500']} />
+        )}
+        <StyledText className={cn(textStyles[variant], 'font-raleway-bold text-center text-lg')}>{children}</StyledText>
+        {rightIcon && (
+          <Feather name={rightIcon} size={24} color={variant === 'primary' ? 'white' : colors.primary['500']} />
+        )}
+      </Pressable>
+    );
+  }
+);
+
+StyledButton.displayName = 'StyledButton';
+
+export { StyledButton };
