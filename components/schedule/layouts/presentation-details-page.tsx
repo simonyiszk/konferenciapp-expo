@@ -28,6 +28,7 @@ export function PresentationDetailsPage({ slug }: ScheduleDetailsPageProps) {
             <Subtitle>
               {data.room} • {startTime} - {endTime}
             </Subtitle>
+            <Subtitle>{data.presenter.name}</Subtitle>
           </>
         )}
       </Header>
