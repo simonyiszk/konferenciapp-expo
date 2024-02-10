@@ -10,7 +10,7 @@ type ButtonVariant = 'primary' | 'outline';
 
 const buttonStyles: Record<ButtonVariant, string> = {
   primary: 'bg-primary-500 active:bg-primary-600',
-  outline: 'bg-transparent border-2 border-primary-500 active:bg-primary-100',
+  outline: 'bg-transparent border-2 border-primary-500 active:bg-primary-500/30',
 };
 
 const textStyles: Record<ButtonVariant, string> = {
