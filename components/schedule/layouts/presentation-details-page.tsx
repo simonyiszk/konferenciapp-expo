@@ -1,4 +1,5 @@
 import { usePresentation } from '../../../hooks/use-presentation';
+import { ConferenceService } from '../../../services/conference.service';
 import { Screen } from '../../base/screen';
 import { ScrollContent } from '../../base/scroll-content';
 import { StyledText } from '../../base/text';
@@ -15,16 +16,19 @@ interface ScheduleDetailsPageProps {
 
 export function PresentationDetailsPage({ slug }: ScheduleDetailsPageProps) {
   const { data, isLoading } = usePresentation(slug);
+  const startTime = ConferenceService.getFormattedTimestamp(data?.startTime ?? '');
+  const endTime = ConferenceService.getFormattedTimestamp(data?.endTime ?? '');
   return (
     <Screen>
-      <Header>
+      <Header corner={data ? <FavoriteButton presentation={data} /> : undefined}>
         {isLoading && <SkeletonTitle />}
         {data && (
           <>
             <Title>{data?.title}</Title>
             <Subtitle>
-              {data.room} • {data.startTime} - {data.endTime}
+              {data.room} • {startTime} - {endTime}
             </Subtitle>
+            <Subtitle>{data.presenter.name}</Subtitle>
           </>
         )}
       </Header>
@@ -32,7 +36,6 @@ export function PresentationDetailsPage({ slug }: ScheduleDetailsPageProps) {
         {isLoading && <SkeletonParagraph />}
         {data && <StyledText className='text-xl'>{data.description}</StyledText>}
       </ScrollContent>
-      {data && <FavoriteButton presentation={data} />}
     </Screen>
   );
 }

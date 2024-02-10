@@ -7,7 +7,6 @@ export class ConferenceService {
   static async getConferenceData(): Promise<FullConferenceDto> {
     const response = await axiosInstance.get<FullConferenceDto>('/api/conference/index');
     response.data.presentations = ConferenceService.sortPresentationsByStartDate(response.data);
-    response.data.presentations = ConferenceService.formatTimestamps(response.data);
     return response.data;
   }
 
@@ -25,15 +24,7 @@ export class ConferenceService {
     });
   }
 
-  private static formatTimestamps(conference: FullConferenceDto) {
-    return conference.presentations.map((presentation) => {
-      presentation.startTime = ConferenceService.getFormattedTimestamp(presentation.startTime);
-      presentation.endTime = ConferenceService.getFormattedTimestamp(presentation.endTime);
-      return presentation;
-    });
-  }
-
-  private static getFormattedTimestamp(timestamp: string) {
+  static getFormattedTimestamp(timestamp: string) {
     try {
       return format(new Date(timestamp), 'HH:mm');
     } catch {
