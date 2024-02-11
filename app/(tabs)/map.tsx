@@ -23,7 +23,7 @@ export default function MapPage() {
         <Title>Térkép</Title>
       </Header>
       <ReactNativeZoomableViewWithGestures initialZoom={0.5} maxZoom={2} contentHeight={1332} contentWidth={846}>
-        <Map onSelectedResource={onSelectedResource} />
+        <Map selectedResource={selectedResource?.id} onSelectedResource={onSelectedResource} />
       </ReactNativeZoomableViewWithGestures>
       <ResourceSheet resource={selectedResource} />
     </Screen>

@@ -166,4 +166,9 @@ export const MapResources: MapResource[] = [
     title: 'Mosdó',
     description: '',
   },
+  {
+    id: 'WC_3',
+    title: 'Mosdó',
+    description: '',
+  },
 ];
