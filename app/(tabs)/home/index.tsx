@@ -1,4 +1,3 @@
-import { Link } from 'expo-router';
 import React from 'react';
 
 import { Screen } from '../../../components/base/screen';
@@ -23,8 +22,6 @@ export default function HomePage() {
       <Header>
         <Title>Simonyi Konferencia</Title>
       </Header>
-      <Link href={'unmatched'}>Unmatched</Link>
-
       <ScrollContent>
         <SectionTitle>Előadások</SectionTitle>
         {conference.isLoading && <PresentationItemSkeletonList />}
