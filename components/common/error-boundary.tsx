@@ -2,12 +2,14 @@ import { ErrorBoundaryProps } from 'expo-router';
 import { ScrollView, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
+import { usePageView } from '../../utils/analytics.utils';
 import { StyledButton } from './styled-button';
 import { Subtitle } from './subtitle';
 import { Title } from './title';
 
 export function ErrorBoundary(props: ErrorBoundaryProps) {
   const { top, bottom, left, right } = useSafeAreaInsets();
+  usePageView('error');
   return (
     <View
       className='bg-blue-500 items-center justify-center flex-1 space-y-5'

@@ -14,12 +14,11 @@ interface NewsDetailsPageProps {
 
 export function NewsDetailsPage({ id }: NewsDetailsPageProps) {
   const { data, error, isLoading } = useNewsItem(id);
-  if (!data) return <Screen />;
   return (
-    <Screen>
+    <Screen analyticsScreenName={`news/${id}`}>
       <Header>
         {isLoading && <SkeletonTitle />}
-        {data.title && <Title>{data.title}</Title>}
+        {data?.title && <Title>{data.title}</Title>}
       </Header>
       <ScrollContent>
         {error && (

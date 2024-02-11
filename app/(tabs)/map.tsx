@@ -18,7 +18,7 @@ export default function MapPage() {
   };
 
   return (
-    <Screen>
+    <Screen analyticsScreenName='map'>
       <Header>
         <Title>Térkép</Title>
       </Header>
