@@ -18,7 +18,7 @@ export default function HomePage() {
   const conference = useConference();
   const news = useNews();
   return (
-    <Screen>
+    <Screen analyticsScreenName='home'>
       <Header>
         <Title>Simonyi Konferencia</Title>
       </Header>

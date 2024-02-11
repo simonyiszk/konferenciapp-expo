@@ -19,7 +19,7 @@ export function PresentationDetailsPage({ slug }: ScheduleDetailsPageProps) {
   const startTime = ConferenceService.getFormattedTimestamp(data?.startTime ?? '');
   const endTime = ConferenceService.getFormattedTimestamp(data?.endTime ?? '');
   return (
-    <Screen>
+    <Screen analyticsScreenName={`presentation-details/` + slug}>
       <Header corner={data ? <FavoriteButton presentation={data} /> : undefined}>
         {isLoading && <SkeletonTitle />}
         {data && (

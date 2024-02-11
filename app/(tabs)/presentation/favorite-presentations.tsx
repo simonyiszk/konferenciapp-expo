@@ -11,7 +11,7 @@ import { useFavoritePresentationsList } from '../../../hooks/use-favorite-presen
 export default function FavoritePresentationsScreen() {
   const { data, isLoading, isError } = useFavoritePresentationsList();
   return (
-    <Screen>
+    <Screen analyticsScreenName='favorite-presentations'>
       <Header>
         <Title>Kedvenc előadásaim</Title>
       </Header>

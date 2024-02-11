@@ -13,7 +13,7 @@ import { useConference } from '../../../hooks/use-conference';
 export default function PresentationListPage() {
   const { data, isError, isLoading } = useConference();
   return (
-    <Screen>
+    <Screen analyticsScreenName='presentation'>
       <Header>
         <Title>Programterv</Title>
       </Header>
