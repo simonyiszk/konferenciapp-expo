@@ -6,21 +6,14 @@ import { Header } from '../../components/common/header';
 import { Title } from '../../components/common/title';
 import { Map } from '../../components/map/map';
 import { ResourceSheet } from '../../components/map/resource-sheet';
+import { MapResources } from '../../content/map-resources.content';
 import { MapResource } from '../../types/map.type';
-
-const resources: MapResource[] = [
-  {
-    id: 'T1',
-    title: 'Resource 1',
-    description: 'Resource 1 description',
-  },
-];
 
 export default function MapPage() {
   const [selectedResource, setSelectedResource] = useState<MapResource>();
 
   const onSelectedResource = (id: string) => {
-    const res = resources.find((r) => r.id === id);
+    const res = MapResources.find((r) => r.id === id);
     setSelectedResource(res);
   };
 
