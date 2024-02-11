@@ -7,6 +7,11 @@ export const MapResources: MapResource[] = [
     description: '',
   },
   {
+    id: 'COFFEE',
+    title: 'Chill sarok',
+    description: 'Kapcsolódj ki egy kávé mellett!',
+  },
+  {
     id: 'IB028',
     title: 'IB028-as előadó',
     description: '',

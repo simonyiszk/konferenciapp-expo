@@ -30,7 +30,7 @@ export function ResourceSheet({ resource, className, ...props }: ResourceSheetPr
           outputRange: [0, 400],
         }),
       }}
-      className={cn('bg-slate-800 pb-40 rounded-t-2xl px-5 pt-5 space-y-2', className)}
+      className={cn('bg-white -mt-10 dark:bg-slate-800 pb-40 rounded-t-2xl px-5 pt-5 space-y-2', className)}
       {...props}
     >
       <StyledText className='text-2xl'>{savedResource?.title}</StyledText>
