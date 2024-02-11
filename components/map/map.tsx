@@ -51,15 +51,9 @@ export function Map({ onSelectedResource, selectedResource }: MapProps) {
           strokeLinejoin='round'
         />
       </MapIcon>
-      <Path
+      <MapRoom
         id='NOTUSED1'
-        onPress={() => onSelectedResource('NOTUSED1')}
         d='M245.5 847.5L224 978.5L248.5 991.5L205.5 1089L54.5 1012.5L106.5 906L96.5 900.5L187 725.5L224 745.5L273 645.5L390.5 749L332 863.5L245.5 847.5Z'
-        fill='#64748B'
-        fillOpacity={0.3}
-        stroke='#64748B'
-        strokeWidth={7}
-        strokeLinejoin='round'
       />
       <MapRoom
         id='IB028'
@@ -73,33 +67,9 @@ export function Map({ onSelectedResource, selectedResource }: MapProps) {
           fill={colors.primary['800']}
         />
       </MapRoom>
-      <MapRoom
-        id='NOTUSED4'
-        onPress={onSelectedResource}
-        selectedResource={selectedResource}
-        x={632}
-        y={147}
-        width={163}
-        height={180}
-      />
-      <MapRoom
-        id='NOTUSED3'
-        onPress={onSelectedResource}
-        selectedResource={selectedResource}
-        x={632}
-        y={423}
-        width={163}
-        height={180}
-      />
-      <MapRoom
-        id='NOTUSED2'
-        onPress={onSelectedResource}
-        selectedResource={selectedResource}
-        x={632}
-        y={613}
-        width={163}
-        height={181}
-      />
+      <MapRoom id='NOTUSED4' selectedResource={selectedResource} x={632} y={147} width={163} height={180} />
+      <MapRoom id='NOTUSED3' selectedResource={selectedResource} x={632} y={423} width={163} height={180} />
+      <MapRoom id='NOTUSED2' selectedResource={selectedResource} x={632} y={613} width={163} height={181} />
       <MapRoom
         id='VIP'
         onPress={onSelectedResource}

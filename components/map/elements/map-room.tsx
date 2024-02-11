@@ -5,7 +5,7 @@ import { colors } from '../../../theme/colors';
 
 interface MapRoomProps extends PropsWithChildren<Omit<RectProps & PathProps, 'onPress' | 'id'>> {
   id: string;
-  onPress: (id: string) => void;
+  onPress?: (id: string) => void;
   selectedResource?: string;
   highlight?: boolean;
 }
@@ -45,7 +45,7 @@ export function MapRoom({
     );
 
   return (
-    <G id={id} onPressOut={() => onPress(id)}>
+    <G id={id} onPressOut={onPress ? () => onPress(id) : undefined}>
       {comp}
       {children}
     </G>
