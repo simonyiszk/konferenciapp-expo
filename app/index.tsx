@@ -6,7 +6,7 @@ import i18n from '../services/i18-next';
 export default function App() {
   useEffect(() => {
     i18n.changeLanguage('en');
-  });
+  }, []);
 
   return <Redirect href='/(tabs)/home' />;
 }
