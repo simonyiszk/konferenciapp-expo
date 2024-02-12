@@ -1,6 +1,6 @@
 import { ReactNativeZoomableViewWithGestures } from '@openspacelabs/react-native-zoomable-view';
-import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { Screen } from '../../components/base/screen';
 import { Header } from '../../components/common/header';
