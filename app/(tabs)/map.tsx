@@ -7,7 +7,8 @@ import { Header } from '../../components/common/header';
 import { Title } from '../../components/common/title';
 import { Map } from '../../components/map/map';
 import { ResourceSheet } from '../../components/map/resource-sheet';
-import { MapResources } from '../../content/map-resources.content';
+import { MapResources_en } from '../../content/map-resources-en.content';
+import { MapResources_hu } from '../../content/map-resources-hu.content';
 import { MapResource } from '../../types/map.type';
 
 export default function MapPage() {
@@ -15,7 +16,8 @@ export default function MapPage() {
   const [selectedResource, setSelectedResource] = useState<MapResource>();
 
   const onSelectedResource = (id: string) => {
-    const res = MapResources.find((r) => r.id === id);
+    const localizedResource = t('map.key') === 'hu' ? MapResources_hu : MapResources_en;
+    const res = localizedResource.find((r) => r.id === id);
     setSelectedResource(res);
   };
 

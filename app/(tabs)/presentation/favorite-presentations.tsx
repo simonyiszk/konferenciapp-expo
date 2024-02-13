@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { Screen } from '../../../components/base/screen';
 import { ErrorMessage } from '../../../components/common/error-message';
@@ -10,14 +11,15 @@ import { useFavoritePresentationsList } from '../../../hooks/use-favorite-presen
 
 export default function FavoritePresentationsScreen() {
   const { data, isLoading, isError } = useFavoritePresentationsList();
+  const { t } = useTranslation();
   return (
     <Screen analyticsScreenName='favorite-presentations'>
       <Header>
-        <Title>Kedvenc előadásaim</Title>
+        <Title>{t('presentations.favoritesTitle')}</Title>
       </Header>
       {isLoading && <PresentationItemSkeletonList />}
       {!isError && !isLoading && <PresentationList presentations={data ?? []} />}
-      {isError && <ErrorMessage>Nem sikerült betölteni az előadásokat</ErrorMessage>}
+      {isError && <ErrorMessage>{t('presentations.error')}</ErrorMessage>}
     </Screen>
   );
 }

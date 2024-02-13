@@ -21,7 +21,7 @@ export default function PresentationListPage() {
       </Header>
       <Link href='/presentation/favorite-presentations' asChild>
         <StyledButton variant='outline' rightIcon='arrow-right' className='mt-4 mx-5'>
-          Kedvenceim
+          {t('presentations.favorites')}
         </StyledButton>
       </Link>
       {isLoading && <PresentationItemSkeletonList />}

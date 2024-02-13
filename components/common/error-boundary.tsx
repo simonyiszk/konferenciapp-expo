@@ -1,4 +1,5 @@
 import { ErrorBoundaryProps } from 'expo-router';
+import { useTranslation } from 'react-i18next';
 import { ScrollView, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
@@ -9,6 +10,7 @@ import { Title } from './title';
 
 export function ErrorBoundary(props: ErrorBoundaryProps) {
   const { top, bottom, left, right } = useSafeAreaInsets();
+  const { t } = useTranslation();
   usePageView('error');
   return (
     <View
@@ -20,13 +22,13 @@ export function ErrorBoundary(props: ErrorBoundaryProps) {
         paddingRight: right + 20,
       }}
     >
-      <Title className='text-white'>Hopp, ez elszállt :(</Title>
+      <Title className='text-white'>{t('errBoundary.main')}</Title>
       <ScrollView>
         <Subtitle className='text-white/50 flex-shrink'>{props.error.message}</Subtitle>
       </ScrollView>
-      <Subtitle className='text-white/50'>Kérlek ezt jelezd a fejlesztőknek!</Subtitle>
+      <Subtitle className='text-white/50'>{t('errBoundary.sub')}</Subtitle>
       <StyledButton onPress={props.retry} className='bg-blue-900'>
-        Újrapróbálkozás
+        {t('errBoundary.retry')}
       </StyledButton>
     </View>
   );

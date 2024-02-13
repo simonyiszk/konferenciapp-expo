@@ -1,6 +1,6 @@
 import { MapResource } from '../types/map.type';
 
-export const MapResources: MapResource[] = [
+export const MapResources_hu: MapResource[] = [
   {
     id: 'DOOR',
     title: 'Bejárat',
