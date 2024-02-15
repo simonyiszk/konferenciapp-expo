@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { Screen } from '../../../components/base/screen';
 import { ScrollContent } from '../../../components/base/scroll-content';
@@ -17,20 +18,21 @@ import { useNews } from '../../../hooks/use-news';
 export default function HomePage() {
   const conference = useConference();
   const news = useNews();
+  const { t } = useTranslation();
   return (
     <Screen analyticsScreenName='home'>
       <Header>
-        <Title>Simonyi Konferencia</Title>
+        <Title>{t('home.mainTitle')}</Title>
       </Header>
       <ScrollContent>
-        <SectionTitle>Előadások</SectionTitle>
+        <SectionTitle>{t('home.presentationTitle')}</SectionTitle>
         {conference.isLoading && <PresentationItemSkeletonList />}
-        {conference.isError && <ErrorMessage>Nem sikerült betölteni az előadásokat</ErrorMessage>}
+        {conference.isError && <ErrorMessage>{t('home.error')}</ErrorMessage>}
         {!conference.isError && !conference.isLoading && (
           <HomePresentationList presentations={conference.data?.presentations ?? []} />
         )}
         <Separator />
-        <SectionTitle>Hírek</SectionTitle>
+        <SectionTitle>{t('home.newsTitle')}</SectionTitle>
         {news.isLoading && <NewsItemSkeletonList />}
         {news.data && <HomeNewsList news={news.data.news} />}
       </ScrollContent>

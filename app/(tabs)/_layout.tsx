@@ -1,4 +1,5 @@
 import { Tabs } from 'expo-router';
+import { useTranslation } from 'react-i18next';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { TabbarBackground } from '../../components/tabbar/tabbar-background';
@@ -10,6 +11,7 @@ import { colors } from '../../theme/colors';
 export default function TabsLayout() {
   useNotificationObserver();
   const { top, bottom, left, right } = useSafeAreaInsets();
+  const { t } = useTranslation();
   return (
     <Tabs
       initialRouteName='home'
@@ -40,21 +42,21 @@ export default function TabsLayout() {
       <Tabs.Screen
         name='home'
         options={{
-          title: 'Főoldal',
+          title: t('tabbar.home'),
           tabBarIcon: ({ focused }) => <TabbarIcon focused={focused} name='home' />,
         }}
       />
       <Tabs.Screen
         name='presentation'
         options={{
-          title: 'Programterv',
+          title: t('tabbar.schedule'),
           tabBarIcon: ({ focused }) => <TabbarIcon focused={focused} name='calendar' />,
         }}
       />
       <Tabs.Screen
         name='map'
         options={{
-          title: 'Térkép',
+          title: t('tabbar.map'),
           tabBarIcon: ({ focused }) => <TabbarIcon focused={focused} name='map' />,
         }}
       />
