@@ -6,7 +6,7 @@ import { TabbarBackground } from '../../components/tabbar/tabbar-background';
 import { TabbarIcon } from '../../components/tabbar/tabbar-icon';
 import { TabbarLabel } from '../../components/tabbar/tabbar-label';
 import { useNotificationObserver } from '../../hooks/use-notification-observer';
-import { colors } from '../../theme/colors';
+import { extendedColors } from '../../theme/extendedColors';
 
 export default function TabsLayout() {
   useNotificationObserver();
@@ -24,7 +24,8 @@ export default function TabsLayout() {
       }}
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: colors.primary['500'],
+        tabBarInactiveTintColor: extendedColors.slate['500'],
+        tabBarActiveTintColor: extendedColors.primary['500'],
         tabBarLabel: TabbarLabel,
         tabBarBackground: TabbarBackground,
         tabBarStyle: {

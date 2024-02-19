@@ -1,7 +1,7 @@
 import { PropsWithChildren } from 'react';
 import { G, Path, PathProps, Rect, RectProps } from 'react-native-svg';
 
-import { colors } from '../../../theme/colors';
+import { extendedColors } from '../../../theme/extendedColors';
 
 interface MapRoomProps extends PropsWithChildren<Omit<RectProps & PathProps, 'onPress' | 'id'>> {
   id: string;
@@ -22,7 +22,11 @@ export function MapRoom({
   ...props
 }: MapRoomProps) {
   const color =
-    selectedResource === id ? colors.primary['500'] : highlight ? colors.primary['800'] : colors.slate['500'];
+    selectedResource === id
+      ? extendedColors.primary['500']
+      : highlight
+        ? extendedColors.primary['800']
+        : extendedColors.slate['500'];
   const comp =
     'width' in props ? (
       <Rect

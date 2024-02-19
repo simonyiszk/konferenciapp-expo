@@ -1,7 +1,7 @@
 import { PropsWithChildren } from 'react';
 import { G, Rect, RectProps } from 'react-native-svg';
 
-import { colors } from '../../../theme/colors';
+import { extendedColors } from '../../../theme/extendedColors';
 
 interface MapTableProps extends PropsWithChildren<Omit<RectProps, 'onPress' | 'id'>> {
   id: string;
@@ -19,7 +19,7 @@ export function MapTable({
   height = 10,
   ...props
 }: MapTableProps) {
-  const color = selectedResource === id ? colors.primary['500'] : colors.slate['500'];
+  const color = selectedResource === id ? extendedColors.primary['500'] : extendedColors.slate['500'];
   return (
     <G id={id} onPress={() => onPress(id)}>
       <Rect width={width} height={height} fill={color} rx={rx} {...props} />
