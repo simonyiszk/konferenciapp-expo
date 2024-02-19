@@ -2,7 +2,7 @@ import { Feather } from '@expo/vector-icons';
 import { useNavigation } from 'expo-router';
 import { Pressable, View, ViewProps } from 'react-native';
 
-import { colors } from '../../theme/colors';
+import { extendedColors } from '../../theme/extendedColors';
 import { cn } from '../../utils/common.utils';
 import { Separator } from './separator';
 
@@ -19,7 +19,7 @@ export function Header({ children, className, corner, ...props }: HeaderProps) {
         <View className='flex flex-row items-center justify-between'>
           {showBackButton && (
             <Pressable onPress={navigation.goBack}>
-              <Feather name='arrow-left' size={30} color={colors.primary['500']} />
+              <Feather name='arrow-left' size={30} color={extendedColors.primary['500']} />
             </Pressable>
           )}
           {corner}

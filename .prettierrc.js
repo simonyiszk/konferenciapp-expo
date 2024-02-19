@@ -6,4 +6,5 @@ module.exports = {
   printWidth: 120,
   jsxSingleQuote: true,
   bracketSameLine: false,
+  endOfLine: 'lf',
 };

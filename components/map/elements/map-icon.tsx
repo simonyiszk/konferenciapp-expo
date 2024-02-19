@@ -1,7 +1,7 @@
 import { PropsWithChildren } from 'react';
 import { Circle, CircleProps, G } from 'react-native-svg';
 
-import { colors } from '../../../theme/colors';
+import { extendedColors } from '../../../theme/extendedColors';
 
 interface MapIconProps extends PropsWithChildren<Omit<CircleProps, 'onPress' | 'id'>> {
   id: string;
@@ -12,7 +12,12 @@ interface MapIconProps extends PropsWithChildren<Omit<CircleProps, 'onPress' | '
 export function MapIcon({ id, onPress, children, selectedResource, r = 25, ...props }: MapIconProps) {
   return (
     <G id={id} onPress={() => onPress(id)}>
-      <Circle stroke={selectedResource === id ? colors.primary['500'] : undefined} strokeWidth={5} r={r} {...props} />
+      <Circle
+        stroke={selectedResource === id ? extendedColors.primary['500'] : undefined}
+        strokeWidth={5}
+        r={r}
+        {...props}
+      />
       {children}
     </G>
   );

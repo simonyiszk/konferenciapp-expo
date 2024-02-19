@@ -3,6 +3,7 @@ import { useMemo } from 'react';
 import { Pressable } from 'react-native';
 
 import { useFavoritePresentations } from '../../../contexts/favorite-presentations.context';
+import { extendedColors } from '../../../theme/extendedColors';
 import { PresentationDto } from '../../../types/conference-api.type';
 
 interface FavoriteButtonProps {
@@ -24,7 +25,11 @@ export function FavoriteButton({ presentation }: FavoriteButtonProps) {
 
   return (
     <Pressable onPress={onPress}>
-      <AntDesign name={isFavorite ? 'star' : 'staro'} color={isFavorite ? '#eab308' : 'gray'} size={30} />
+      <AntDesign
+        name={isFavorite ? 'star' : 'staro'}
+        color={isFavorite ? extendedColors.primary['500'] : extendedColors.slate['500']}
+        size={30}
+      />
     </Pressable>
   );
 }

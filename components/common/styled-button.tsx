@@ -2,7 +2,7 @@ import { Feather } from '@expo/vector-icons';
 import { forwardRef } from 'react';
 import { Pressable, PressableProps, View } from 'react-native';
 
-import { colors } from '../../theme/colors';
+import { extendedColors } from '../../theme/extendedColors';
 import { cn } from '../../utils/common.utils';
 import { StyledText } from '../base/text';
 
@@ -10,7 +10,7 @@ type ButtonVariant = 'primary' | 'outline';
 
 const buttonStyles: Record<ButtonVariant, string> = {
   primary: 'bg-primary-500 active:bg-primary-600',
-  outline: 'bg-transparent border-2 border-primary-500 active:bg-primary-500/30',
+  outline: 'bg-transparent border-2 border-primary-500 active:bg-yellow-500/30',
 };
 
 const textStyles: Record<ButtonVariant, string> = {
@@ -34,18 +34,18 @@ const StyledButton = forwardRef<View, StyledButtonProps>(
           'rounded-md',
           'px-4',
           'py-2',
-          'shadow-md items-center justify-center flex-row space-x-2',
+          'items-center justify-center flex-row space-x-2',
           className
         )}
         ref={ref}
         {...props}
       >
         {leftIcon && (
-          <Feather name={leftIcon} size={24} color={variant === 'primary' ? 'white' : colors.primary['500']} />
+          <Feather name={leftIcon} size={24} color={variant === 'primary' ? 'white' : extendedColors.primary['500']} />
         )}
         <StyledText className={cn(textStyles[variant], 'font-raleway-bold text-center text-lg')}>{children}</StyledText>
         {rightIcon && (
-          <Feather name={rightIcon} size={24} color={variant === 'primary' ? 'white' : colors.primary['500']} />
+          <Feather name={rightIcon} size={24} color={variant === 'primary' ? 'white' : extendedColors.primary['500']} />
         )}
       </Pressable>
     );
