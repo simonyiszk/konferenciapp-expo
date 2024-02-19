@@ -16,7 +16,7 @@ export function Map({ onSelectedResource, selectedResource }: MapProps) {
       <Path
         id='BDG'
         d='M39 1017.5L92.5 910L82.5 904.5L390 316L404 323.5L426 245L407 235.5L497.5 58L636 135.5H806V1274H627.5V1067.5L551.5 1054L532 1159L373.5 1115L366 1156L219.899 1082.5L209.5 1103.5L39 1017.5Z'
-        stroke='#64748B'
+        stroke={extendedColors.slate['500']}
         strokeWidth={7}
         strokeLinejoin='round'
       />
@@ -27,7 +27,7 @@ export function Map({ onSelectedResource, selectedResource }: MapProps) {
         cx={282}
         cy={1114}
         r={25}
-        fill='#FFB800'
+        fill={extendedColors.orange['500']}
       >
         <Path
           d='M285.471 1114.42V1114.43'
@@ -79,7 +79,7 @@ export function Map({ onSelectedResource, selectedResource }: MapProps) {
         width={156}
         height={180}
       >
-        <MapIcon id='VIP' onPress={onSelectedResource} cx={717} cy={1172} r={25} fill='#7E7E7E'>
+        <MapIcon id='VIP' onPress={onSelectedResource} cx={717} cy={1172} r={25} fill={extendedColors.gray['500']}>
           <Path
             d='M703.668 1161.17H731.168'
             stroke='white'
@@ -328,7 +328,7 @@ export function Map({ onSelectedResource, selectedResource }: MapProps) {
       <MapIcon
         id='WC'
         onPress={onSelectedResource}
-        fill='#007FFF'
+        fill={extendedColors.blue['500']}
         cx={770}
         cy={1034}
         selectedResource={selectedResource}
@@ -361,7 +361,7 @@ export function Map({ onSelectedResource, selectedResource }: MapProps) {
         selectedResource={selectedResource}
         cx={328}
         cy={806}
-        fill='#007FFF'
+        fill={extendedColors.blue['500']}
       >
         <Path
           d='M312.002 796.666C312.002 795.694 312.388 794.761 313.076 794.073C313.764 793.386 314.696 793 315.669 793H341.335C342.308 793 343.24 793.386 343.928 794.073C344.616 794.761 345.002 795.694 345.002 796.666V815C345.002 815.972 344.616 816.905 343.928 817.592C343.24 818.28 342.308 818.666 341.335 818.666H315.669C314.696 818.666 313.764 818.28 313.076 817.592C312.388 816.905 312.002 815.972 312.002 815V796.666Z'
@@ -391,7 +391,7 @@ export function Map({ onSelectedResource, selectedResource }: MapProps) {
         selectedResource={selectedResource}
         cx={766}
         cy={375}
-        fill='#007FFF'
+        fill={extendedColors.blue['500']}
       >
         <Path
           d='M750.002 365.666C750.002 364.694 750.388 363.761 751.076 363.073C751.764 362.386 752.696 362 753.669 362H779.335C780.308 362 781.24 362.386 781.928 363.073C782.616 363.761 783.002 364.694 783.002 365.666V384C783.002 384.972 782.616 385.905 781.928 386.592C781.24 387.28 780.308 387.666 779.335 387.666H753.669C752.696 387.666 751.764 387.28 751.076 386.592C750.388 385.905 750.002 384.972 750.002 384V365.666Z'
@@ -436,7 +436,7 @@ export function Map({ onSelectedResource, selectedResource }: MapProps) {
         selectedResource={selectedResource}
         cx={492}
         cy={144}
-        fill='#785A0C'
+        fill={extendedColors.amber['700']}
       >
         <Path
           d='M477 147.336C478.384 148.406 480.462 149.031 482.834 149.003C485.206 149.031 487.285 148.406 488.668 147.336C490.052 146.266 492.13 145.64 494.502 145.669C496.874 145.64 498.953 146.266 500.336 147.336'
