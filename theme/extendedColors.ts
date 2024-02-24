@@ -1,4 +1,8 @@
-import colors from 'tailwindcss/colors';
+import resolveConfig from 'tailwindcss/resolveConfig';
+
+import tailwindConfig from '../tailwind.config';
+
+const fullConfig = resolveConfig(tailwindConfig);
 
 export const extendedColors = {
   primary: {
@@ -12,5 +16,5 @@ export const extendedColors = {
     800: '#524900',
     900: '#292500',
   },
-  ...colors,
+  ...fullConfig.theme?.colors,
 };
