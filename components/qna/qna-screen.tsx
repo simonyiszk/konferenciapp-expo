@@ -7,6 +7,7 @@ import { Header } from '../common/header';
 import { SkeletonTitle } from '../common/skeletons/skeleton-title';
 import { Subtitle } from '../common/subtitle';
 import { Title } from '../common/title';
+import { Input } from './input';
 import { QnaAnswer } from './qna-answer';
 import { QnaQuestion } from './qna-question';
 
@@ -21,7 +22,7 @@ export function QnaScreen() {
         {presentation.isLoading && <SkeletonTitle />}
         {presentation.data && <Subtitle>{presentation.data.title}</Subtitle>}
       </Header>
-      <ScrollContent>
+      <ScrollContent automaticallyAdjustKeyboardInsets>
         {question.data && (
           <>
             <QnaQuestion question={question.data[0].text} />
@@ -29,6 +30,7 @@ export function QnaScreen() {
           </>
         )}
       </ScrollContent>
+      <Input placeholder='Írd be a kérdésed' onSubmit={(text) => console.log(text)} />
     </Screen>
   );
 }
