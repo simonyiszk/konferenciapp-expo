@@ -9,6 +9,7 @@ import { SkeletonTitle } from '../../common/skeletons/skeleton-title';
 import { Subtitle } from '../../common/subtitle';
 import { Title } from '../../common/title';
 import { FavoriteButton } from '../elements/favorite-button';
+import { QnaButton } from '../elements/qna-button';
 
 interface ScheduleDetailsPageProps {
   slug: string;
@@ -20,7 +21,14 @@ export function PresentationDetailsPage({ slug }: ScheduleDetailsPageProps) {
   const endTime = ConferenceService.getFormattedTimestamp(data?.endTime ?? '');
   return (
     <Screen analyticsScreenName={`presentation-details/` + slug}>
-      <Header corner={data ? <FavoriteButton presentation={data} /> : undefined}>
+      <Header
+        corner={
+          <>
+            {data && <FavoriteButton presentation={data} />}
+            <QnaButton slug={slug} />
+          </>
+        }
+      >
         {isLoading && <SkeletonTitle />}
         {data && (
           <>

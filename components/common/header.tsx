@@ -22,7 +22,7 @@ export function Header({ children, className, corner, ...props }: HeaderProps) {
               <Feather name='arrow-left' size={30} color={extendedColors.primary['500']} />
             </Pressable>
           )}
-          {corner}
+          <View className='flex-row items-center'>{corner}</View>
         </View>
       )}
       {children}

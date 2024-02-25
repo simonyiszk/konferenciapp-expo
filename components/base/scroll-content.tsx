@@ -10,6 +10,6 @@ export function ScrollContent({ className, ...props }: ScrollViewProps) {
         paddingBottom: 130,
       }}
       {...props}
-    ></ScrollView>
+    />
   );
 }
