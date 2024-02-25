@@ -26,7 +26,7 @@ interface StyledButtonProps extends Omit<PressableProps, 'children'> {
 }
 
 const StyledButton = forwardRef<View, StyledButtonProps>(
-  ({ children, variant = 'primary', leftIcon, rightIcon, className, ...props }, ref) => {
+  ({ children, variant = 'primary', leftIcon, rightIcon, className, disabled, ...props }, ref) => {
     return (
       <Pressable
         className={cn(
@@ -35,6 +35,9 @@ const StyledButton = forwardRef<View, StyledButtonProps>(
           'px-4',
           'py-2',
           'items-center justify-center flex-row space-x-2',
+          {
+            'opacity-50': disabled,
+          },
           className
         )}
         ref={ref}

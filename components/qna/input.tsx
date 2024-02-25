@@ -23,6 +23,7 @@ export function Input({ placeholder, onSubmit, disabled = false }: InputProps) {
     onSubmit(value);
     setValue('');
   };
+  const isDisabled = value.length < MIN_CHARACTERS_TO_SEND || disabled;
   return (
     <View
       style={{
@@ -45,7 +46,12 @@ export function Input({ placeholder, onSubmit, disabled = false }: InputProps) {
         onSubmitEditing={onSend}
         editable={!disabled}
       />
-      <StyledButton className='rounded-full p-1 h-8 w-8 self-end' leftIcon='arrow-up' onPress={onSend} />
+      <StyledButton
+        disabled={isDisabled}
+        className='rounded-full p-1 h-8 w-8 self-end'
+        leftIcon='arrow-up'
+        onPress={onSend}
+      />
     </View>
   );
 }
