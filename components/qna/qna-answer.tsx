@@ -1,15 +1,38 @@
-import { View } from 'react-native';
+import { useEffect } from 'react';
+import { Animated } from 'react-native';
 
+import { QnaMessage } from '../../types/qna.type';
+import { useAnimated } from '../../utils/animation.utils';
 import { StyledText } from '../base/text';
 
 interface QnaAnswerProps {
-  answer: string;
+  message: QnaMessage;
 }
 
-export function QnaAnswer({ answer }: QnaAnswerProps) {
+export function QnaAnswer({ message }: QnaAnswerProps) {
+  const { value, forward } = useAnimated();
+  useEffect(() => {
+    if (!message.isInitial) forward();
+  }, []);
   return (
-    <View className='bg-white dark:bg-slate-800 rounded-t-2xl rounded-br-2xl p-3 mb-2 mr-5'>
-      <StyledText className='text-slate-900 dark:text-white text-lg'>{answer}</StyledText>
-    </View>
+    <Animated.View
+      style={{
+        transform: [
+          {
+            translateY: value.current.interpolate({
+              inputRange: [0, 1],
+              outputRange: [100, 0],
+            }),
+          },
+        ],
+        opacity: value.current.interpolate({
+          inputRange: [0, 1],
+          outputRange: [0, 1],
+        }),
+      }}
+      className='bg-white dark:bg-slate-800 rounded-t-2xl rounded-br-2xl p-3 mb-2 mr-5'
+    >
+      <StyledText className='text-slate-900 dark:text-white text-lg'>{message.text}</StyledText>
+    </Animated.View>
   );
 }

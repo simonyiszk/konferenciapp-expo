@@ -1,5 +1,8 @@
+import { useEffect, useRef } from 'react';
+import { ScrollView } from 'react-native';
+
+import { useMessaging } from '../../hooks/use-messaging';
 import { usePresentation } from '../../hooks/use-presentation';
-import { useQuestions } from '../../hooks/use-questions';
 import { useSafeId } from '../../utils/common.utils';
 import { Screen } from '../base/screen';
 import { ScrollContent } from '../base/scroll-content';
@@ -12,9 +15,16 @@ import { QnaAnswer } from './qna-answer';
 import { QnaQuestion } from './qna-question';
 
 export function QnaScreen() {
+  const ref = useRef<ScrollView>(null);
   const id = useSafeId();
   const presentation = usePresentation(id);
-  const question = useQuestions();
+  const messaging = useMessaging();
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      ref.current?.scrollToEnd({ animated: true });
+    }, 1);
+    return () => clearTimeout(timeout);
+  }, [messaging.messages]);
   return (
     <Screen>
       <Header>
@@ -22,15 +32,22 @@ export function QnaScreen() {
         {presentation.isLoading && <SkeletonTitle />}
         {presentation.data && <Subtitle>{presentation.data.title}</Subtitle>}
       </Header>
-      <ScrollContent automaticallyAdjustKeyboardInsets>
-        {question.data && (
-          <>
-            <QnaQuestion question={question.data[0].text} />
-            <QnaAnswer answer='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' />
-          </>
+      <ScrollContent
+        ref={ref}
+        contentContainerStyle={{
+          paddingBottom: 200,
+        }}
+        automaticallyAdjustKeyboardInsets
+      >
+        {messaging.messages.map((message, index) =>
+          message.kind === 'question' ? (
+            <QnaQuestion key={index} message={message} />
+          ) : (
+            <QnaAnswer key={index} message={message} />
+          )
         )}
       </ScrollContent>
-      <Input placeholder='Írd be a kérdésed' onSubmit={(text) => console.log(text)} />
+      <Input placeholder='Írd be a kérdésed' onSubmit={messaging.sendMessageText} />
     </Screen>
   );
 }

@@ -9,5 +9,5 @@ interface ScreenProps extends ViewProps {
 
 export function Screen({ className, analyticsScreenName, ...props }: ScreenProps) {
   usePageView(analyticsScreenName);
-  return <View className={cn('bg-slate-100 dark:bg-slate-900 h-full', className)} {...props} />;
+  return <View className={cn('bg-slate-100 dark:bg-slate-900 flex-1', className)} {...props} />;
 }
