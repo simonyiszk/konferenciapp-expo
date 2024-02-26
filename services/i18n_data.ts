@@ -5,6 +5,7 @@ export const resources = {
         home: 'Home',
         schedule: 'Schedule',
         map: 'Map',
+        settings: 'Settings',
       },
       home: {
         mainTitle: 'Simonyi Conference',
@@ -27,6 +28,12 @@ export const resources = {
       },
       map: {
         key: 'en',
+      },
+      settings: {
+        title: 'Settings',
+        darkMode: 'Dark Mode',
+        language: 'Language',
+        notifications: 'Notifications',
       },
       unmatched: {
         main: 'You have reached an unmatched route',
@@ -51,6 +58,7 @@ export const resources = {
         home: 'Főoldal',
         schedule: 'Programterv',
         map: 'Térkép',
+        settings: 'Beállítások',
       },
       home: {
         mainTitle: 'Simonyi Konferencia',
@@ -73,6 +81,12 @@ export const resources = {
       },
       map: {
         key: 'hu',
+      },
+      settings: {
+        title: 'Beállítások',
+        darkMode: 'Sötét mód',
+        language: 'Nyelv',
+        notifications: 'Értesítések',
       },
       unmatched: {
         main: 'Ismeretlen képernyőre jutottál',
