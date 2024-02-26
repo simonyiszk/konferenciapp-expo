@@ -38,6 +38,11 @@ export const resources = {
         sub: 'Please contact the developers',
         retry: 'Retry',
       },
+      qna: {
+        title: 'Send a question',
+        remainingQuestions: 'remaining',
+        placeholder: 'Type a question!',
+      },
     },
   },
   hu: {
@@ -78,6 +83,11 @@ export const resources = {
         main: 'Hopp, ez elszállt :(',
         sub: 'Kérlek ezt jelezd a fejlesztőknek!',
         retry: 'Újrapróbálkozás',
+      },
+      qna: {
+        title: 'Kérdés küldése',
+        remainingQuestions: 'maradt',
+        placeholder: 'Írj egy kérdést!',
       },
     },
   },

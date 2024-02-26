@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ScrollView } from 'react-native';
 
 import { useMessaging } from '../../hooks/use-messaging';
@@ -14,9 +15,10 @@ import { Input } from './input';
 import { QnaAnswer } from './qna-answer';
 import { QnaQuestion } from './qna-question';
 
-const MAX_QUESTION_COUNT = 3;
+const MAX_QUESTION_COUNT = Infinity;
 
 export function QnaScreen() {
+  const { t } = useTranslation();
   const ref = useRef<ScrollView>(null);
   const id = useSafeId();
   const presentation = usePresentation(id);
@@ -39,7 +41,7 @@ export function QnaScreen() {
   return (
     <Screen>
       <Header>
-        <Title>Kérdés küldése</Title>
+        <Title>{t('qna.title')}</Title>
         {presentation.isLoading && <SkeletonTitle />}
         {presentation.data && <Subtitle>{presentation.data.title}</Subtitle>}
       </Header>
@@ -60,7 +62,7 @@ export function QnaScreen() {
       </ScrollContent>
       <Input
         disabled={remainingQuestions === 0}
-        placeholder={`Írd be a kérdésed (${remainingQuestions} maradt)`}
+        placeholder={`${t('qna.placeholder')} (${remainingQuestions} ${t('qna.remainingQuestions')})`}
         onSubmit={messaging.sendMessageText}
       />
     </Screen>
