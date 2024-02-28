@@ -19,14 +19,14 @@ const textStyles: Record<ButtonVariant, string> = {
 };
 
 interface StyledButtonProps extends Omit<PressableProps, 'children'> {
-  children: string;
+  children?: string;
   leftIcon?: React.ComponentProps<typeof Feather>['name'];
   rightIcon?: React.ComponentProps<typeof Feather>['name'];
   variant?: keyof typeof buttonStyles;
 }
 
 const StyledButton = forwardRef<View, StyledButtonProps>(
-  ({ children, variant = 'primary', leftIcon, rightIcon, className, ...props }, ref) => {
+  ({ children, variant = 'primary', leftIcon, rightIcon, className, disabled, ...props }, ref) => {
     return (
       <Pressable
         className={cn(
@@ -35,6 +35,9 @@ const StyledButton = forwardRef<View, StyledButtonProps>(
           'px-4',
           'py-2',
           'items-center justify-center flex-row space-x-2',
+          {
+            'opacity-50': disabled,
+          },
           className
         )}
         ref={ref}
@@ -43,7 +46,11 @@ const StyledButton = forwardRef<View, StyledButtonProps>(
         {leftIcon && (
           <Feather name={leftIcon} size={24} color={variant === 'primary' ? 'white' : extendedColors.primary['500']} />
         )}
-        <StyledText className={cn(textStyles[variant], 'font-raleway-bold text-center text-lg')}>{children}</StyledText>
+        {children && (
+          <StyledText className={cn(textStyles[variant], 'font-raleway-bold text-center text-lg')}>
+            {children}
+          </StyledText>
+        )}
         {rightIcon && (
           <Feather name={rightIcon} size={24} color={variant === 'primary' ? 'white' : extendedColors.primary['500']} />
         )}

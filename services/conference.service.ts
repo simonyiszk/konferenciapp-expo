@@ -15,10 +15,10 @@ export class ConferenceService {
       const aStartDate = new Date(a.startTime);
       const bStartDate = new Date(b.startTime);
       if (isBefore(aStartDate, bStartDate)) {
-        return 1;
+        return -1;
       }
       if (isAfter(aStartDate, bStartDate)) {
-        return -1;
+        return 1;
       }
       return 0;
     });

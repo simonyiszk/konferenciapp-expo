@@ -4,7 +4,7 @@ import tailwindConfig from '../tailwind.config';
 
 const fullConfig = resolveConfig(tailwindConfig);
 
-export const extendedColors = {
+export const extendedColors: Record<string, Record<number, string>> = {
   primary: {
     100: '#f5f1cc',
     200: '#ebe299',
