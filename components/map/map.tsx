@@ -19,6 +19,7 @@ export function Map({ onSelectedResource, selectedResource }: MapProps) {
         stroke={extendedColors.slate['500']}
         strokeWidth={7}
         strokeLinejoin='round'
+        onPress={() => onSelectedResource('BDG')}
       />
       <MapIcon
         selectedResource={selectedResource}
@@ -125,204 +126,164 @@ export function Map({ onSelectedResource, selectedResource }: MapProps) {
       />
       <G id='TABLES'>
         <MapTable
-          id='K1'
+          id='25'
           onPress={onSelectedResource}
           selectedResource={selectedResource}
-          x={458.193}
-          y={214}
-          transform='rotate(24.7963 458.193 214)'
+          x='494.018'
+          y='224.34'
+          transform='rotate(33.7465 494.018 224.34)'
         />
         <MapTable
-          id='K4'
+          id='24'
           onPress={onSelectedResource}
           selectedResource={selectedResource}
-          x={490.951}
-          y={230.686}
-          transform='rotate(31.4606 490.951 230.686)'
+          x='536.227'
+          y='252'
+          transform='rotate(46.2823 536.227 252)'
         />
         <MapTable
-          id='K5'
+          id='23'
           onPress={onSelectedResource}
           selectedResource={selectedResource}
-          x={521.609}
-          y={250.686}
-          transform='rotate(39.4291 521.609 250.686)'
+          x='578.207'
+          y='311'
+          transform='rotate(67.0418 578.207 311)'
         />
         <MapTable
-          id='K2'
+          id='22'
           onPress={onSelectedResource}
           selectedResource={selectedResource}
-          x={623}
-          y={192.5}
-          transform='rotate(90 623 192.5)'
+          x='623'
+          y='254.5'
+          transform='rotate(90 623 254.5)'
         />
         <MapTable
-          id='K3'
+          id='21'
           onPress={onSelectedResource}
           selectedResource={selectedResource}
-          x={623}
-          y={227.5}
-          transform='rotate(90 623 227.5)'
-        />
-        <MapTable
-          id='T5'
-          onPress={onSelectedResource}
-          selectedResource={selectedResource}
-          x={623}
-          y={262.5}
-          transform='rotate(90 623 262.5)'
-        />
-        <MapTable
-          id='T4'
-          onPress={onSelectedResource}
-          selectedResource={selectedResource}
-          x={623}
-          y={297.5}
+          x='623'
+          y='297.5'
           transform='rotate(90 623 297.5)'
         />
         <MapTable
-          id='T3'
+          id='20'
           onPress={onSelectedResource}
           selectedResource={selectedResource}
-          x={623}
-          y={460.5}
-          transform='rotate(90 623 460.5)'
+          x='646'
+          y='380'
+          transform='rotate(90 646 380)'
         />
         <MapTable
-          id='T2'
+          id='19'
           onPress={onSelectedResource}
           selectedResource={selectedResource}
-          x={623}
-          y={495.5}
-          transform='rotate(90 623 495.5)'
-        />
-        <MapTable
-          id='T1'
-          onPress={onSelectedResource}
-          selectedResource={selectedResource}
-          x={623}
-          y={530.5}
+          x='623'
+          y='530.5'
           transform='rotate(90 623 530.5)'
         />
         <MapTable
-          id='C9'
+          id='18'
           onPress={onSelectedResource}
           selectedResource={selectedResource}
-          x={562.705}
-          y={555.071}
-          transform='rotate(135 562.705 555.071)'
+          x='524.162'
+          y='592.098'
+          transform='rotate(144.082 524.162 592.098)'
         />
         <MapTable
-          id='C8'
+          id='12'
           onPress={onSelectedResource}
           selectedResource={selectedResource}
-          x={529.582}
-          y={585.099}
-          transform='rotate(144.082 529.582 585.099)'
+          x='497.586'
+          y='894.269'
+          transform='rotate(3.1955 497.586 894.269)'
         />
         <MapTable
-          id='C7'
+          id='11'
           onPress={onSelectedResource}
           selectedResource={selectedResource}
-          x={455.082}
-          y={627.542}
-          transform='rotate(171.371 455.082 627.542)'
+          x='430.1'
+          y='633.903'
+          transform='rotate(172.007 430.1 633.903)'
         />
         <MapTable
-          id='C6'
+          id='10'
           onPress={onSelectedResource}
           selectedResource={selectedResource}
-          x={410}
-          y={633.194}
-          transform='rotate(-180 410 633.194)'
+          x='514.822'
+          y='712.203'
+          transform='rotate(58.3674 514.822 712.203)'
         />
         <MapTable
-          id='C5'
+          id='9'
           onPress={onSelectedResource}
           selectedResource={selectedResource}
-          x={413}
-          y={761.5}
-          transform='rotate(-89.8009 413 761.5)'
+          x='545.689'
+          y='760'
+          transform='rotate(60.3508 545.689 760)'
         />
         <MapTable
-          id='C4'
+          id='8'
           onPress={onSelectedResource}
           selectedResource={selectedResource}
-          x={403}
-          y={826.233}
-          transform='rotate(-82.3524 403 826.233)'
+          x='571.539'
+          y='844.191'
+          transform='rotate(92.0752 571.539 844.191)'
         />
         <MapTable
-          id='C3'
+          id='7'
           onPress={onSelectedResource}
           selectedResource={selectedResource}
-          x={394}
-          y={864.512}
-          transform='rotate(-75.2579 394 864.512)'
+          x='486.947'
+          y='986'
+          transform='rotate(11.2363 486.947 986)'
         />
         <MapTable
-          id='C12'
+          id='6'
           onPress={onSelectedResource}
           selectedResource={selectedResource}
-          x={484.367}
-          y={841.312}
-          transform='rotate(-80.9987 484.367 841.312)'
-        />
-        <MapTable
-          id='C13'
-          onPress={onSelectedResource}
-          selectedResource={selectedResource}
-          x={478}
-          y={881.131}
-          transform='rotate(-80.9987 478 881.131)'
-        />
-        <MapTable
-          id='C14'
-          onPress={onSelectedResource}
-          selectedResource={selectedResource}
-          x={499.09}
-          y={891.386}
-          transform='rotate(15 499.09 891.386)'
-        />
-        <MapTable
-          id='C15'
-          onPress={onSelectedResource}
-          selectedResource={selectedResource}
-          x={568}
-          y={836.5}
-          transform='rotate(90 568 836.5)'
-        />
-        <MapTable
-          id='C10'
-          onPress={onSelectedResource}
-          selectedResource={selectedResource}
-          x={558.66}
-          y={790.5}
-          transform='rotate(75 558.66 790.5)'
-        />
-        <MapTable
-          id='C11'
-          onPress={onSelectedResource}
-          selectedResource={selectedResource}
-          x={536.84}
-          y={743.5}
-          transform='rotate(62.1239 536.84 743.5)'
-        />
-        <MapTable
-          id='C2'
-          onPress={onSelectedResource}
-          selectedResource={selectedResource}
-          x={428.045}
-          y={973.385}
+          x='428.045'
+          y='973.385'
           transform='rotate(11.2363 428.045 973.385)'
         />
         <MapTable
-          id='C1'
+          id='5'
           onPress={onSelectedResource}
           selectedResource={selectedResource}
-          x={386.949}
-          y={965.5}
+          x='386.949'
+          y='965.5'
           transform='rotate(11.2363 386.949 965.5)'
+        />
+        <MapTable
+          id='4'
+          onPress={onSelectedResource}
+          selectedResource={selectedResource}
+          x='393.207'
+          y='883.727'
+          transform='rotate(-80.343 393.207 883.727)'
+        />
+        <MapTable
+          id='3'
+          onPress={onSelectedResource}
+          selectedResource={selectedResource}
+          x='401'
+          y='845.733'
+          transform='rotate(-82.3524 401 845.733)'
+        />
+        <MapTable
+          id='2'
+          onPress={onSelectedResource}
+          selectedResource={selectedResource}
+          x='413.609'
+          y='772.457'
+          transform='rotate(-84.392 413.609 772.457)'
+        />
+        <MapTable
+          id='1'
+          onPress={onSelectedResource}
+          selectedResource={selectedResource}
+          x='494'
+          y='864.886'
+          transform='rotate(-85.0141 494 864.886)'
         />
       </G>
       <MapIcon
@@ -441,38 +402,79 @@ export function Map({ onSelectedResource, selectedResource }: MapProps) {
         <Path
           d='M477 147.336C478.384 148.406 480.462 149.031 482.834 149.003C485.206 149.031 487.285 148.406 488.668 147.336C490.052 146.266 492.13 145.64 494.502 145.669C496.874 145.64 498.953 146.266 500.336 147.336'
           stroke='white'
-          strokeWidth={2.50032}
+          strokeWidth={2.5}
           strokeLinecap='round'
           strokeLinejoin='round'
         />
         <Path
           d='M485.334 129C484.806 129.379 484.379 129.88 484.088 130.461C483.798 131.042 483.653 131.685 483.667 132.334C483.653 132.983 483.798 133.626 484.088 134.207C484.379 134.787 484.806 135.289 485.334 135.668'
           stroke='white'
-          strokeWidth={2.50032}
+          strokeWidth={2.5}
           strokeLinecap='round'
           strokeLinejoin='round'
         />
         <Path
           d='M492.002 129C491.474 129.379 491.047 129.88 490.756 130.461C490.466 131.042 490.321 131.685 490.335 132.334C490.321 132.983 490.466 133.626 490.756 134.207C491.047 134.787 491.474 135.289 492.002 135.668'
           stroke='white'
-          strokeWidth={2.50032}
+          strokeWidth={2.5}
           strokeLinecap='round'
           strokeLinejoin='round'
         />
         <Path
           d='M477 140.668H500.336V149.002C500.336 151.655 499.283 154.199 497.407 156.074C495.531 157.95 492.988 159.004 490.335 159.004H487.001C484.349 159.004 481.805 157.95 479.929 156.074C478.054 154.199 477 151.655 477 149.002V140.668Z'
           stroke='white'
-          strokeWidth={2.50032}
+          strokeWidth={2.5}
           strokeLinecap='round'
           strokeLinejoin='round'
         />
         <Path
           d='M499.912 151.88C500.657 152.221 501.474 152.375 502.291 152.327C503.109 152.279 503.902 152.031 504.602 151.604C505.301 151.178 505.885 150.586 506.302 149.881C506.719 149.176 506.957 148.38 506.994 147.561C507.031 146.743 506.867 145.928 506.515 145.189C506.163 144.449 505.635 143.807 504.978 143.319C504.32 142.831 503.552 142.512 502.742 142.39C501.932 142.268 501.104 142.347 500.332 142.62'
           stroke='white'
-          strokeWidth={2.50032}
+          strokeWidth={2.5}
           strokeLinecap='round'
           strokeLinejoin='round'
         />
+      </MapIcon>
+      <MapIcon
+        id='COAT'
+        onPress={onSelectedResource}
+        selectedResource={selectedResource}
+        cx={591}
+        cy={712}
+        fill={extendedColors.lime['500']}
+      >
+        <Path
+          d='M596 699.667L605 702.667V710.167H600.5V722.167C600.5 722.565 600.342 722.946 600.061 723.227C599.779 723.509 599.398 723.667 599 723.667H584C583.602 723.667 583.221 723.509 582.939 723.227C582.658 722.946 582.5 722.565 582.5 722.167V710.167H578V702.667L587 699.667C587 700.86 587.474 702.005 588.318 702.849C589.162 703.693 590.307 704.167 591.5 704.167C592.693 704.167 593.838 703.693 594.682 702.849C595.526 702.005 596 700.86 596 699.667Z'
+          stroke='white'
+          strokeWidth='2.25'
+          strokeLinecap='round'
+          strokeLinejoin='round'
+        />
+      </MapIcon>
+      <MapIcon
+        id='REGISTRATION'
+        onPress={onSelectedResource}
+        selectedResource={selectedResource}
+        cx={310}
+        cy={931}
+        fill={extendedColors.red['500']}
+      >
+        <Path
+          d='M312.834 918V924C312.834 924.398 312.992 924.779 313.273 925.061C313.555 925.342 313.936 925.5 314.334 925.5H320.334'
+          stroke='white'
+          strokeWidth={2.5}
+          strokeLinecap='round'
+          strokeLinejoin='round'
+        />
+        <Path
+          d='M317.334 945H302.334C301.538 945 300.775 944.684 300.213 944.121C299.65 943.559 299.334 942.796 299.334 942V921C299.334 920.204 299.65 919.441 300.213 918.879C300.775 918.316 301.538 918 302.334 918H312.834L320.334 925.5V942C320.334 942.796 320.018 943.559 319.455 944.121C318.893 944.684 318.13 945 317.334 945Z'
+          stroke='white'
+          strokeWidth={2.5}
+          strokeLinecap='round'
+          strokeLinejoin='round'
+        />
+        <Path d='M305.334 939H314.334' stroke='white' strokeWidth={2.5} strokeLinecap='round' strokeLinejoin='round' />
+        <Path d='M305.334 933H314.334' stroke='white' strokeWidth={2.5} strokeLinecap='round' strokeLinejoin='round' />
       </MapIcon>
     </Svg>
   );
