@@ -19,7 +19,6 @@ export function Map({ onSelectedResource, selectedResource }: MapProps) {
         stroke={extendedColors.slate['500']}
         strokeWidth={7}
         strokeLinejoin='round'
-        onPress={() => onSelectedResource('BDG')}
       />
       <MapIcon
         selectedResource={selectedResource}
