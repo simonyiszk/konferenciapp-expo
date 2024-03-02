@@ -1,5 +1,8 @@
 export type MapResource = {
   id: string;
   title: string;
-  description: string;
+  description: {
+    hu: string;
+    en: string;
+  };
 };
