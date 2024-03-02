@@ -15,3 +15,10 @@ export function useSafeSlug() {
   const { slug } = useLocalSearchParams();
   return Array.isArray(slug) ? slug[0] : slug ?? '';
 }
+
+export function generateId(length = 16) {
+  const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+  let result = '';
+  for (let i = length; i > 0; --i) result += chars[Math.floor(Math.random() * chars.length)];
+  return result;
+}
