@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Appearance } from 'react-native';
 
 import { Screen } from '../../components/base/screen';
 import { ScrollContent } from '../../components/base/scroll-content';
@@ -7,6 +8,7 @@ import { Header } from '../../components/common/header';
 import { Setting } from '../../components/common/settings/setting';
 import { SettingToggle } from '../../components/common/settings/setting-toggle';
 import { Title } from '../../components/common/title';
+import i18n from '../../services/i18-next';
 import { SettingsStorageService } from '../../services/settings-storage.service';
 import { SettingsType } from '../../types/settings.type';
 
@@ -21,8 +23,28 @@ export default function SettingsPage() {
     SettingsStorageService.saveSettings(settings);
   }, [settings]);
 
-  const setLanguage = (newLng: string) => setSettings((prevState) => ({ ...prevState, language: newLng }));
-  const setColorScheme = (colorScheme: string) => setSettings((prevState) => ({ ...prevState, mode: colorScheme }));
+  const setLanguage = (newLng: string) => {
+    i18n.changeLanguage(newLng);
+    setSettings((prevState) => ({ ...prevState, language: newLng }));
+  };
+
+  const setMode = (colorScheme: string) => {
+    switch (colorScheme) {
+      case 'default':
+        setColorScheme(null);
+        break;
+      case 'dark':
+        setColorScheme('dark');
+        break;
+      case 'light':
+        setColorScheme('light');
+        break;
+    }
+  };
+  const setColorScheme = (colorScheme: 'dark' | 'light' | null) => {
+    Appearance.setColorScheme(colorScheme);
+    setSettings((prevState) => ({ ...prevState, mode: colorScheme ?? 'default' }));
+  };
   const toggleNotifications = (notifications: boolean) =>
     setSettings((prevState) => ({ ...prevState, notifications: notifications }));
 
@@ -50,10 +72,10 @@ export default function SettingsPage() {
             { label: 'Light', value: 'light' },
           ]}
           currentValue={settings?.mode ?? 'light'}
-          onChange={setColorScheme}
+          onChange={setMode}
         />
         <SettingToggle
-          label={'Notification'}
+          label={t('settings.notifications')}
           currentValue={settings?.notifications ?? false}
           onChange={toggleNotifications}
         />

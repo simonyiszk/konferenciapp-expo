@@ -7,7 +7,7 @@ export class SettingsStorageService {
     try {
       const settings = await AsyncStorage.getItem('settings');
       if (!settings) {
-        const defaultSettings = { language: 'hu', mode: 'light', notifications: true };
+        const defaultSettings: SettingsType = { language: 'hu', mode: 'light', notifications: true };
         await this.saveSettings(defaultSettings);
         return defaultSettings;
       }
