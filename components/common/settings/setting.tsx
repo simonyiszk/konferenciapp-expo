@@ -21,8 +21,8 @@ export function Setting({ label, availableValues, currentValue, onChange }: Sett
   };
 
   return (
-    <View className='mb-5 rounded-xl bg-white dark:bg-slate-800 active:bg-slate-50 active:dark:bg-slate-700 px-3 shadow-md shadow-slate-500/10 relative overflow-hidden h-fit'>
-      <Pressable className='flex-row justify-between items-center flex-1 py-5' onPress={toggleOpen}>
+    <View className='mb-5 rounded-xl bg-white dark:bg-slate-800 active:bg-slate-50 active:dark:bg-slate-700 px-3 shadow-md shadow-slate-500/10'>
+      <Pressable className='flex-row justify-between items-center py-5' onPress={toggleOpen}>
         <StyledText className='text-xl'>{label}</StyledText>
         <View className='flex-row items-center'>
           <StyledText className='text-xl text-slate-400'>{currentOption?.label}</StyledText>
@@ -33,7 +33,7 @@ export function Setting({ label, availableValues, currentValue, onChange }: Sett
         availableValues.map((option) => (
           <Pressable
             key={option.value}
-            className='flex-row justify-between items-center flex-1 border-t border-slate-200 py-2'
+            className='flex-row justify-between items-center border-t border-slate-200 py-2'
             onPress={() => onSelect(option.value)}
           >
             <StyledText className='text-xl'>{option.label}</StyledText>
