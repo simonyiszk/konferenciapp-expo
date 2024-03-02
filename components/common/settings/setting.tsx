@@ -24,8 +24,10 @@ export function Setting({ label, availableValues, currentValue, onChange, icon }
   return (
     <View className='mb-5 rounded-xl bg-white dark:bg-slate-800 active:bg-slate-50 active:dark:bg-slate-700 px-3 shadow-md shadow-slate-500/10'>
       <Pressable className='flex-row justify-between items-center py-5' onPress={toggleOpen}>
-        {icon && <Feather name={icon} color={extendedColors.slate['400']} size={20} />}
-        <StyledText className='text-xl'>{label}</StyledText>
+        <View className='flex-row items-center'>
+          {icon && <Feather name={icon} color={extendedColors.slate['400']} size={20} />}
+          <StyledText className='text-xl pl-1'>{label}</StyledText>
+        </View>
         <View className='flex-row items-center'>
           <StyledText className='text-xl text-slate-400'>{currentOption?.label}</StyledText>
           <Feather name={open ? 'chevron-down' : 'chevron-right'} color={extendedColors.slate['400']} size={20} />

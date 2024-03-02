@@ -32,6 +32,9 @@ export const resources = {
       settings: {
         title: 'Settings',
         darkMode: 'Dark Mode',
+        dark: 'Dark',
+        light: 'Light',
+        default: 'System',
         language: 'Language',
         notifications: 'Notifications',
       },
@@ -85,6 +88,9 @@ export const resources = {
       settings: {
         title: 'Beállítások',
         darkMode: 'Sötét mód',
+        dark: 'Sötét',
+        light: 'Világos',
+        default: 'Rendszer alapján',
         language: 'Nyelv',
         notifications: 'Értesítések',
       },

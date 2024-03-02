@@ -56,6 +56,7 @@ export default function SettingsPage() {
       </Header>
       <ScrollContent>
         <Setting
+          icon='globe'
           label={t('settings.language')}
           availableValues={[
             { label: 'Magyar', value: 'hu' },
@@ -65,16 +66,26 @@ export default function SettingsPage() {
           onChange={setLanguage}
         />
         <Setting
+          icon={
+            settings.mode == 'default'
+              ? Appearance.getColorScheme() === 'light'
+                ? 'sun'
+                : 'moon'
+              : settings.mode == 'light'
+                ? 'sun'
+                : 'moon'
+          }
           label={t('settings.darkMode')}
           availableValues={[
-            { label: 'Rendszer alapján', value: 'default' },
-            { label: 'Dark', value: 'dark' },
-            { label: 'Light', value: 'light' },
+            { label: t('settings.default'), value: 'default' },
+            { label: t('settings.dark'), value: 'dark' },
+            { label: t('settings.light'), value: 'light' },
           ]}
           currentValue={settings?.mode ?? 'light'}
           onChange={setMode}
         />
         <SettingToggle
+          icon={settings?.notifications === true ? 'bell' : 'bell-off'}
           label={t('settings.notifications')}
           currentValue={settings?.notifications ?? false}
           onChange={toggleNotifications}
