@@ -1,4 +1,3 @@
-import { Feather } from '@expo/vector-icons';
 import React from 'react';
 import { Switch, View, ViewProps } from 'react-native';
 
