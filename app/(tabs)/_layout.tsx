@@ -61,6 +61,13 @@ export default function TabsLayout() {
           tabBarIcon: ({ focused }) => <TabbarIcon focused={focused} name='map' />,
         }}
       />
+      <Tabs.Screen
+        name='settings'
+        options={{
+          title: t('tabbar.settings'),
+          tabBarIcon: ({ focused }) => <TabbarIcon focused={focused} name='settings' />,
+        }}
+      />
     </Tabs>
   );
 }
