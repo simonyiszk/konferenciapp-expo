@@ -1,4 +1,4 @@
-import { isBefore } from 'date-fns';
+import { isBefore, subMinutes } from 'date-fns';
 import * as Notifications from 'expo-notifications';
 import { Platform } from 'react-native';
 
@@ -38,7 +38,7 @@ export class NotificationService {
       return;
     }
 
-    const triggerDate = new Date(presentation.startTime);
+    const triggerDate = subMinutes(new Date(presentation.startTime), 5);
 
     return await Notifications.scheduleNotificationAsync({
       content: {
