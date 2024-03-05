@@ -44,7 +44,7 @@ export class NotificationService {
       content: {
         title: presentation.title,
         body: `Hamarosan kezdődik a(z) ${presentation.room} teremben!`,
-        data: { tab: 'presentation', screen: 'presentation-details', slug: presentation.slug },
+        data: { tab: 'presentation', screen: 'presentation-details', id: presentation.slug },
       },
       trigger: triggerDate,
     });
