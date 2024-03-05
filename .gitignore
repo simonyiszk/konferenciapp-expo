@@ -41,4 +41,5 @@ ios
 .idea/workspace.xml
 
 .env
+google-service-account-key.json
 
