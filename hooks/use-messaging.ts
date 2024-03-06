@@ -1,5 +1,5 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import axios from 'axios';
+import axios, { isAxiosError } from 'axios';
 import { useEffect, useState } from 'react';
 
 import { QNA_API_BASE_URL } from '../config/env.config';
@@ -56,7 +56,12 @@ export function useMessaging() {
         updateMessage({ ...newMessage, status: 'sent' });
         addAnswer('Kérdésed megkaptuk és moderálás után a felolvasandó kérdések közé kerül. Köszönjük!');
       })
-      .catch(() => {
+      .catch((e) => {
+        if (isAxiosError(e)) {
+          console.error('Error sending question', e.response?.data);
+        } else {
+          console.error('Error sending question', e);
+        }
         updateMessage({ ...newMessage, status: 'error' });
       });
   };
@@ -69,7 +74,7 @@ export function useMessaging() {
 }
 
 async function sendMessage(content: string, presentationId: string, userId: string) {
-  return await axios.post(`${QNA_API_BASE_URL}/api/presentation/${presentationId}/questions`, {
+  return await axios.post(`${QNA_API_BASE_URL}/api/presentation/${presentationId}/question`, {
     content,
     userId,
   });
