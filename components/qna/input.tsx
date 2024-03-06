@@ -21,6 +21,7 @@ export function Input({ placeholder, onSubmit, disabled = false }: InputProps) {
   const onSend = () => {
     if (value.length < MIN_CHARACTERS_TO_SEND) return;
     ref.current?.clear();
+    ref.current?.blur();
     onSubmit(value);
     setValue('');
   };
