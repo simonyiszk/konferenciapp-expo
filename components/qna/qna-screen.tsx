@@ -38,6 +38,10 @@ export function QnaScreen() {
 
   const remainingQuestions = MAX_QUESTION_COUNT - questionCount;
 
+  const onSubmission = (messageText: string) => {
+    messaging.sendMessageText(messageText, id);
+  };
+
   return (
     <Screen>
       <Header>
@@ -63,7 +67,7 @@ export function QnaScreen() {
       <Input
         disabled={remainingQuestions === 0}
         placeholder={`${t('qna.placeholder')} (${remainingQuestions} ${t('qna.remainingQuestions')})`}
-        onSubmit={messaging.sendMessageText}
+        onSubmit={onSubmission}
       />
     </Screen>
   );

@@ -29,7 +29,7 @@ export function Input({ placeholder, onSubmit, disabled = false }: InputProps) {
       style={{
         bottom: Math.max(130, keyboardOffset + 16),
       }}
-      className='absolute left-0 right-0 mx-5 flex-row space-x-3 rounded-2xl bg-white dark:bg-slate-800 px-3 py-2 shadow-md max-h-60'
+      className='absolute left-0 right-0 mx-5 flex-row space-x-3 rounded-xl bg-white dark:bg-slate-800 px-3 py-2 shadow-md max-h-60'
     >
       <TextInput
         ref={ref}
