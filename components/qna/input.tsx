@@ -32,7 +32,7 @@ export function Input({ placeholder, onSubmit, disabled = false }: InputProps) {
       keyboardVerticalOffset={0}
       behavior='position'
       style={{ paddingBottom: insets.bottom + 100 }}
-      className='justify-end absolute w-full h-full'
+      className='justify-end absolute w-full bottom-0'
       enabled
     >
       <View className='mx-5 flex-row space-x-3 rounded-xl bg-white dark:bg-slate-800 px-3 py-2 shadow-md max-h-60'>
