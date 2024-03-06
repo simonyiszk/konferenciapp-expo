@@ -14,15 +14,16 @@ import { Title } from '../common/title';
 import { Input } from './input';
 import { QnaAnswer } from './qna-answer';
 import { QnaQuestion } from './qna-question';
+import { QnaSkeleton } from './qna-skeleton';
 
-const MAX_QUESTION_COUNT = Infinity;
+const MAX_QUESTION_COUNT = 3;
 
 export function QnaScreen() {
   const { t } = useTranslation();
   const ref = useRef<ScrollView>(null);
   const id = useSafeId();
   const presentation = usePresentation(id);
-  const messaging = useMessaging();
+  const messaging = useMessaging(id);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -36,7 +37,7 @@ export function QnaScreen() {
     [messaging.messages]
   );
 
-  const remainingQuestions = MAX_QUESTION_COUNT - questionCount;
+  const remainingQuestions = Math.max(0, MAX_QUESTION_COUNT - questionCount);
 
   const onSubmission = (messageText: string) => {
     messaging.sendMessageText(messageText, id);
@@ -56,6 +57,7 @@ export function QnaScreen() {
         }}
         automaticallyAdjustKeyboardInsets
       >
+        {messaging.isLoading && <QnaSkeleton />}
         {messaging.messages.map((message, index) =>
           message.kind === 'question' ? (
             <QnaQuestion key={index} message={message} />
@@ -65,7 +67,7 @@ export function QnaScreen() {
         )}
       </ScrollContent>
       <Input
-        disabled={remainingQuestions === 0}
+        disabled={remainingQuestions === 0 || messaging.isLoading}
         placeholder={`${t('qna.placeholder')} (${remainingQuestions} ${t('qna.remainingQuestions')})`}
         onSubmit={onSubmission}
       />
