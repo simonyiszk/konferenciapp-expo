@@ -14,7 +14,7 @@ export default function MainLayout() {
     <QueryClientProvider client={queryClient}>
       <Splash>
         <FavoritePresentationsProvider>
-          <View className='bg-slate-100 dark:bg-slate-900 min-h-screen'>
+          <View className='bg-slate-100 dark:bg-slate-900 flex-1'>
             <Slot />
           </View>
         </FavoritePresentationsProvider>
