@@ -26,7 +26,7 @@ export default function HomePage() {
       </Header>
       <ScrollContent>
         <SectionTitle>{t('home.presentationTitle')}</SectionTitle>
-        {conference.isLoading && <PresentationItemSkeletonList />}
+        {conference.isLoading && <PresentationItemSkeletonList className='mx-0' />}
         {conference.isError && <ErrorMessage>{t('home.error')}</ErrorMessage>}
         {!conference.isError && !conference.isLoading && (
           <HomePresentationList presentations={conference.data?.presentations ?? []} />

@@ -8,6 +8,8 @@ import { useNews } from '../../hooks/use-news';
 import i18n from '../../services/i18-next';
 import { SettingsStorageService } from '../../services/settings-storage.service';
 
+SplashScreen.preventAutoHideAsync();
+
 export function Splash({ children }: PropsWithChildren) {
   const conference = useConference();
   const news = useNews();
@@ -25,7 +27,7 @@ export function Splash({ children }: PropsWithChildren) {
     RalewayLight: require('../../assets/fonts/Raleway-Light.ttf'),
   });
 
-  const dataReady = conference.status !== 'pending' && news.status !== 'pending';
+  const dataReady = !conference.isPending && !news.isPending;
 
   useEffect(() => {
     if (error) throw error;
@@ -35,7 +37,7 @@ export function Splash({ children }: PropsWithChildren) {
     if (loaded && dataReady) SplashScreen.hideAsync();
   }, [loaded, dataReady]);
 
-  if (!loaded || !dataReady) return null;
+  if (!loaded) return null;
 
   return children;
 }
