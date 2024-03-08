@@ -44,6 +44,7 @@ export default function TabsLayout() {
         name='home'
         options={{
           title: t('tabbar.home'),
+          tabBarLabelPosition: 'below-icon',
           tabBarIcon: ({ focused }) => <TabbarIcon focused={focused} name='home' />,
         }}
       />
@@ -51,6 +52,7 @@ export default function TabsLayout() {
         name='presentation'
         options={{
           title: t('tabbar.schedule'),
+          tabBarLabelPosition: 'below-icon',
           tabBarIcon: ({ focused }) => <TabbarIcon focused={focused} name='calendar' />,
         }}
       />
@@ -58,6 +60,7 @@ export default function TabsLayout() {
         name='map'
         options={{
           title: t('tabbar.map'),
+          tabBarLabelPosition: 'below-icon',
           tabBarIcon: ({ focused }) => <TabbarIcon focused={focused} name='map' />,
         }}
       />
@@ -65,6 +68,7 @@ export default function TabsLayout() {
         name='settings'
         options={{
           title: t('tabbar.settings'),
+          tabBarLabelPosition: 'below-icon',
           tabBarIcon: ({ focused }) => <TabbarIcon focused={focused} name='settings' />,
         }}
       />

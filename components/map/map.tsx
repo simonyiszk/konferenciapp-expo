@@ -125,7 +125,7 @@ export function Map({ onSelectedResource, selectedResource }: MapProps) {
       />
       <G id='TABLES'>
         <MapTable
-          id='25'
+          id='22'
           onPress={onSelectedResource}
           selectedResource={selectedResource}
           x='494.018'
@@ -133,7 +133,7 @@ export function Map({ onSelectedResource, selectedResource }: MapProps) {
           transform='rotate(33.7465 494.018 224.34)'
         />
         <MapTable
-          id='24'
+          id='21'
           onPress={onSelectedResource}
           selectedResource={selectedResource}
           x='536.227'
@@ -141,7 +141,7 @@ export function Map({ onSelectedResource, selectedResource }: MapProps) {
           transform='rotate(46.2823 536.227 252)'
         />
         <MapTable
-          id='23'
+          id='20'
           onPress={onSelectedResource}
           selectedResource={selectedResource}
           x='578.207'
@@ -149,7 +149,7 @@ export function Map({ onSelectedResource, selectedResource }: MapProps) {
           transform='rotate(67.0418 578.207 311)'
         />
         <MapTable
-          id='22'
+          id='19'
           onPress={onSelectedResource}
           selectedResource={selectedResource}
           x='623'
@@ -157,7 +157,7 @@ export function Map({ onSelectedResource, selectedResource }: MapProps) {
           transform='rotate(90 623 254.5)'
         />
         <MapTable
-          id='21'
+          id='18'
           onPress={onSelectedResource}
           selectedResource={selectedResource}
           x='623'
@@ -165,15 +165,23 @@ export function Map({ onSelectedResource, selectedResource }: MapProps) {
           transform='rotate(90 623 297.5)'
         />
         <MapTable
-          id='20'
+          id='17'
           onPress={onSelectedResource}
           selectedResource={selectedResource}
-          x='646'
+          x='623'
           y='380'
-          transform='rotate(90 646 380)'
+          transform='rotate(90 623 380)'
         />
         <MapTable
-          id='19'
+          id='16'
+          onPress={onSelectedResource}
+          selectedResource={selectedResource}
+          x='623'
+          y='488'
+          transform='rotate(90 623 488.5)'
+        />
+        <MapTable
+          id='15'
           onPress={onSelectedResource}
           selectedResource={selectedResource}
           x='623'
@@ -181,7 +189,15 @@ export function Map({ onSelectedResource, selectedResource }: MapProps) {
           transform='rotate(90 623 530.5)'
         />
         <MapTable
-          id='18'
+          id='14'
+          onPress={onSelectedResource}
+          selectedResource={selectedResource}
+          x='560.193'
+          y='554.086'
+          transform='rotate(127.488 560.193 554.086)'
+        />
+        <MapTable
+          id='13'
           onPress={onSelectedResource}
           selectedResource={selectedResource}
           x='524.162'
@@ -192,20 +208,12 @@ export function Map({ onSelectedResource, selectedResource }: MapProps) {
           id='12'
           onPress={onSelectedResource}
           selectedResource={selectedResource}
-          x='497.586'
-          y='894.269'
-          transform='rotate(3.1955 497.586 894.269)'
-        />
-        <MapTable
-          id='11'
-          onPress={onSelectedResource}
-          selectedResource={selectedResource}
           x='430.1'
           y='633.903'
           transform='rotate(172.007 430.1 633.903)'
         />
         <MapTable
-          id='10'
+          id='11'
           onPress={onSelectedResource}
           selectedResource={selectedResource}
           x='514.822'
@@ -213,7 +221,7 @@ export function Map({ onSelectedResource, selectedResource }: MapProps) {
           transform='rotate(58.3674 514.822 712.203)'
         />
         <MapTable
-          id='9'
+          id='10'
           onPress={onSelectedResource}
           selectedResource={selectedResource}
           x='545.689'
@@ -221,12 +229,20 @@ export function Map({ onSelectedResource, selectedResource }: MapProps) {
           transform='rotate(60.3508 545.689 760)'
         />
         <MapTable
-          id='8'
+          id='9'
           onPress={onSelectedResource}
           selectedResource={selectedResource}
           x='571.539'
           y='844.191'
           transform='rotate(92.0752 571.539 844.191)'
+        />
+        <MapTable
+          id='8'
+          onPress={onSelectedResource}
+          selectedResource={selectedResource}
+          x='497.586'
+          y='894.269'
+          transform='rotate(3.1955 497.586 894.269)'
         />
         <MapTable
           id='7'

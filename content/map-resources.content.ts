@@ -1,6 +1,6 @@
 import { MapResource } from '../types/map.type';
 
-export const MapResources_hu: MapResource[] = [
+export const MapResources: MapResource[] = [
   {
     id: 'DOOR',
     title: 'Bejárat',
@@ -66,7 +66,7 @@ export const MapResources_hu: MapResource[] = [
     },
   },
   {
-    id: '25',
+    id: '22',
     title: 'LEGO',
     description: {
       hu: 'A LEGO kör a Simonyi robotikával fogallkozó köre.',
@@ -74,7 +74,7 @@ export const MapResources_hu: MapResource[] = [
     },
   },
   {
-    id: '24',
+    id: '21',
     title: 'HA5KFU',
     description: {
       hu: 'Rádióamatőr klub.',
@@ -82,7 +82,7 @@ export const MapResources_hu: MapResource[] = [
     },
   },
   {
-    id: '23',
+    id: '20',
     title: 'SEM',
     description: {
       hu: 'A Schönherz elektronikai műhelye.',
@@ -90,7 +90,7 @@ export const MapResources_hu: MapResource[] = [
     },
   },
   {
-    id: '22',
+    id: '19',
     title: 'Kir-Dev',
     description: {
       hu: 'A kollégium webfejlesztő köre.',
@@ -98,7 +98,7 @@ export const MapResources_hu: MapResource[] = [
     },
   },
   {
-    id: '21',
+    id: '18',
     title: 'schdesign',
     description: {
       hu: 'A Simonyi kreatív alkotóműhelye.',
@@ -106,7 +106,7 @@ export const MapResources_hu: MapResource[] = [
     },
   },
   {
-    id: '20',
+    id: '17',
     title: 'BME Formula Racing Team',
     description: {
       hu: 'Technológiailag fejlett autók építése.',
@@ -114,7 +114,15 @@ export const MapResources_hu: MapResource[] = [
     },
   },
   {
-    id: '19',
+    id: '16',
+    title: 'BME Suborbitals',
+    description: {
+      hu: 'Kísérleti rakéták fejlesztése versenyre és oktatási célokra.',
+      en: 'Developing research rockets for competition and educational purposes',
+    },
+  },
+  {
+    id: '15',
     title: 'Paripa',
     description: {
       hu: 'Partnerség az iparral program.',
@@ -122,11 +130,19 @@ export const MapResources_hu: MapResource[] = [
     },
   },
   {
-    id: '18',
-    title: 'BME Suborbitals',
+    id: '14',
+    title: 'BME EELISA',
     description: {
-      hu: 'Kísérleti rakéták fejlesztése versenyre és oktatási célokra.',
-      en: 'Developing research rockets for competition and educational purposes',
+      hu: 'Európai Mérnöki Tanulás Innováció és Tudomány Szövetség',
+      en: 'European Engineering Learning Innovation and Science Alliance',
+    },
+  },
+  {
+    id: '13',
+    title: 'Schönherz Iskolaszövetkezet',
+    description: {
+      hu: 'Szakmai diákmunka.',
+      en: 'Professional student work.',
     },
   },
   {
@@ -139,14 +155,6 @@ export const MapResources_hu: MapResource[] = [
   },
   {
     id: '11',
-    title: 'Barré Technologies Zrt.',
-    description: {
-      hu: 'Nagyvállalati megoldásokra szakosodott szoftverfejlesztő és megoldásszállító vállalat.',
-      en: 'A software development and solution provider company specializing in enterprise solutions.',
-    },
-  },
-  {
-    id: '10',
     title: 'OTP Bank Nyrt.',
     description: {
       hu: 'Kelet-Közép-Európa meghatározó bankcsoportja.',
@@ -154,7 +162,7 @@ export const MapResources_hu: MapResource[] = [
     },
   },
   {
-    id: '9',
+    id: '10',
     title: 'KUKA Robotics Hungária Kft.',
     description: {
       hu: 'A robot- és automatizáció-technológia szakértője.',
@@ -162,11 +170,19 @@ export const MapResources_hu: MapResource[] = [
     },
   },
   {
-    id: '8',
+    id: '9',
     title: 'Nova Services Zrt.',
     description: {
       hu: 'Az új technológiák és az új IT trendek iránt elkötelezett innovatív IT megoldásokat nyújtó cég.',
       en: 'An innovative IT solution provider company committed to new technologies and new IT trends.',
+    },
+  },
+  {
+    id: '8',
+    title: 'Barré Technologies Zrt.',
+    description: {
+      hu: 'Nagyvállalati megoldásokra szakosodott szoftverfejlesztő és megoldásszállító vállalat.',
+      en: 'A software development and solution provider company specializing in enterprise solutions.',
     },
   },
   {

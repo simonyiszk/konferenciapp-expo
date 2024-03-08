@@ -9,7 +9,7 @@ export function ErrorMessage({ className, children, ...props }: ViewProps) {
   return (
     <View className={cn('gap-x-2 m-5 flex-row items-center justify-center', className)} {...props}>
       <Feather name='alert-circle' size={24} color={extendedColors.red['500']} />
-      <StyledText className='text-red-500 text-xl'>{children}</StyledText>
+      <StyledText className='text-red-500'>{children}</StyledText>
     </View>
   );
 }

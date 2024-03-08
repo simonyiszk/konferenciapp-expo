@@ -1,24 +1,14 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import axios, { isAxiosError } from 'axios';
+import { isAxiosError } from 'axios';
 import { useEffect, useState } from 'react';
 
-import { QNA_API_BASE_URL } from '../config/env.config';
+import { MessagingService } from '../services/messaging.service';
 import { QnaMessage } from '../types/qna.type';
 import { generateId } from '../utils/common.utils';
+import { useMessages } from './use-messages';
 
-export function useMessaging() {
+export function useMessaging(presentationId: string) {
+  const initialMessages = useMessages(presentationId);
   const [messages, setMessages] = useState<QnaMessage[]>([]);
-  const [userId, setUserId] = useState<string>();
-
-  const loadUserId = () => {
-    AsyncStorage.getItem('userId').then((userId) => {
-      if (!userId) {
-        userId = generateId();
-        AsyncStorage.setItem('userId', userId);
-      }
-      setUserId(userId);
-    });
-  };
 
   const addMessage = (newMessage: QnaMessage) => {
     setMessages((prevMessages) => [...prevMessages, newMessage]);
@@ -35,23 +25,20 @@ export function useMessaging() {
       id: generateId(),
       kind: 'answer',
       text: answerText,
-      isInitial: false,
       status: 'sent',
     };
     addMessage(newMessage);
   };
 
   const sendMessageText = (messageText: string, presentationId: string) => {
-    if (!userId) return;
     const newMessage: QnaMessage = {
       id: generateId(),
       kind: 'question',
       text: messageText,
-      isInitial: false,
       status: 'pending',
     };
     addMessage(newMessage);
-    sendMessage(messageText, presentationId, userId)
+    MessagingService.sendMessage(messageText, presentationId)
       .then(() => {
         updateMessage({ ...newMessage, status: 'sent' });
         addAnswer('Kérdésed megkaptuk és moderálás után a felolvasandó kérdések közé kerül. Köszönjük!');
@@ -67,15 +54,10 @@ export function useMessaging() {
   };
 
   useEffect(() => {
-    loadUserId();
-  }, []);
+    if (initialMessages.data) {
+      setMessages(initialMessages.data);
+    }
+  }, [initialMessages.data]);
 
-  return { messages, sendMessageText };
-}
-
-async function sendMessage(content: string, presentationId: string, userId: string) {
-  return await axios.post(`${QNA_API_BASE_URL}/api/presentation/${presentationId}/question`, {
-    content,
-    userId,
-  });
+  return { messages, sendMessageText, isLoading: initialMessages.isLoading };
 }

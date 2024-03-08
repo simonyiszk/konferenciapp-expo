@@ -11,9 +11,7 @@ interface QnaQuestionProps {
 
 export function QnaQuestion({ message }: QnaQuestionProps) {
   const { value, forward } = useAnimated();
-  useEffect(() => {
-    if (!message.isInitial) forward();
-  }, []);
+  useEffect(forward, []);
   return (
     <Animated.View
       style={{

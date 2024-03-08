@@ -6,7 +6,6 @@ import { Screen } from '../../components/base/screen';
 import { ScrollContent } from '../../components/base/scroll-content';
 import { Header } from '../../components/common/header';
 import { Setting } from '../../components/common/settings/setting';
-import { SettingToggle } from '../../components/common/settings/setting-toggle';
 import { Title } from '../../components/common/title';
 import i18n from '../../services/i18-next';
 import { SettingsStorageService } from '../../services/settings-storage.service';
@@ -45,8 +44,8 @@ export default function SettingsPage() {
     Appearance.setColorScheme(colorScheme);
     setSettings((prevState) => ({ ...prevState, mode: colorScheme ?? 'default' }));
   };
-  const toggleNotifications = (notifications: boolean) =>
-    setSettings((prevState) => ({ ...prevState, notifications: notifications }));
+  // const toggleNotifications = (notifications: boolean) =>
+  //   setSettings((prevState) => ({ ...prevState, notifications: notifications }));
 
   const { t } = useTranslation();
   return (
@@ -84,12 +83,12 @@ export default function SettingsPage() {
           currentValue={settings?.mode ?? 'light'}
           onChange={setMode}
         />
-        <SettingToggle
-          icon={settings?.notifications === true ? 'bell' : 'bell-off'}
-          label={t('settings.notifications')}
-          currentValue={settings?.notifications ?? false}
-          onChange={toggleNotifications}
-        />
+        {/*<SettingToggle*/}
+        {/*  icon={settings?.notifications === true ? 'bell' : 'bell-off'}*/}
+        {/*  label={t('settings.notifications')}*/}
+        {/*  currentValue={settings?.notifications ?? false}*/}
+        {/*  onChange={toggleNotifications}*/}
+        {/*/>*/}
       </ScrollContent>
     </Screen>
   );
