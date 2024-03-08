@@ -17,6 +17,12 @@
       "channel": "staging"
     },
     "production": {
+      "android": {
+        "autoIncrement": true
+      },
+      "ios": {
+        "autoIncrement": true
+      },
       "channel": "production"
     }
   },
