@@ -14,7 +14,7 @@ export function ErrorBoundary(props: ErrorBoundaryProps) {
   usePageView('error');
   return (
     <View
-      className='bg-blue-500 items-center justify-center flex-1 space-y-5'
+      className='bg-blue-500 items-center justify-center h-full space-y-5'
       style={{
         paddingTop: top,
         paddingBottom: bottom,
@@ -27,7 +27,7 @@ export function ErrorBoundary(props: ErrorBoundaryProps) {
         <Subtitle className='text-white/50 flex-shrink'>{props.error.message}</Subtitle>
       </ScrollView>
       <Subtitle className='text-white/50'>{t('errBoundary.sub')}</Subtitle>
-      <StyledButton onPress={props.retry} className='bg-blue-900'>
+      <StyledButton onPress={props.retry} className='bg-blue-900 mb-10'>
         {t('errBoundary.retry')}
       </StyledButton>
     </View>
