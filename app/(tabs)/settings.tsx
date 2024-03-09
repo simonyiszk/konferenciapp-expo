@@ -7,6 +7,7 @@ import { ScrollContent } from '../../components/base/scroll-content';
 import { Header } from '../../components/common/header';
 import { Setting } from '../../components/common/settings/setting';
 import { Title } from '../../components/common/title';
+import { AppDetails } from '../../components/settings/app-details';
 import i18n from '../../services/i18-next';
 import { SettingsStorageService } from '../../services/settings-storage.service';
 import { SettingsType } from '../../types/settings.type';
@@ -89,6 +90,7 @@ export default function SettingsPage() {
         {/*  currentValue={settings?.notifications ?? false}*/}
         {/*  onChange={toggleNotifications}*/}
         {/*/>*/}
+        <AppDetails />
       </ScrollContent>
     </Screen>
   );

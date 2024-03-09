@@ -32,7 +32,7 @@ export class MessagingService {
     });
   }
 
-  private static async getUserId(): Promise<string> {
+  static async getUserId(): Promise<string> {
     if (this.userId) return this.userId;
     let userIdFromStorage = await AsyncStorage.getItem('userId');
     if (!userIdFromStorage) {

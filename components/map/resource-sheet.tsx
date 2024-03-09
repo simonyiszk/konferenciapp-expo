@@ -6,6 +6,8 @@ import { useAnimated } from '../../utils/animation.utils';
 import { cn } from '../../utils/common.utils';
 import { StyledText } from '../base/text';
 
+const DISPLAY_ID = false;
+
 interface ResourceSheetProps extends ViewProps {
   resource: MapResource | undefined;
 }
@@ -34,7 +36,8 @@ export function ResourceSheet({ resource, className, ...props }: ResourceSheetPr
       {...props}
     >
       <StyledText className='text-2xl'>
-        {savedResource?.title} ({savedResource?.id})
+        {savedResource?.title}
+        {DISPLAY_ID && ` (${savedResource?.id})`}
       </StyledText>
       <StyledText className='text-slate-500 text-lg'>{savedResource?.description.hu}</StyledText>
     </Animated.View>
