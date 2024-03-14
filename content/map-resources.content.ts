@@ -4,6 +4,7 @@ export const MapResources: MapResource[] = [
   {
     id: 'DOOR',
     title: 'Bejárat',
+    enTitle: 'Entrance',
     description: {
       hu: 'Itt jössz be!',
       en: 'This is the entrance!',
@@ -12,6 +13,7 @@ export const MapResources: MapResource[] = [
   {
     id: 'COFFEE',
     title: 'Chill sarok',
+    enTitle: 'Chill corner',
     description: {
       hu: 'Kapcsolódj ki egy kávé mellett!',
       en: 'Relax with a coffee!',
@@ -20,6 +22,7 @@ export const MapResources: MapResource[] = [
   {
     id: 'COAT',
     title: 'Ruhatár',
+    enTitle: 'Cloakroom',
     description: {
       hu: 'Itt hagyhatod a kabátod!',
       en: 'You can leave your coat here!',
@@ -28,6 +31,7 @@ export const MapResources: MapResource[] = [
   {
     id: 'REGISTRATION',
     title: 'Regisztráció',
+    enTitle: 'Registration',
     description: {
       hu: 'Itt indul minden!',
       en: 'This is where everything starts!',
@@ -36,6 +40,7 @@ export const MapResources: MapResource[] = [
   {
     id: 'IB028',
     title: 'IB028-as előadó',
+    enTitle: 'Hall IB028',
     description: {
       hu: 'Előadóterem, melyben érdekes előadásokat hallhatsz!',
       en: 'Presentation room, where you can listen to interesting presentations!',
@@ -44,6 +49,7 @@ export const MapResources: MapResource[] = [
   {
     id: 'IB025',
     title: 'IB025-ös előadó',
+    enTitle: 'Hall IB025',
     description: {
       hu: 'Előadóterem, melyben érdekes előadásokat hallhatsz!',
       en: 'Presentation room, where you can listen to interesting presentations!',
@@ -60,6 +66,7 @@ export const MapResources: MapResource[] = [
   {
     id: 'ORG',
     title: 'Rendezők',
+    enTitle: 'Organizers',
     description: {
       hu: 'Itt találod a rendezőket!',
       en: 'You can find the organizers here!',
@@ -252,6 +259,7 @@ export const MapResources: MapResource[] = [
   {
     id: 'WC',
     title: 'Mosdó',
+    enTitle: 'Restroom',
     description: {
       hu: 'Itt találod a mosdót!',
       en: 'You can find the toilet here!',
@@ -260,6 +268,7 @@ export const MapResources: MapResource[] = [
   {
     id: 'WC_2',
     title: 'Mosdó',
+    enTitle: 'Restroom',
     description: {
       hu: 'Itt találod a mosdót!',
       en: 'You can find the toilet here!',
@@ -268,6 +277,7 @@ export const MapResources: MapResource[] = [
   {
     id: 'WC_3',
     title: 'Mosdó',
+    enTitle: 'Restroom',
     description: {
       hu: 'Itt találod a mosdót!',
       en: 'You can find the toilet here!',

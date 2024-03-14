@@ -1,3 +1,4 @@
+import i18n from 'i18next';
 import { useEffect, useState } from 'react';
 import { Animated, ViewProps } from 'react-native';
 
@@ -38,11 +39,13 @@ export function ResourceSheet({ resource, onClose, className, ...props }: Resour
       {...props}
     >
       <StyledText className='text-2xl pr-10' numberOfLines={1}>
-        {savedResource?.title}
+          {i18n.language == 'en' && savedResource?.enTitle !== undefined ? savedResource?.enTitle : savedResource?.title}
         {DISPLAY_ID && ` (${savedResource?.id})`}
       </StyledText>
       <SheetCloseButton onPress={onClose} />
-      <StyledText className='text-slate-500 text-lg'>{savedResource?.description.hu}</StyledText>
+      <StyledText className='text-slate-500 text-lg'>
+          {i18n.language == 'en' ? savedResource?.description.en : savedResource?.description.hu}
+      </StyledText>
     </Animated.View>
   );
 }
