@@ -22,27 +22,47 @@ export function Setting({ label, availableValues, currentValue, onChange, icon }
   };
 
   return (
-    <View className='mb-5 rounded-xl bg-white dark:bg-slate-800 active:bg-slate-50 active:dark:bg-slate-700 px-3 shadow-md shadow-slate-500/10'>
-      <Pressable className='flex-row justify-between items-center py-5' onPress={toggleOpen}>
+    <View
+      testID='setting'
+      className='mb-5 rounded-xl bg-white dark:bg-slate-800 active:bg-slate-50 active:dark:bg-slate-700 px-3 shadow-md shadow-slate-500/10'
+    >
+      <Pressable testID='setting-header' className='flex-row justify-between items-center py-5' onPress={toggleOpen}>
         <View className='flex-row items-center'>
-          {icon && <Feather name={icon} color={extendedColors.slate['400']} size={20} />}
-          <StyledText className='text-xl pl-1'>{label}</StyledText>
+          {icon && <Feather testID='setting-icon' name={icon} color={extendedColors.slate['400']} size={20} />}
+          <StyledText testID='setting-label' className='text-xl pl-1'>
+            {label}
+          </StyledText>
         </View>
         <View className='flex-row items-center'>
-          <StyledText className='text-xl text-slate-400'>{currentOption?.label}</StyledText>
-          <Feather name={open ? 'chevron-down' : 'chevron-right'} color={extendedColors.slate['400']} size={20} />
+          <StyledText testID='setting-current-label' className='text-xl text-slate-400'>
+            {currentOption?.label}
+          </StyledText>
+          <Feather
+            testID='setting-open-icon'
+            name={open ? 'chevron-down' : 'chevron-right'}
+            color={extendedColors.slate['400']}
+            size={20}
+          />
         </View>
       </Pressable>
       {open &&
         availableValues.map((option) => (
           <Pressable
             key={option.value}
+            testID={`setting-option-${option.value}`}
             className='flex-row justify-between items-center border-t border-slate-200 dark:border-slate-700 py-2'
             onPress={() => onSelect(option.value)}
           >
-            <StyledText className='text-xl'>{option.label}</StyledText>
+            <StyledText testID={`setting-option-${option.value}-label`} className='text-xl'>
+              {option.label}
+            </StyledText>
             {option.value === currentValue && (
-              <Feather name={'check'} color={extendedColors.primary['500']} size={20} />
+              <Feather
+                testID={`setting-option-${option.value}-selected`}
+                name={'check'}
+                color={extendedColors.primary['500']}
+                size={20}
+              />
             )}
           </Pressable>
         ))}
