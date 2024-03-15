@@ -44,7 +44,7 @@ export function QnaScreen() {
   };
 
   return (
-    <Screen>
+    <Screen analyticsScreenName={`qna/${id}`}>
       <Header>
         <Title>{t('qna.title')}</Title>
         {presentation.isLoading && <SkeletonTitle />}
