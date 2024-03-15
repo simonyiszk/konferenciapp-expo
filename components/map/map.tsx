@@ -124,6 +124,7 @@ export function Map({ onSelectedResource, selectedResource }: MapProps) {
         d='M392.5 1018L542.5 1045L523.5 1145.5L374.5 1104.5L392.5 1018Z'
       />
       <G id='TABLES'>
+        <MapTable id='23' onPress={onSelectedResource} selectedResource={selectedResource} x='375' y='1221' />
         <MapTable
           id='22'
           onPress={onSelectedResource}
