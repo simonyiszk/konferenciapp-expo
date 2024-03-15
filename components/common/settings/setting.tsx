@@ -37,7 +37,7 @@ export function Setting({ label, availableValues, currentValue, onChange, icon }
         availableValues.map((option) => (
           <Pressable
             key={option.value}
-            className='flex-row justify-between items-center border-t border-slate-200 py-2'
+            className='flex-row justify-between items-center border-t border-slate-200 dark:border-slate-700 py-2'
             onPress={() => onSelect(option.value)}
           >
             <StyledText className='text-xl'>{option.label}</StyledText>

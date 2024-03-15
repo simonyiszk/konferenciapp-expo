@@ -17,7 +17,7 @@ interface NewsDetailsPageProps {
 export function NewsDetailsPage({ id }: NewsDetailsPageProps) {
   const { data, error, isLoading } = useNewsItem(id);
   const { t } = useTranslation();
-  if (!data) return <Screen />;
+  if (!data) return <Screen analyticsScreenName='news/unknown' />;
   return (
     <Screen analyticsScreenName={`news/${id}`}>
       <Header>

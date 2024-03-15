@@ -19,6 +19,10 @@ export default function MapPage() {
     setSelectedResource(res);
   };
 
+  const onClose = () => {
+    setSelectedResource(undefined);
+  };
+
   return (
     <Screen analyticsScreenName='map'>
       <Header>
@@ -33,7 +37,7 @@ export default function MapPage() {
       >
         <Map selectedResource={selectedResource?.id} onSelectedResource={onSelectedResource} />
       </ReactNativeZoomableViewWithGestures>
-      <ResourceSheet resource={selectedResource} />
+      <ResourceSheet resource={selectedResource} onClose={onClose} />
     </Screen>
   );
 }

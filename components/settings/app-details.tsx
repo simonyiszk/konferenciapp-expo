@@ -2,7 +2,7 @@ import Constants from 'expo-constants';
 import * as Updates from 'expo-updates';
 import React, { useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Platform, View } from 'react-native';
+import { View } from 'react-native';
 
 import { MessagingService } from '../../services/messaging.service';
 import { StyledText } from '../base/text';
@@ -12,9 +12,7 @@ export function AppDetails() {
   const appVersion = useMemo(() => {
     const update = Updates.updateId ?? '?';
     const appVersion = Constants.expoConfig?.version ?? '?';
-    const versionCode =
-      Platform.OS === 'android' ? Constants.expoConfig?.android?.versionCode : Constants.expoConfig?.ios?.buildNumber;
-    return `${appVersion} (${versionCode ?? '?'}) - ${update}`;
+    return `${appVersion} - ${update}`;
   }, []);
 
   const appName = Constants.expoConfig?.name ?? 'App';

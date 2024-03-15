@@ -37,16 +37,16 @@ export const MapResources: MapResource[] = [
     id: 'IB028',
     title: 'IB028-as előadó',
     description: {
-      hu: 'A legnagyobb előadóterem!',
-      en: 'The biggest lecture hall!',
+      hu: 'Előadóterem, melyben érdekes előadásokat hallhatsz!',
+      en: 'Presentation room, where you can listen to interesting presentations!',
     },
   },
   {
     id: 'IB025',
     title: 'IB025-ös előadó',
     description: {
-      hu: 'Egy kisebb előadóterem!',
-      en: 'A smaller lecture hall!',
+      hu: 'Előadóterem, melyben érdekes előadásokat hallhatsz!',
+      en: 'Presentation room, where you can listen to interesting presentations!',
     },
   },
   {
@@ -63,6 +63,14 @@ export const MapResources: MapResource[] = [
     description: {
       hu: 'Itt találod a rendezőket!',
       en: 'You can find the organizers here!',
+    },
+  },
+  {
+    id: '23',
+    title: 'BME Solar Boat Team',
+    description: {
+      hu: 'Napenergiával működő, teljesen elektromos hajtású versenyhajót építő csapat.',
+      en: 'A team building a solar-powered, fully electric drive racing boat.',
     },
   },
   {
