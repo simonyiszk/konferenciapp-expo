@@ -1,0 +1,31 @@
+name: Dynamic Analysis
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
+    branches:
+      - main
+      - dev
+
+jobs:
+    tests:
+        name: Tests
+        runs-on: ubuntu-latest
+
+        steps:
+          - name: Checkout code
+            uses: actions/checkout@v3
+
+          - name: Setup Node.js
+            uses: actions/setup-node@v3
+            with:
+              node-version: '20'
+
+          - name: Install dependencies
+            run: yarn install --frozen-lockfile --non-interactive --production=false
+
+          - name: Run Jest tests
+            run: yarn test
