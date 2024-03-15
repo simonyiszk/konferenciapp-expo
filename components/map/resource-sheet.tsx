@@ -39,12 +39,12 @@ export function ResourceSheet({ resource, onClose, className, ...props }: Resour
       {...props}
     >
       <StyledText className='text-2xl pr-10' numberOfLines={1}>
-          {i18n.language == 'en' && savedResource?.enTitle !== undefined ? savedResource?.enTitle : savedResource?.title}
+        {i18n.language === 'en' && savedResource?.title.en ? savedResource?.title.en : savedResource?.title.hu}
         {DISPLAY_ID && ` (${savedResource?.id})`}
       </StyledText>
       <SheetCloseButton onPress={onClose} />
       <StyledText className='text-slate-500 text-lg'>
-          {i18n.language == 'en' ? savedResource?.description.en : savedResource?.description.hu}
+        {i18n.language == 'en' ? savedResource?.description.en : savedResource?.description.hu}
       </StyledText>
     </Animated.View>
   );
