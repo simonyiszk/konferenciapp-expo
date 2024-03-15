@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { KeyboardAvoidingView, TextInput, View } from 'react-native';
+import { KeyboardAvoidingView, Platform, TextInput, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { extendedColors } from '../../theme/extendedColors';
@@ -34,7 +34,7 @@ export function Input({ placeholder, onSubmit, disabled = false }: InputProps) {
       behavior='position'
       style={{ paddingBottom: insets.bottom + 100 }}
       className='justify-end absolute w-full bottom-0'
-      enabled
+      enabled={Platform.OS === 'ios'}
     >
       <View className='mx-5 flex-row space-x-3 rounded-xl bg-white dark:bg-slate-800 px-3 py-2 shadow-md max-h-60'>
         <TextInput
