@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from '@testing-library/react-native';
+import { render, waitFor } from '@testing-library/react-native';
 
 import { StyledButton } from '../../../components/common/styled-button';
 

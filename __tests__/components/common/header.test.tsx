@@ -1,4 +1,5 @@
 import { render } from '@testing-library/react-native';
+import * as router from 'expo-router';
 import { View } from 'react-native';
 
 import { Header } from '../../../components/common/header';
@@ -27,9 +28,10 @@ it('should render the header with a back button', () => {
 });
 
 it("should not render the back button if it can't go back", () => {
-  jest.spyOn(require('expo-router'), 'useNavigation').mockReturnValue({
+  jest.spyOn(router, 'useNavigation').mockReturnValue({
     canGoBack: jest.fn().mockReturnValue(false),
   });
+
   const { queryByTestId } = render(<Header />);
   expect(queryByTestId('header-container')).toBeTruthy();
   expect(queryByTestId('back-button')).toBeFalsy();
