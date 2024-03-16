@@ -31,4 +31,4 @@ jobs:
             run: yarn test:coverage
 
           - name: Coverage Report
-            uses: codecov/codecov-action@v4
+            uses: ArtiomTr/jest-coverage-report-action@v2
