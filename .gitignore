@@ -43,3 +43,5 @@ ios
 .env
 google-service-account-key.json
 
+coverage
+
