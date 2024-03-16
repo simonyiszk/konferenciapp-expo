@@ -37,8 +37,8 @@ export default function PresentationListPage() {
         {[0, 1, 2].map((buttonNumber) => (
           <StyledButton
             key={buttonNumber}
-            variant='outline'
-            style={{ margin: 8 }} // Adjust styling here as needed
+            variant={buttonNumber === RenderMode ? 'primary' : 'outline'}
+            style={{ margin: 8 }}
             onPress={() => handleButtonClick(buttonNumber)}
           >
             {t(`${ButtonNames[buttonNumber]}`)}
