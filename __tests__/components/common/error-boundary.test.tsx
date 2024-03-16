@@ -2,6 +2,9 @@ import { render, userEvent } from '@testing-library/react-native';
 
 import { ErrorBoundary } from '../../../components/common/error-boundary';
 
+const user = userEvent.setup();
+jest.useFakeTimers();
+
 jest.mock('react-i18next', () => ({
   useTranslation: () => ({ t: (key: string) => key }),
 }));
@@ -23,6 +26,6 @@ it('should call retry function', async () => {
   const { getByTestId } = render(
     <ErrorBoundary error={{ name: 'Error name', message: 'Error message' }} retry={retry} />
   );
-  await userEvent.press(getByTestId('error-retry'));
+  await user.press(getByTestId('error-retry'));
   expect(retry).toHaveBeenCalled();
 });

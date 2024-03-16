@@ -2,6 +2,9 @@ import { render, userEvent, waitFor } from '@testing-library/react-native';
 
 import { Setting } from '../../../components/common/settings/setting';
 
+const user = userEvent.setup();
+jest.useFakeTimers();
+
 it('should be closed by default', async () => {
   const { queryByTestId } = render(
     <Setting
@@ -53,9 +56,9 @@ it('should open and close', async () => {
       onChange={() => {}}
     />
   );
-  await userEvent.press(getByTestId('setting-header'));
+  await user.press(getByTestId('setting-header'));
   expect(queryByTestId('setting-option-test')).toBeTruthy();
-  await userEvent.press(getByTestId('setting-header'));
+  await user.press(getByTestId('setting-header'));
   await waitFor(() => expect(queryByTestId('setting-option-test')).toBeFalsy());
 });
 
@@ -74,8 +77,8 @@ it('should call onChange when selecting a value', async () => {
       onChange={onChange}
     />
   );
-  await userEvent.press(getByTestId('setting-header'));
-  await userEvent.press(getByTestId('setting-option-test'));
+  await user.press(getByTestId('setting-header'));
+  await user.press(getByTestId('setting-option-test'));
   expect(onChange).toHaveBeenCalledWith('test');
 });
 
@@ -116,7 +119,7 @@ it('should display icon next to selected value', async () => {
       icon='arrow-right'
     />
   );
-  await userEvent.press(queryByTestId('setting-header'));
+  await user.press(queryByTestId('setting-header'));
   expect(queryByTestId('setting-option-test-selected')).toBeTruthy();
   expect(queryByTestId('setting-option-test2-selected')).toBeFalsy();
 });
@@ -137,7 +140,7 @@ it('should display every option', async () => {
     <Setting label='Test setting' availableValues={options} currentValue='test' onChange={() => {}} />
   );
 
-  await userEvent.press(queryByTestId('setting-header'));
+  await user.press(queryByTestId('setting-header'));
   options.forEach((option) => {
     expect(queryByTestId(`setting-option-${option.value}`)).toBeTruthy();
   });
