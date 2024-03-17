@@ -21,6 +21,7 @@ export const resources = {
         empty: 'No presentations available.',
         favorites: 'Favorites',
         favoritesTitle: 'Favorite presentations',
+        allFilter: 'All',
       },
       news: {
         highlight: 'Highlight',
@@ -79,6 +80,7 @@ export const resources = {
         empty: 'Nincs megjeleníthető előadás.',
         favorites: 'Kedvenceim',
         favoritesTitle: 'Kedvenc előadásaim',
+        allFilter: 'Összes',
       },
       news: {
         highlight: 'Kiemelt',
