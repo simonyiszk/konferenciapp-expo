@@ -16,7 +16,7 @@ export function Header({ children, className, corner, ...props }: HeaderProps) {
   return (
     <View className={cn('space-y-5 mx-5', className)} {...props}>
       {(showBackButton || corner) && (
-        <View className='flex flex-row items-center justify-between'>
+        <View className='flex flex-row items-center justify-between z-10'>
           {showBackButton && (
             <Pressable onPress={navigation.goBack}>
               <Feather name='arrow-left' size={30} color={extendedColors.primary['500']} />

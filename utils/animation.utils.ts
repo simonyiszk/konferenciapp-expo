@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Animated, Easing } from 'react-native';
 
-export function usePulseAnimation() {
+export function usePulseAnimation(duration = 1000) {
   const [pulseValue] = useState(new Animated.Value(0));
 
   useEffect(() => {
@@ -10,13 +10,13 @@ export function usePulseAnimation() {
         Animated.sequence([
           Animated.timing(pulseValue, {
             toValue: 1,
-            duration: 1000,
+            duration: duration,
             easing: Easing.inOut(Easing.ease),
             useNativeDriver: true,
           }),
           Animated.timing(pulseValue, {
             toValue: 0,
-            duration: 1000,
+            duration: duration,
             easing: Easing.inOut(Easing.ease),
             useNativeDriver: true,
           }),

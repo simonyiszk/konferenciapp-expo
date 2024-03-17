@@ -1,5 +1,6 @@
 import { usePresentation } from '../../../hooks/use-presentation';
 import { ConferenceService } from '../../../services/conference.service';
+import { isPresentationCurrent } from '../../../utils/presentation.utils';
 import { Screen } from '../../base/screen';
 import { ScrollContent } from '../../base/scroll-content';
 import { StyledText } from '../../base/text';
@@ -19,13 +20,14 @@ export function PresentationDetailsPage({ slug }: ScheduleDetailsPageProps) {
   const { data, isLoading } = usePresentation(slug);
   const startTime = ConferenceService.getFormattedTimestamp(data?.startTime ?? '');
   const endTime = ConferenceService.getFormattedTimestamp(data?.endTime ?? '');
+  const isCurrent = data ? isPresentationCurrent(data) : false;
   return (
     <Screen analyticsScreenName={`presentation-details/` + slug}>
       <Header
         corner={
           <>
             {data && <FavoriteButton presentation={data} />}
-            <QnaButton slug={slug} />
+            <QnaButton highlight={isCurrent} slug={slug} />
           </>
         }
       >
