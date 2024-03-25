@@ -44,7 +44,12 @@ const StyledButton = forwardRef<View, StyledButtonProps>(
         {...props}
       >
         {leftIcon && (
-          <Feather name={leftIcon} size={24} color={variant === 'primary' ? 'white' : extendedColors.primary['500']} />
+          <Feather
+            testID='left-icon'
+            name={leftIcon}
+            size={24}
+            color={variant === 'primary' ? 'white' : extendedColors.primary['500']}
+          />
         )}
         {children && (
           <StyledText className={cn(textStyles[variant], 'font-raleway-bold text-center text-lg')}>
@@ -52,7 +57,12 @@ const StyledButton = forwardRef<View, StyledButtonProps>(
           </StyledText>
         )}
         {rightIcon && (
-          <Feather name={rightIcon} size={24} color={variant === 'primary' ? 'white' : extendedColors.primary['500']} />
+          <Feather
+            testID='right-icon'
+            name={rightIcon}
+            size={24}
+            color={variant === 'primary' ? 'white' : extendedColors.primary['500']}
+          />
         )}
       </Pressable>
     );

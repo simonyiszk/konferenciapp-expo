@@ -24,10 +24,12 @@ export function ErrorBoundary(props: ErrorBoundaryProps) {
     >
       <Title className='text-white'>{t('errBoundary.main')}</Title>
       <ScrollView>
-        <Subtitle className='text-white/50 flex-shrink'>{props.error.message}</Subtitle>
+        <Subtitle testID='error-message' className='text-white/50 flex-shrink'>
+          {props.error.message}
+        </Subtitle>
       </ScrollView>
       <Subtitle className='text-white/50'>{t('errBoundary.sub')}</Subtitle>
-      <StyledButton onPress={props.retry} className='bg-blue-900 mb-10'>
+      <StyledButton testID='error-retry' onPress={props.retry} className='bg-blue-900 mb-10'>
         {t('errBoundary.retry')}
       </StyledButton>
     </View>

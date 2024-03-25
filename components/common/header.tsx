@@ -14,11 +14,11 @@ export function Header({ children, className, corner, ...props }: HeaderProps) {
   const navigation = useNavigation();
   const showBackButton = navigation.canGoBack();
   return (
-    <View className={cn('space-y-5 mx-5', className)} {...props}>
+    <View testID='header-container' className={cn('space-y-5 mx-5', className)} {...props}>
       {(showBackButton || corner) && (
         <View className='flex flex-row items-center justify-between z-10'>
           {showBackButton && (
-            <Pressable onPress={navigation.goBack}>
+            <Pressable testID='back-button' onPress={navigation.goBack}>
               <Feather name='arrow-left' size={30} color={extendedColors.primary['500']} />
             </Pressable>
           )}
