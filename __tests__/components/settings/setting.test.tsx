@@ -1,6 +1,6 @@
 import { render, userEvent, waitFor } from '@testing-library/react-native';
 
-import { Setting } from '../../../components/common/settings/setting';
+import { Setting } from '../../../components/settings/setting';
 
 const user = userEvent.setup();
 jest.useFakeTimers();
