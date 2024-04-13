@@ -21,11 +21,20 @@ export function LocationFilter({ current, options, onChange, className, ...props
       )}
       {...props}
     >
-      <FilterButton isSelected={typeof current === 'undefined'} onPress={() => onChange(undefined)}>
+      <FilterButton
+        testID='location-filter-option-all'
+        isSelected={typeof current === 'undefined'}
+        onPress={() => onChange(undefined)}
+      >
         {t('presentations.allFilter')}
       </FilterButton>
-      {options.map((option, index) => (
-        <FilterButton key={index} isSelected={current === option} onPress={() => onChange(option)}>
+      {options.map((option) => (
+        <FilterButton
+          key={option}
+          testID={`location-filter-option-${option}`}
+          isSelected={current === option}
+          onPress={() => onChange(option)}
+        >
           {option}
         </FilterButton>
       ))}

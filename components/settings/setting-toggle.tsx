@@ -2,8 +2,8 @@ import { Feather } from '@expo/vector-icons';
 import React, { ComponentProps } from 'react';
 import { Switch, View, ViewProps } from 'react-native';
 
-import { extendedColors } from '../../../theme/extendedColors';
-import { StyledText } from '../../base/text';
+import { extendedColors } from '../../theme/extendedColors';
+import { StyledText } from '../base/text';
 
 interface SettingsToggleProps extends ViewProps {
   label: string;
