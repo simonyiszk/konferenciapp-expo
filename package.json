@@ -1,6 +1,6 @@
 {
   "name": "konferenciapp",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "main": "expo-router/entry",
   "scripts": {
     "start": "expo start",
@@ -30,7 +30,6 @@
     "clsx": "^2.1.0",
     "date-fns": "^3.2.0",
     "dotenv": "^16.4.1",
-    "eas-cli": "^7.3.0",
     "env-var": "^7.4.1",
     "expo": "~49.0.21",
     "expo-constants": "~14.4.2",
