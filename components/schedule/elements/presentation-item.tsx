@@ -2,6 +2,7 @@ import { useNavigation } from 'expo-router';
 import { Image, PressableProps, View } from 'react-native';
 import { NativeStackNavigationProp } from 'react-native-screens/native-stack';
 
+import { ARCHIVE } from '../../../config/env.config';
 import { useFavoritePresentations } from '../../../contexts/favorite-presentations.context';
 import { ConferenceService } from '../../../services/conference.service';
 import { PresentationDto } from '../../../types/conference-api.type';
@@ -19,7 +20,7 @@ interface PresentationItemProps extends Omit<PressableProps, 'onPress' | 'onPres
 export function PresentationItem({ presentation, className, ...props }: PresentationItemProps) {
   const { isFavoritePresentation } = useFavoritePresentations();
   const router = useNavigation<NativeStackNavigationProp<{ 'presentation-details': { id: string } }>>();
-  const isPast = isPresentationPast(presentation);
+  const isPast = isPresentationPast(presentation) && !ARCHIVE;
   const isFavorite = isFavoritePresentation(presentation.slug);
   const startTime = ConferenceService.getFormattedTimestamp(presentation.startTime);
   const endTime = ConferenceService.getFormattedTimestamp(presentation.endTime);

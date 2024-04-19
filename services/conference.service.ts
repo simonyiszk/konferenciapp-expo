@@ -5,8 +5,9 @@ import { FullConferenceDto } from '../types/conference-api.type';
 
 export class ConferenceService {
   static async getConferenceData(): Promise<FullConferenceDto> {
-    const response = await axiosInstance.get<FullConferenceDto>('/api/conference/index');
+    const response = await axiosInstance.get<FullConferenceDto>('/api/conference');
     response.data.presentations = ConferenceService.sortPresentationsByStartDate(response.data);
+    ConferenceService.prefixConferenceImages(response.data);
     return response.data;
   }
 
@@ -30,5 +31,19 @@ export class ConferenceService {
     } catch {
       return 'n/a';
     }
+  }
+
+  static prefixConferenceImages(conference: FullConferenceDto) {
+    conference.presentations.forEach((p) => {
+      p.presenter.pictureUrl = ConferenceService.prefixPresenterImage(p.presenter);
+    });
+    return conference;
+  }
+
+  static prefixPresenterImage(presenter: { pictureUrl: string }) {
+    if (presenter.pictureUrl.startsWith('http')) {
+      return presenter.pictureUrl;
+    }
+    return `https://konferencia.simonyi.bme.hu${presenter.pictureUrl}`;
   }
 }

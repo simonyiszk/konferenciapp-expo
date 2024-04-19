@@ -7,11 +7,13 @@ import { ErrorMessage } from '../../../components/common/error-message';
 import { Header } from '../../../components/common/header';
 import { SectionTitle } from '../../../components/common/sectiontitle';
 import { Separator } from '../../../components/common/separator';
+import { StatusMessage } from '../../../components/common/status-message';
 import { Title } from '../../../components/common/title';
 import { HomeNewsList } from '../../../components/news/layouts/home-news-list';
 import { NewsItemSkeletonList } from '../../../components/news/layouts/news-item-skeleton-list';
 import { HomePresentationList } from '../../../components/schedule/layouts/home-presentation-list';
 import { PresentationItemSkeletonList } from '../../../components/schedule/layouts/presentation-item-skeleton-list';
+import { ARCHIVE } from '../../../config/env.config';
 import { useConference } from '../../../hooks/use-conference';
 import { useNews } from '../../../hooks/use-news';
 
@@ -24,7 +26,15 @@ export default function HomePage() {
       <Header>
         <Title>{t('home.mainTitle')}</Title>
       </Header>
+
       <ScrollContent>
+        {ARCHIVE && (
+          <>
+            <StatusMessage type='warning'>{t('home.archive')}</StatusMessage>
+            <Separator />
+          </>
+        )}
+
         <SectionTitle>{t('home.presentationTitle')}</SectionTitle>
         {conference.isLoading && <PresentationItemSkeletonList className='mx-0' />}
         {conference.isError && <ErrorMessage>{t('home.error')}</ErrorMessage>}

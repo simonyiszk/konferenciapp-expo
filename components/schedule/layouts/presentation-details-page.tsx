@@ -1,3 +1,4 @@
+import { ENABLE_QNA } from '../../../config/env.config';
 import { usePresentation } from '../../../hooks/use-presentation';
 import { ConferenceService } from '../../../services/conference.service';
 import { isPresentationCurrent } from '../../../utils/presentation.utils';
@@ -27,7 +28,7 @@ export function PresentationDetailsPage({ slug }: ScheduleDetailsPageProps) {
         corner={
           <>
             {data && <FavoriteButton presentation={data} />}
-            <QnaButton highlight={isCurrent} slug={slug} />
+            {ENABLE_QNA && <QnaButton highlight={isCurrent} slug={slug} />}
           </>
         }
       >

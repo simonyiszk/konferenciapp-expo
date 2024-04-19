@@ -1,7 +1,9 @@
+import { Redirect } from 'expo-router';
 import { useEffect, useMemo, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ScrollView } from 'react-native';
 
+import { ENABLE_QNA } from '../../config/env.config';
 import { useMessaging } from '../../hooks/use-messaging';
 import { usePresentation } from '../../hooks/use-presentation';
 import { useSafeId } from '../../utils/common.utils';
@@ -42,6 +44,8 @@ export function QnaScreen() {
   const onSubmission = (messageText: string) => {
     messaging.sendMessageText(messageText, id);
   };
+
+  if (!ENABLE_QNA) return <Redirect href='/' />;
 
   return (
     <Screen analyticsScreenName={`qna/${id}`}>
