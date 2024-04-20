@@ -12,6 +12,8 @@ jobs:
     env:
       EXPO_PUBLIC_API_BASE_URL: ${{ vars.EXPO_PUBLIC_API_BASE_URL }}
       EXPO_PUBLIC_QNA_API_BASE_URL: ${{ vars.EXPO_PUBLIC_QNA_API_BASE_URL }}
+      EXPO_PUBLIC_ENABLE_QNA: ${{ vars.EXPO_PUBLIC_ENABLE_QNA }}
+      EXPO_PUBLIC_ARCHIVE: ${{ vars.EXPO_PUBLIC_ARCHIVE }}
     steps:
       - name: Check for EXPO_TOKEN
         run: |
