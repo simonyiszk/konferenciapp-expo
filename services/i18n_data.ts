@@ -30,6 +30,7 @@ export const resources = {
       },
       map: {
         key: 'en',
+        prompt: 'Click on items to view more information!',
       },
       settings: {
         title: 'Settings',
@@ -90,6 +91,7 @@ export const resources = {
       },
       map: {
         key: 'hu',
+        prompt: 'Kattints az elemekre a részletekért!',
       },
       settings: {
         title: 'Beállítások',

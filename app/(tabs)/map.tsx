@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 
 import { Screen } from '../../components/base/screen';
 import { Header } from '../../components/common/header';
+import { Subtitle } from '../../components/common/subtitle';
 import { Title } from '../../components/common/title';
 import { Map } from '../../components/map/map';
 import { ResourceSheet } from '../../components/map/resource-sheet';
@@ -27,6 +28,7 @@ export default function MapPage() {
     <Screen analyticsScreenName='map'>
       <Header>
         <Title>{t('tabbar.map')}</Title>
+        <Subtitle>{t('map.prompt')}</Subtitle>
       </Header>
       <ReactNativeZoomableViewWithGestures
         panBoundaryPadding={200}
