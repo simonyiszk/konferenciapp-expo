@@ -23,7 +23,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#000000"
       },
-      "package": "hu.kirdev.konferenciapp"
+      "package": "com.kirdev.konferenciapp"
     },
     "extra": {
       "eas": {
