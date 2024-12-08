@@ -30,12 +30,12 @@ export function QnaQuestion({ message }: QnaQuestionProps) {
       }}
       className='bg-primary-500 dark:bg-primary-300 rounded-t-2xl rounded-bl-2xl p-3 mb-2 ml-5'
     >
-      <StyledText className='text-white dark:text-slate-900 text-lg'>{message.text}</StyledText>
+      <StyledText className='text-white dark:text-background-900 text-lg'>{message.text}</StyledText>
       {message.status === 'pending' && (
-        <StyledText className='text-white/80 dark:text-slate-800/80 text-xs text-right'>Küldés...</StyledText>
+        <StyledText className='text-white/80 dark:text-background-800/80 text-xs text-right'>Küldés...</StyledText>
       )}
       {message.status === 'error' && (
-        <StyledText className='text-white/80 dark:text-slate-800/80 text-xs text-right'>Hiba</StyledText>
+        <StyledText className='text-white/80 dark:text-background-800/80 text-xs text-right'>Hiba</StyledText>
       )}
     </Animated.View>
   );

@@ -3,7 +3,7 @@
     "name": "KonferenciApp",
     "slug": "konferenciapp",
     "scheme": "konferenciapp",
-    "version": "1.2.1",
+    "version": "2.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon-rounded.png",
     "userInterfaceStyle": "automatic",
@@ -21,7 +21,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#000000"
+        "backgroundColor": "#31292F"
       },
       "package": "com.kirdev.konferenciapp"
     },
@@ -40,7 +40,7 @@
     "plugins": ["expo-router"],
     "notification": {
       "icon": "./assets/notification-icon.png",
-      "color": "#000000"
+      "color": "#31292F"
     }
   }
 }

@@ -27,7 +27,7 @@ export function FavoriteButton({ presentation }: FavoriteButtonProps) {
     <Pressable testID='favorite-button' onPress={onPress} className='mr-3'>
       <AntDesign
         name={isFavorite ? 'star' : 'staro'}
-        color={isFavorite ? extendedColors.primary['500'] : extendedColors.slate['500']}
+        color={isFavorite ? extendedColors.primary['500'] : extendedColors.background['500']}
         size={30}
       />
     </Pressable>

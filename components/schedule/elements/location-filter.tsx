@@ -16,7 +16,7 @@ export function LocationFilter({ current, options, onChange, className, ...props
   return (
     <View
       className={cn(
-        'flex flex-row space-x-2 bg-slate-200 dark:bg-slate-800 mx-5 rounded-lg justify-evenly p-1',
+        'flex flex-row space-x-2 bg-background-200 dark:bg-background-800 mx-5 rounded-lg justify-evenly p-1',
         className
       )}
       {...props}
@@ -51,17 +51,17 @@ function FilterButton({ children, isSelected, className, ...props }: FilterButto
   return (
     <Pressable
       className={cn(
-        'bg-transparent flex-1 items-center justify-center py-1 rounded-md transition-colors duration-300 ease-in-out active:bg-slate-50 active:dark:bg-slate-700',
+        'bg-transparent flex-1 items-center justify-center py-1 rounded-md transition-colors duration-300 ease-in-out active:bg-background-50 active:dark:bg-background-700',
         {
-          'bg-white dark:bg-slate-600': isSelected,
+          'bg-white dark:bg-background-600': isSelected,
         },
         className
       )}
       {...props}
     >
       <StyledText
-        className={cn('text-slate-500 text-xl', {
-          'text-slate-900 dark:text-white': isSelected,
+        className={cn('text-background-400 text-xl', {
+          'text-background-900 dark:text-white': isSelected,
         })}
       >
         {children}

@@ -35,7 +35,7 @@ export function QnaButton({ slug, highlight }: QnaButtonProps) {
         >
           <Feather
             name='message-circle'
-            color={highlight ? 'white' : extendedColors.slate[500]}
+            color={highlight ? 'white' : extendedColors.background[500]}
             size={highlight ? 26 : 30}
           />
         </Animated.View>
@@ -46,10 +46,10 @@ export function QnaButton({ slug, highlight }: QnaButtonProps) {
           className='absolute top-full right-1/2 shadow-md w-40 rounded-tr-none flex-row items-center space-x-2'
         >
           <Pressable onPress={() => setPromptOpen(false)}>
-            <Feather name='x' size={20} color={extendedColors.slate[300]} />
+            <Feather name='x' size={20} color={extendedColors.background[300]} />
           </Pressable>
           <View>
-            <StyledText className='text-xl font-raleway-bold'>Kérdezz</StyledText>
+            <StyledText className='text-xl'>Kérdezz</StyledText>
             <StyledText>az előadótól!</StyledText>
           </View>
         </ItemCard>
