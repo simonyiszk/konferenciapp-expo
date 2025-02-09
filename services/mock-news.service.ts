@@ -3,8 +3,8 @@ import { NewsService } from './news.service';
 
 export class MockNewsService implements NewsService {
   private static readonly NewsMock: NewsItemDetailsDto = {
-    title: 'Breaking News: New Product Launch',
-    content: 'Our company has launched a new product that will revolutionise the industry.',
+    title: 'Új app frissítés',
+    content: 'A 2025-ös konferenciára frissítettük a KonferenciApp-ot.',
     imageUrl: 'https://example.com/images/news/1.jpg',
     timestamp: new Date().getTime(),
     ogTitle: '',
@@ -16,11 +16,11 @@ export class MockNewsService implements NewsService {
     return {
       news: [
         {
-          title: 'Breaking News: New Product Launch',
+          title: 'Új app frissítés',
           imageUrl: 'https://example.com/images/news/1.jpg',
           timestamp: new Date().getTime(),
           url: 'https://example.com/news/1',
-          briefContent: 'Our company has launched a new product that will revolutionise the industry.',
+          briefContent: 'A 2025-ös konferenciára frissítettük a KonferenciApp-ot.',
           highlighted: true,
         },
       ],
