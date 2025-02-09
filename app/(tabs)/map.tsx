@@ -1,4 +1,4 @@
-import { ReactNativeZoomableViewWithGestures } from '@openspacelabs/react-native-zoomable-view';
+import { ReactNativeZoomableView } from '@openspacelabs/react-native-zoomable-view';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -30,15 +30,16 @@ export default function MapPage() {
         <Title>{t('tabbar.map')}</Title>
         <Subtitle>{t('map.prompt')}</Subtitle>
       </Header>
-      <ReactNativeZoomableViewWithGestures
+      <ReactNativeZoomableView
         panBoundaryPadding={200}
         initialZoom={0.5}
         maxZoom={2}
+        minZoom={0.3}
         contentHeight={1332}
         contentWidth={846}
       >
         <Map selectedResource={selectedResource?.id} onSelectedResource={onSelectedResource} />
-      </ReactNativeZoomableViewWithGestures>
+      </ReactNativeZoomableView>
       <ResourceSheet resource={selectedResource} onClose={onClose} />
     </Screen>
   );

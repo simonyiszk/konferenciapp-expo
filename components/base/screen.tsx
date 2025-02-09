@@ -12,7 +12,7 @@ export function Screen({ className, ...props }: ScreenProps) {
   const posthog = usePostHog();
   useEffect(() => {
     if (props.analyticsScreenName) {
-      posthog.screen(props.analyticsScreenName);
+      posthog?.screen(props.analyticsScreenName);
     }
   }, []);
   return <View className={cn('bg-background-50 dark:bg-background-900 flex-1', className)} {...props} />;

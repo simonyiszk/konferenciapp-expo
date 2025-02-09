@@ -5,23 +5,23 @@
     "scheme": "konferenciapp",
     "version": "2.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon-rounded.png",
+    "icon": "./assets/icon-light.png",
+    "newArchEnabled": true,
     "userInterfaceStyle": "automatic",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#000000"
-    },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "icon": "./assets/icon.png",
+      "icon": {
+        "dark": "./assets/icon-dark.png",
+        "light": "./assets/icon-light.png",
+        "tinted": "./assets/icon-tinted.png"
+      },
       "supportsTablet": true,
       "bundleIdentifier": "hu.kirdev.konferenciapp"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#31292F"
+        "backgroundColor": "#f18a4e"
       },
       "package": "com.kirdev.konferenciapp"
     },
@@ -37,7 +37,19 @@
       "policy": "sdkVersion"
     },
     "owner": "kir-dev",
-    "plugins": ["expo-router", "expo-localization"],
+    "plugins": [
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon-light.png",
+          "backgroundColor": "#F18A4E",
+          "dark": {
+            "image": "./assets/splash-icon-dark.png",
+            "backgroundColor": "#31292F"
+          }
+        }
+      ]
+    ],
     "notification": {
       "icon": "./assets/notification-icon.png",
       "color": "#31292F"

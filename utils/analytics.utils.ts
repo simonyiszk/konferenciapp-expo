@@ -5,6 +5,6 @@ export function usePageView(location?: string) {
   const posthog = usePostHog();
   useEffect(() => {
     if (!location) return;
-    posthog.screen(location);
+    posthog?.screen(location);
   }, []);
 }
