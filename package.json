@@ -3,9 +3,9 @@
   "version": "1.2.1",
   "main": "expo-router/entry",
   "scripts": {
-    "start": "expo run",
-    "android": "expo run:android",
-    "ios": "expo run:ios",
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
     "lint": "eslint \"./**/*.ts?(x)\" --fix",
     "lint:check": "eslint \"./**/*.ts?(x)\"",
     "format": "prettier --write \"**/*.(ts|tsx)\"",

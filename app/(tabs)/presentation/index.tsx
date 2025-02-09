@@ -24,8 +24,8 @@ export default function PresentationListPage() {
 
   const filteredPresentations = useMemo(() => {
     return filter
-      ? data?.presentations?.filter((presentation) => presentation.room === filter) ?? []
-      : data?.presentations ?? [];
+      ? (data?.presentations?.filter((presentation) => presentation.room === filter) ?? [])
+      : (data?.presentations ?? []);
   }, [data?.presentations, filter]);
 
   return (
