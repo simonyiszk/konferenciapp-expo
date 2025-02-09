@@ -1,7 +1,14 @@
 import axios from 'axios';
 
-import { API_BASE_URL } from './env.config';
+import { posthog } from './posthog.config';
+
+const featureFlagName = 'api_base_url';
 
 export const axiosInstance = axios.create({
-  baseURL: API_BASE_URL,
+  baseURL: '',
+});
+
+posthog.onFeatureFlag(featureFlagName, () => {
+  const baseUrl = posthog.getFeatureFlagPayload(featureFlagName);
+  axiosInstance.defaults.baseURL = baseUrl?.toString() ?? '';
 });

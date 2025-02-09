@@ -10,8 +10,7 @@ jobs:
     name: EAS Update
     runs-on: ubuntu-latest
     env:
-      EXPO_PUBLIC_API_BASE_URL: ${{ vars.EXPO_PUBLIC_API_BASE_URL }}
-      EXPO_PUBLIC_QNA_API_BASE_URL: ${{ vars.EXPO_PUBLIC_QNA_API_BASE_URL }}
+      EXPO_PUBLIC_POSTHOG_API_KEY: ${{ secrets.EXPO_PUBLIC_POSTHOG_API_KEY }}
     permissions:
       contents: read
       pull-requests: write
@@ -24,12 +23,8 @@ jobs:
           fi
       - name: Check for ENV variables
         run: |
-          if [ -z "${{ vars.EXPO_PUBLIC_API_BASE_URL }}" ]; then
-            echo "EXPO_PUBLIC_API_BASE_URL is not set"
-            exit 1
-          fi
-          if [ -z "${{ vars.EXPO_PUBLIC_QNA_API_BASE_URL }}" ]; then
-            echo "EXPO_PUBLIC_QNA_API_BASE_URL is not set"
+          if [ -z "${{ secrets.EXPO_PUBLIC_POSTHOG_API_KEY }}" ]; then
+            echo "EXPO_PUBLIC_POSTHOG_API_KEY is not set"
             exit 1
           fi
       - name: Checkout repository

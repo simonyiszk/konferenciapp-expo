@@ -37,7 +37,7 @@
       "policy": "sdkVersion"
     },
     "owner": "kir-dev",
-    "plugins": ["expo-router"],
+    "plugins": ["expo-router", "expo-localization"],
     "notification": {
       "icon": "./assets/notification-icon.png",
       "color": "#31292F"
