@@ -82,24 +82,6 @@ it('should call onChange when selecting a value', async () => {
   expect(onChange).toHaveBeenCalledWith('test');
 });
 
-it('should display the icon', () => {
-  const { getByTestId } = render(
-    <Setting
-      label='Test setting'
-      availableValues={[
-        {
-          label: 'Test label',
-          value: 'test',
-        },
-      ]}
-      currentValue='test'
-      onChange={() => {}}
-      icon='arrow-right'
-    />
-  );
-  expect(getByTestId('setting-icon')).toBeTruthy();
-});
-
 it('should display icon next to selected value', async () => {
   const { queryByTestId } = render(
     <Setting

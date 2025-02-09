@@ -2,17 +2,20 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 import { isBefore } from 'date-fns';
 
-import { QNA_API_BASE_URL } from '../config/env.config';
+import { posthog } from '../config/posthog.config';
 import { QnaMessage, QnaMessageDto } from '../types/qna.type';
 import { generateId } from '../utils/common.utils';
 
+const featureFlagName = 'enable_qna';
+
 export class MessagingService {
   static userId: string;
-
+  private static baseUrl: string;
+  private static enableQna: boolean;
   static async getMessagesForPresentationAndUser(presentationId: string): Promise<QnaMessage[]> {
     const userId = await this.getUserId();
     const response = await axios.get<QnaMessageDto[]>(
-      `${QNA_API_BASE_URL}/api/presentation/${presentationId}/question?userid=${userId}`
+      `${this.baseUrl}/api/presentation/${presentationId}/question?userid=${userId}`
     );
     const messages = response.data;
     messages.sort((a, b) => (isBefore(a.createdAt, b.createdAt) ? -1 : 1));
@@ -26,7 +29,7 @@ export class MessagingService {
 
   static async sendMessage(content: string, presentationId: string) {
     const userId = await this.getUserId();
-    return axios.post(`${QNA_API_BASE_URL}/api/presentation/${presentationId}/question`, {
+    return axios.post(`${this.baseUrl}/api/presentation/${presentationId}/question`, {
       content,
       userId,
     });
@@ -41,5 +44,16 @@ export class MessagingService {
     }
     this.userId = userIdFromStorage;
     return userIdFromStorage;
+  }
+
+  static async init() {
+    const enableQnaFromPosthog = posthog.getFeatureFlag(featureFlagName);
+    if (enableQnaFromPosthog) {
+      this.enableQna = Boolean(enableQnaFromPosthog);
+    }
+    const urlFromPosthog = posthog.getFeatureFlagPayload(featureFlagName);
+    if (urlFromPosthog) {
+      this.baseUrl = urlFromPosthog.toString();
+    }
   }
 }

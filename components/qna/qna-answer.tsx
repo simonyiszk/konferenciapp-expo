@@ -30,9 +30,9 @@ export function QnaAnswer({ message }: QnaAnswerProps) {
           outputRange: [0, 1],
         }),
       }}
-      className='bg-white dark:bg-slate-800 rounded-t-2xl rounded-br-2xl p-3 mb-2 mr-5'
+      className='bg-white dark:bg-background-800 rounded-t-2xl rounded-br-2xl p-3 mb-2 mr-5'
     >
-      <StyledText className='text-slate-900 dark:text-white text-lg'>{message.text}</StyledText>
+      <StyledText className='text-background-900 dark:text-white text-lg'>{message.text}</StyledText>
     </Animated.View>
   );
 }

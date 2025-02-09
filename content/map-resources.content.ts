@@ -1,93 +1,6 @@
 import { MapResource } from '../types/map.type';
 
-export const MapResources: MapResource[] = [
-  {
-    id: 'DOOR',
-    title: {
-      hu: 'Bejárat',
-      en: 'Entrance',
-    },
-    description: {
-      hu: 'Itt jössz be!',
-      en: 'This is the entrance!',
-    },
-  },
-  {
-    id: 'COFFEE',
-    title: {
-      hu: 'Chill sarok',
-      en: 'Chill corner',
-    },
-    description: {
-      hu: 'Kapcsolódj ki egy kávé mellett!',
-      en: 'Relax with a coffee!',
-    },
-  },
-  {
-    id: 'COAT',
-    title: {
-      hu: 'Ruhatár',
-      en: 'Cloakroom',
-    },
-    description: {
-      hu: 'Itt hagyhatod a kabátod!',
-      en: 'You can leave your coat here!',
-    },
-  },
-  {
-    id: 'REGISTRATION',
-    title: {
-      hu: 'Regisztráció',
-      en: 'Registration',
-    },
-    description: {
-      hu: 'Itt indul minden!',
-      en: 'This is where everything starts!',
-    },
-  },
-  {
-    id: 'IB028',
-    title: {
-      hu: 'IB028-as előadó',
-      en: 'Hall IB028',
-    },
-    description: {
-      hu: 'Előadóterem, melyben érdekes előadásokat hallhatsz!',
-      en: 'Presentation room, where you can listen to interesting presentations!',
-    },
-  },
-  {
-    id: 'IB025',
-    title: {
-      hu: 'IB025-ös előadó',
-      en: 'Hall IB025',
-    },
-    description: {
-      hu: 'Előadóterem, melyben érdekes előadásokat hallhatsz!',
-      en: 'Presentation room, where you can listen to interesting presentations!',
-    },
-  },
-  {
-    id: 'VIP',
-    title: {
-      hu: 'VIP',
-    },
-    description: {
-      hu: 'Különleges vendégeinknek!',
-      en: 'For our special guests!',
-    },
-  },
-  {
-    id: 'ORG',
-    title: {
-      hu: 'Rendezők',
-      en: 'Organizers',
-    },
-    description: {
-      hu: 'Itt találod a rendezőket!',
-      en: 'You can find the organizers here!',
-    },
-  },
+const Tables: MapResource[] = [
   {
     id: '23',
     title: {
@@ -318,6 +231,96 @@ export const MapResources: MapResource[] = [
       en: 'A leading international supplier of various technologies and services.',
     },
   },
+];
+
+export const MapResources: MapResource[] = [
+  {
+    id: 'DOOR',
+    title: {
+      hu: 'Bejárat',
+      en: 'Entrance',
+    },
+    description: {
+      hu: 'Itt jössz be!',
+      en: 'This is the entrance!',
+    },
+  },
+  {
+    id: 'COFFEE',
+    title: {
+      hu: 'Chill sarok',
+      en: 'Chill corner',
+    },
+    description: {
+      hu: 'Kapcsolódj ki egy kávé mellett!',
+      en: 'Relax with a coffee!',
+    },
+  },
+  {
+    id: 'COAT',
+    title: {
+      hu: 'Ruhatár',
+      en: 'Cloakroom',
+    },
+    description: {
+      hu: 'Itt hagyhatod a kabátod!',
+      en: 'You can leave your coat here!',
+    },
+  },
+  {
+    id: 'REGISTRATION',
+    title: {
+      hu: 'Regisztráció',
+      en: 'Registration',
+    },
+    description: {
+      hu: 'Itt indul minden!',
+      en: 'This is where everything starts!',
+    },
+  },
+  {
+    id: 'IB028',
+    title: {
+      hu: 'IB028-as előadó',
+      en: 'Hall IB028',
+    },
+    description: {
+      hu: 'Előadóterem, melyben érdekes előadásokat hallhatsz!',
+      en: 'Presentation room, where you can listen to interesting presentations!',
+    },
+  },
+  {
+    id: 'IB025',
+    title: {
+      hu: 'IB025-ös előadó',
+      en: 'Hall IB025',
+    },
+    description: {
+      hu: 'Előadóterem, melyben érdekes előadásokat hallhatsz!',
+      en: 'Presentation room, where you can listen to interesting presentations!',
+    },
+  },
+  {
+    id: 'VIP',
+    title: {
+      hu: 'VIP',
+    },
+    description: {
+      hu: 'Különleges vendégeinknek!',
+      en: 'For our special guests!',
+    },
+  },
+  {
+    id: 'ORG',
+    title: {
+      hu: 'Rendezők',
+      en: 'Organizers',
+    },
+    description: {
+      hu: 'Itt találod a rendezőket!',
+      en: 'You can find the organizers here!',
+    },
+  },
   {
     id: 'WC',
     title: {
@@ -351,4 +354,5 @@ export const MapResources: MapResource[] = [
       en: 'You can find the toilet here!',
     },
   },
+  ...Tables,
 ];

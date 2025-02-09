@@ -25,11 +25,11 @@ export function AppDetails() {
 
   return (
     <View className='items-center space-y-2'>
-      <StyledText className='text-slate-500'>{appName}</StyledText>
-      <StyledText className='text-slate-500'>{appVersion}</StyledText>
-      <StyledText className='text-slate-500'>UID: {userId}</StyledText>
-      <StyledText className='text-slate-500 text-center'>{t('settings.author')}</StyledText>
-      <StyledText className='text-slate-500'>{new Date().getFullYear()}.</StyledText>
+      <StyledText className='text-background-400'>{appName}</StyledText>
+      <StyledText className='text-background-400'>{appVersion}</StyledText>
+      <StyledText className='text-background-400'>UID: {userId}</StyledText>
+      <StyledText className='text-background-400 text-center'>{t('settings.author')}</StyledText>
+      <StyledText className='text-background-400'>{new Date().getFullYear()}.</StyledText>
     </View>
   );
 }

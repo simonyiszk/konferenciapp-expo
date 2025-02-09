@@ -10,7 +10,7 @@ type ButtonVariant = 'primary' | 'outline';
 
 const buttonStyles: Record<ButtonVariant, string> = {
   primary: 'bg-primary-500 active:bg-primary-600',
-  outline: 'bg-transparent border-2 border-primary-500 active:bg-yellow-500/30',
+  outline: 'bg-transparent border-2 border-primary-500 active:bg-primary-500/30',
 };
 
 const textStyles: Record<ButtonVariant, string> = {
@@ -51,11 +51,7 @@ const StyledButton = forwardRef<View, StyledButtonProps>(
             color={variant === 'primary' ? 'white' : extendedColors.primary['500']}
           />
         )}
-        {children && (
-          <StyledText className={cn(textStyles[variant], 'font-raleway-bold text-center text-lg')}>
-            {children}
-          </StyledText>
-        )}
+        {children && <StyledText className={cn(textStyles[variant], 'text-center text-lg')}>{children}</StyledText>}
         {rightIcon && (
           <Feather
             testID='right-icon'

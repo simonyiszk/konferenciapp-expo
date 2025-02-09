@@ -1,8 +1,8 @@
 import { useNavigation } from 'expo-router';
+import { useFeatureFlag } from 'posthog-react-native';
 import { Image, PressableProps, View } from 'react-native';
 import { NativeStackNavigationProp } from 'react-native-screens/native-stack';
 
-import { ARCHIVE } from '../../../config/env.config';
 import { useFavoritePresentations } from '../../../contexts/favorite-presentations.context';
 import { ConferenceService } from '../../../services/conference.service';
 import { PresentationDto } from '../../../types/conference-api.type';
@@ -19,8 +19,9 @@ interface PresentationItemProps extends Omit<PressableProps, 'onPress' | 'onPres
 
 export function PresentationItem({ presentation, className, ...props }: PresentationItemProps) {
   const { isFavoritePresentation } = useFavoritePresentations();
+  const isArchive = useFeatureFlag('archive_mode');
   const router = useNavigation<NativeStackNavigationProp<{ 'presentation-details': { id: string } }>>();
-  const isPast = isPresentationPast(presentation) && !ARCHIVE;
+  const isPast = isPresentationPast(presentation) && !isArchive;
   const isFavorite = isFavoritePresentation(presentation.slug);
   const startTime = ConferenceService.getFormattedTimestamp(presentation.startTime);
   const endTime = ConferenceService.getFormattedTimestamp(presentation.endTime);
@@ -45,10 +46,10 @@ export function PresentationItem({ presentation, className, ...props }: Presenta
           {presentation.title}
         </StyledText>
         <View className='flex-row overflow-hidden'>
-          <StyledText className='text-slate-500 flex-shrink' numberOfLines={1}>
+          <StyledText className='text-background-400 flex-shrink' numberOfLines={1}>
             {presentation.presenter.name}
           </StyledText>
-          <StyledText className='text-slate-500' numberOfLines={1}>
+          <StyledText className='text-background-400' numberOfLines={1}>
             {' '}
             • {startTime} - {endTime}
           </StyledText>

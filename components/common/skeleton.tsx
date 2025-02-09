@@ -7,7 +7,7 @@ export function SkeletonRectangle({ className, style, ...props }: ViewProps) {
   const { opacity } = usePulseAnimation();
   return (
     <Animated.View
-      className={cn('bg-slate-200 dark:bg-slate-800 rounded-xl', className)}
+      className={cn('bg-background-200 dark:bg-background-800 rounded-xl', className)}
       style={[{ opacity }, style]}
       {...props}
     />

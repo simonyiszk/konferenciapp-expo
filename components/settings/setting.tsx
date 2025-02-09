@@ -24,23 +24,23 @@ export function Setting({ label, availableValues, currentValue, onChange, icon }
   return (
     <View
       testID='setting'
-      className='mb-5 rounded-xl bg-white dark:bg-slate-800 active:bg-slate-50 active:dark:bg-slate-700 px-3 shadow-md shadow-slate-500/10'
+      className='mb-5 rounded-xl bg-white dark:bg-background-800 active:bg-background-50 active:dark:bg-background-700 px-3 shadow-md shadow-background-700/10'
     >
       <Pressable testID='setting-header' className='flex-row justify-between items-center py-5' onPress={toggleOpen}>
         <View className='flex-row items-center'>
-          {icon && <Feather testID='setting-icon' name={icon} color={extendedColors.slate['400']} size={20} />}
+          {icon && <Feather testID='setting-icon' name={icon} color={extendedColors.background['400']} size={20} />}
           <StyledText testID='setting-label' className='text-xl pl-1'>
             {label}
           </StyledText>
         </View>
         <View className='flex-row items-center'>
-          <StyledText testID='setting-current-label' className='text-xl text-slate-400'>
+          <StyledText testID='setting-current-label' className='text-xl text-background-400'>
             {currentOption?.label}
           </StyledText>
           <Feather
             testID='setting-open-icon'
             name={open ? 'chevron-down' : 'chevron-right'}
-            color={extendedColors.slate['400']}
+            color={extendedColors.background['400']}
             size={20}
           />
         </View>
@@ -50,7 +50,7 @@ export function Setting({ label, availableValues, currentValue, onChange, icon }
           <Pressable
             key={option.value}
             testID={`setting-option-${option.value}`}
-            className='flex-row justify-between items-center border-t border-slate-200 dark:border-slate-700 py-2'
+            className='flex-row justify-between items-center border-t border-background-200 dark:border-background-700 py-2'
             onPress={() => onSelect(option.value)}
           >
             <StyledText testID={`setting-option-${option.value}-label`} className='text-xl'>

@@ -1,3 +1,4 @@
+import { useFeatureFlag } from 'posthog-react-native';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -13,7 +14,6 @@ import { HomeNewsList } from '../../../components/news/layouts/home-news-list';
 import { NewsItemSkeletonList } from '../../../components/news/layouts/news-item-skeleton-list';
 import { HomePresentationList } from '../../../components/schedule/layouts/home-presentation-list';
 import { PresentationItemSkeletonList } from '../../../components/schedule/layouts/presentation-item-skeleton-list';
-import { ARCHIVE } from '../../../config/env.config';
 import { useConference } from '../../../hooks/use-conference';
 import { useNews } from '../../../hooks/use-news';
 
@@ -21,6 +21,8 @@ export default function HomePage() {
   const conference = useConference();
   const news = useNews();
   const { t } = useTranslation();
+  const isArchive = useFeatureFlag('archive_mode');
+
   return (
     <Screen analyticsScreenName='home'>
       <Header>
@@ -28,7 +30,7 @@ export default function HomePage() {
       </Header>
 
       <ScrollContent>
-        {ARCHIVE && (
+        {isArchive && (
           <>
             <StatusMessage type='warning'>{t('home.archive')}</StatusMessage>
             <Separator />

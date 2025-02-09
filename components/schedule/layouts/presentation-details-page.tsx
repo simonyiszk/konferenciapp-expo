@@ -1,4 +1,5 @@
-import { ENABLE_QNA } from '../../../config/env.config';
+import { useFeatureFlag } from 'posthog-react-native';
+
 import { usePresentation } from '../../../hooks/use-presentation';
 import { ConferenceService } from '../../../services/conference.service';
 import { isPresentationCurrent } from '../../../utils/presentation.utils';
@@ -19,6 +20,7 @@ interface ScheduleDetailsPageProps {
 
 export function PresentationDetailsPage({ slug }: ScheduleDetailsPageProps) {
   const { data, isLoading } = usePresentation(slug);
+  const enableQna = useFeatureFlag('enable_qna');
   const startTime = ConferenceService.getFormattedTimestamp(data?.startTime ?? '');
   const endTime = ConferenceService.getFormattedTimestamp(data?.endTime ?? '');
   const isCurrent = data ? isPresentationCurrent(data) : false;
@@ -28,7 +30,7 @@ export function PresentationDetailsPage({ slug }: ScheduleDetailsPageProps) {
         corner={
           <>
             {data && <FavoriteButton presentation={data} />}
-            {ENABLE_QNA && <QnaButton highlight={isCurrent} slug={slug} />}
+            {enableQna && <QnaButton highlight={isCurrent} slug={slug} />}
           </>
         }
       >

@@ -1,10 +1,10 @@
+import { usePostHog } from 'posthog-react-native';
 import { useEffect } from 'react';
 
-import { AnalyticsService } from '../services/analytics.service';
-
 export function usePageView(location?: string) {
+  const posthog = usePostHog();
   useEffect(() => {
     if (!location) return;
-    AnalyticsService.sendPageView(location);
+    posthog?.screen(location);
   }, []);
 }

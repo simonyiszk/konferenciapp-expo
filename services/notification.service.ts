@@ -46,7 +46,10 @@ export class NotificationService {
         body: `Hamarosan kezdődik a(z) ${presentation.room} teremben!`,
         data: { tab: 'presentation', screen: 'presentation-details', id: presentation.slug },
       },
-      trigger: triggerDate,
+      trigger: {
+        type: Notifications.SchedulableTriggerInputTypes.DATE,
+        date: triggerDate,
+      },
     });
   }
 

@@ -14,7 +14,7 @@ export const resources = {
         error: 'Unable load presentations',
         empty: 'No presentations available.',
         noNews: 'No news available',
-        archive: 'This is an archived version of the XXI. Simonyi Conference. Some features may be disabled.',
+        archive: 'This is an archived version of the Simonyi Conference. Some features may be disabled.',
       },
       presentations: {
         title: 'Schedule',
@@ -75,7 +75,7 @@ export const resources = {
         error: 'Nem sikerült betölteni az előadásokat',
         empty: 'Nincs megjeleníthető előadás.',
         noNews: 'Nincs megjeleníthető hír.',
-        archive: 'Ez egy archivált verzió a XXI. Simonyi Konferenciáról. Néhány funkció letiltva lehet.',
+        archive: 'Ez egy archivált verzió a Simonyi Konferenciáról. Néhány funkció letiltva lehet.',
       },
       presentations: {
         title: 'Programterv',

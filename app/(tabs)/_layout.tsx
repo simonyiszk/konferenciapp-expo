@@ -16,18 +16,18 @@ export default function TabsLayout() {
     <Tabs
       initialRouteName='home'
       backBehavior='none'
-      sceneContainerStyle={{
-        backgroundColor: 'transparent',
-        paddingTop: top + 10,
-        paddingLeft: left,
-        paddingRight: right,
-      }}
       screenOptions={{
         headerShown: false,
-        tabBarInactiveTintColor: extendedColors.slate['500'],
+        tabBarInactiveTintColor: extendedColors.background['500'],
         tabBarActiveTintColor: extendedColors.primary['500'],
         tabBarLabel: TabbarLabel,
         tabBarBackground: TabbarBackground,
+        sceneStyle: {
+          backgroundColor: 'transparent',
+          paddingTop: top + 10,
+          paddingLeft: left,
+          paddingRight: right,
+        },
         tabBarStyle: {
           position: 'absolute',
           bottom: bottom + 10,

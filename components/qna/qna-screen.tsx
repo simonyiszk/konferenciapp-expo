@@ -1,9 +1,9 @@
 import { Redirect } from 'expo-router';
+import { useFeatureFlag } from 'posthog-react-native';
 import { useEffect, useMemo, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ScrollView } from 'react-native';
 
-import { ENABLE_QNA } from '../../config/env.config';
 import { useMessaging } from '../../hooks/use-messaging';
 import { usePresentation } from '../../hooks/use-presentation';
 import { useSafeId } from '../../utils/common.utils';
@@ -26,6 +26,7 @@ export function QnaScreen() {
   const id = useSafeId();
   const presentation = usePresentation(id);
   const messaging = useMessaging(id);
+  const enableQna = useFeatureFlag('enable_qna');
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -45,7 +46,7 @@ export function QnaScreen() {
     messaging.sendMessageText(messageText, id);
   };
 
-  if (!ENABLE_QNA) return <Redirect href='/' />;
+  if (!enableQna) return <Redirect href='/' />;
 
   return (
     <Screen analyticsScreenName={`qna/${id}`}>

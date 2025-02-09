@@ -26,7 +26,7 @@ export function MapRoom({
       ? extendedColors.primary['500']
       : highlight
         ? extendedColors.primary['800']
-        : extendedColors.slate['500'];
+        : extendedColors.background['500'];
   const comp =
     'width' in props ? (
       <Rect
