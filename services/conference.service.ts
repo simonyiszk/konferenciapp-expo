@@ -5,7 +5,7 @@ import { FullConferenceDto } from '../types/conference-api.type';
 
 export class ConferenceService {
   static async getConferenceData(): Promise<FullConferenceDto> {
-    const response = await axiosInstance.get<FullConferenceDto>('/api/conference');
+    const response = await axiosInstance.get<FullConferenceDto>('/api/conference/index');
     response.data.presentations = ConferenceService.sortPresentationsByStartDate(response.data);
     ConferenceService.prefixConferenceImages(response.data);
     return response.data;
