@@ -126,18 +126,17 @@ export function Map({ onSelectedResource, selectedResource }: MapProps) {
       <G id='TABLES'>
         <MapTable
           id='15'
-          x='560.193'
+          x='540.193'
           y='554.086'
-          width='30'
-          transform='rotate(127.488 560.193 554.086)'
+          transform='rotate(307.488 540.193 554.086)'
           onPress={onSelectedResource}
           selectedResource={selectedResource}
         />
         <MapTable
           id='14'
-          x='430.1'
-          y='633.903'
-          transform='rotate(172.007 430.1 633.903)'
+          x='420.1'
+          y='620.903'
+          transform='rotate(352.007 420.1 620.903)'
           onPress={onSelectedResource}
           selectedResource={selectedResource}
         />
