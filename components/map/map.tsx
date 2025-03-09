@@ -3,6 +3,7 @@ import Svg, { G, Path } from 'react-native-svg';
 import { extendedColors } from '../../theme/extendedColors';
 import { MapIcon } from './elements/map-icon';
 import { MapRoom } from './elements/map-room';
+import { MapTable } from './elements/map-table';
 
 interface MapProps {
   onSelectedResource: (id: string) => void;
@@ -123,183 +124,128 @@ export function Map({ onSelectedResource, selectedResource }: MapProps) {
         d='M392.5 1018L542.5 1045L523.5 1145.5L374.5 1104.5L392.5 1018Z'
       />
       <G id='TABLES'>
-        {/*<MapTable id='23' onPress={onSelectedResource} selectedResource={selectedResource} x='375' y='1221' />*/}
-        {/*<MapTable*/}
-        {/*  id='22'*/}
-        {/*  onPress={onSelectedResource}*/}
-        {/*  selectedResource={selectedResource}*/}
-        {/*  x='494.018'*/}
-        {/*  y='224.34'*/}
-        {/*  transform='rotate(33.7465 494.018 224.34)'*/}
-        {/*/>*/}
-        {/*<MapTable*/}
-        {/*  id='21'*/}
-        {/*  onPress={onSelectedResource}*/}
-        {/*  selectedResource={selectedResource}*/}
-        {/*  x='536.227'*/}
-        {/*  y='252'*/}
-        {/*  transform='rotate(46.2823 536.227 252)'*/}
-        {/*/>*/}
-        {/*<MapTable*/}
-        {/*  id='20'*/}
-        {/*  onPress={onSelectedResource}*/}
-        {/*  selectedResource={selectedResource}*/}
-        {/*  x='578.207'*/}
-        {/*  y='311'*/}
-        {/*  transform='rotate(67.0418 578.207 311)'*/}
-        {/*/>*/}
-        {/*<MapTable*/}
-        {/*  id='19'*/}
-        {/*  onPress={onSelectedResource}*/}
-        {/*  selectedResource={selectedResource}*/}
-        {/*  x='623'*/}
-        {/*  y='254.5'*/}
-        {/*  transform='rotate(90 623 254.5)'*/}
-        {/*/>*/}
-        {/*<MapTable*/}
-        {/*  id='18'*/}
-        {/*  onPress={onSelectedResource}*/}
-        {/*  selectedResource={selectedResource}*/}
-        {/*  x='623'*/}
-        {/*  y='297.5'*/}
-        {/*  transform='rotate(90 623 297.5)'*/}
-        {/*/>*/}
-        {/*<MapTable*/}
-        {/*  id='17'*/}
-        {/*  onPress={onSelectedResource}*/}
-        {/*  selectedResource={selectedResource}*/}
-        {/*  x='623'*/}
-        {/*  y='380'*/}
-        {/*  transform='rotate(90 623 380)'*/}
-        {/*/>*/}
-        {/*<MapTable*/}
-        {/*  id='16'*/}
-        {/*  onPress={onSelectedResource}*/}
-        {/*  selectedResource={selectedResource}*/}
-        {/*  x='623'*/}
-        {/*  y='488'*/}
-        {/*  transform='rotate(90 623 488.5)'*/}
-        {/*/>*/}
-        {/*<MapTable*/}
-        {/*  id='15'*/}
-        {/*  onPress={onSelectedResource}*/}
-        {/*  selectedResource={selectedResource}*/}
-        {/*  x='623'*/}
-        {/*  y='530.5'*/}
-        {/*  transform='rotate(90 623 530.5)'*/}
-        {/*/>*/}
-        {/*<MapTable*/}
-        {/*  id='14'*/}
-        {/*  onPress={onSelectedResource}*/}
-        {/*  selectedResource={selectedResource}*/}
-        {/*  x='560.193'*/}
-        {/*  y='554.086'*/}
-        {/*  transform='rotate(127.488 560.193 554.086)'*/}
-        {/*/>*/}
-        {/*<MapTable*/}
-        {/*  id='13'*/}
-        {/*  onPress={onSelectedResource}*/}
-        {/*  selectedResource={selectedResource}*/}
-        {/*  x='524.162'*/}
-        {/*  y='592.098'*/}
-        {/*  transform='rotate(144.082 524.162 592.098)'*/}
-        {/*/>*/}
-        {/*<MapTable*/}
-        {/*  id='12'*/}
-        {/*  onPress={onSelectedResource}*/}
-        {/*  selectedResource={selectedResource}*/}
-        {/*  x='430.1'*/}
-        {/*  y='633.903'*/}
-        {/*  transform='rotate(172.007 430.1 633.903)'*/}
-        {/*/>*/}
-        {/*<MapTable*/}
-        {/*  id='11'*/}
-        {/*  onPress={onSelectedResource}*/}
-        {/*  selectedResource={selectedResource}*/}
-        {/*  x='514.822'*/}
-        {/*  y='712.203'*/}
-        {/*  transform='rotate(58.3674 514.822 712.203)'*/}
-        {/*/>*/}
-        {/*<MapTable*/}
-        {/*  id='10'*/}
-        {/*  onPress={onSelectedResource}*/}
-        {/*  selectedResource={selectedResource}*/}
-        {/*  x='545.689'*/}
-        {/*  y='760'*/}
-        {/*  transform='rotate(60.3508 545.689 760)'*/}
-        {/*/>*/}
-        {/*<MapTable*/}
-        {/*  id='9'*/}
-        {/*  onPress={onSelectedResource}*/}
-        {/*  selectedResource={selectedResource}*/}
-        {/*  x='571.539'*/}
-        {/*  y='844.191'*/}
-        {/*  transform='rotate(92.0752 571.539 844.191)'*/}
-        {/*/>*/}
-        {/*<MapTable*/}
-        {/*  id='8'*/}
-        {/*  onPress={onSelectedResource}*/}
-        {/*  selectedResource={selectedResource}*/}
-        {/*  x='497.586'*/}
-        {/*  y='894.269'*/}
-        {/*  transform='rotate(3.1955 497.586 894.269)'*/}
-        {/*/>*/}
-        {/*<MapTable*/}
-        {/*  id='7'*/}
-        {/*  onPress={onSelectedResource}*/}
-        {/*  selectedResource={selectedResource}*/}
-        {/*  x='486.947'*/}
-        {/*  y='986'*/}
-        {/*  transform='rotate(11.2363 486.947 986)'*/}
-        {/*/>*/}
-        {/*<MapTable*/}
-        {/*  id='6'*/}
-        {/*  onPress={onSelectedResource}*/}
-        {/*  selectedResource={selectedResource}*/}
-        {/*  x='428.045'*/}
-        {/*  y='973.385'*/}
-        {/*  transform='rotate(11.2363 428.045 973.385)'*/}
-        {/*/>*/}
-        {/*<MapTable*/}
-        {/*  id='5'*/}
-        {/*  onPress={onSelectedResource}*/}
-        {/*  selectedResource={selectedResource}*/}
-        {/*  x='386.949'*/}
-        {/*  y='965.5'*/}
-        {/*  transform='rotate(11.2363 386.949 965.5)'*/}
-        {/*/>*/}
-        {/*<MapTable*/}
-        {/*  id='4'*/}
-        {/*  onPress={onSelectedResource}*/}
-        {/*  selectedResource={selectedResource}*/}
-        {/*  x='393.207'*/}
-        {/*  y='883.727'*/}
-        {/*  transform='rotate(-80.343 393.207 883.727)'*/}
-        {/*/>*/}
-        {/*<MapTable*/}
-        {/*  id='3'*/}
-        {/*  onPress={onSelectedResource}*/}
-        {/*  selectedResource={selectedResource}*/}
-        {/*  x='401'*/}
-        {/*  y='845.733'*/}
-        {/*  transform='rotate(-82.3524 401 845.733)'*/}
-        {/*/>*/}
-        {/*<MapTable*/}
-        {/*  id='2'*/}
-        {/*  onPress={onSelectedResource}*/}
-        {/*  selectedResource={selectedResource}*/}
-        {/*  x='413.609'*/}
-        {/*  y='772.457'*/}
-        {/*  transform='rotate(-84.392 413.609 772.457)'*/}
-        {/*/>*/}
-        {/*<MapTable*/}
-        {/*  id='1'*/}
-        {/*  onPress={onSelectedResource}*/}
-        {/*  selectedResource={selectedResource}*/}
-        {/*  x='494'*/}
-        {/*  y='864.886'*/}
-        {/*  transform='rotate(-85.0141 494 864.886)'*/}
-        {/*/>*/}
+        <MapTable
+          id='15'
+          x='560.193'
+          y='554.086'
+          width='30'
+          transform='rotate(127.488 560.193 554.086)'
+          onPress={onSelectedResource}
+          selectedResource={selectedResource}
+        />
+        <MapTable
+          id='14'
+          x='430.1'
+          y='633.903'
+          transform='rotate(172.007 430.1 633.903)'
+          onPress={onSelectedResource}
+          selectedResource={selectedResource}
+        />
+        <MapTable
+          id='13'
+          x='514.822'
+          y='712.203'
+          transform='rotate(58.3674 514.822 712.203)'
+          onPress={onSelectedResource}
+          selectedResource={selectedResource}
+        />
+        <MapTable
+          id='12'
+          x='540.691'
+          y='753'
+          transform='rotate(60.3508 540.691 753)'
+          onPress={onSelectedResource}
+          selectedResource={selectedResource}
+        />
+        <MapTable
+          id='11'
+          x='565.691'
+          y='795'
+          transform='rotate(60.3508 565.691 795)'
+          onPress={onSelectedResource}
+          selectedResource={selectedResource}
+        />
+        <MapTable
+          id='10'
+          x='582.08'
+          y='847.362'
+          transform='rotate(92.0752 582.08 847.362)'
+          onPress={onSelectedResource}
+          selectedResource={selectedResource}
+        />
+        <MapTable
+          id='9'
+          x='497.586'
+          y='894.269'
+          width='30'
+          transform='rotate(3.1955 497.586 894.269)'
+          onPress={onSelectedResource}
+          selectedResource={selectedResource}
+        />
+        <MapTable
+          id='8'
+          x='523.949'
+          y='994'
+          transform='rotate(11.2363 523.949 994)'
+          onPress={onSelectedResource}
+          selectedResource={selectedResource}
+        />
+        <MapTable
+          id='7'
+          x='486.947'
+          y='986'
+          transform='rotate(11.2363 486.947 986)'
+          onPress={onSelectedResource}
+          selectedResource={selectedResource}
+        />
+        <MapTable
+          id='6'
+          x='428.045'
+          y='974.385'
+          transform='rotate(11.2363 428.045 974.385)'
+          onPress={onSelectedResource}
+          selectedResource={selectedResource}
+        />
+        <MapTable
+          id='5'
+          x='386.949'
+          y='965.5'
+          transform='rotate(11.2363 386.949 965.5)'
+          onPress={onSelectedResource}
+          selectedResource={selectedResource}
+        />
+        <MapTable
+          id='4'
+          x='393.207'
+          y='883.727'
+          transform='rotate(-80.343 393.207 883.727)'
+          onPress={onSelectedResource}
+          selectedResource={selectedResource}
+        />
+        <MapTable
+          id='3'
+          x='401'
+          y='845.733'
+          transform='rotate(-82.3524 401 845.733)'
+          onPress={onSelectedResource}
+          selectedResource={selectedResource}
+        />
+        <MapTable
+          id='2'
+          x='410'
+          y='772.856'
+          transform='rotate(-84.392 410 772.856)'
+          onPress={onSelectedResource}
+          selectedResource={selectedResource}
+        />
+        <MapTable
+          id='1'
+          x='494'
+          y='864.886'
+          transform='rotate(-85.0141 494 864.886)'
+          onPress={onSelectedResource}
+          selectedResource={selectedResource}
+        />
       </G>
       <MapIcon
         id='WC'
@@ -406,50 +352,6 @@ export function Map({ onSelectedResource, selectedResource }: MapProps) {
           fill={extendedColors.primary[selectedResource === 'IB025' ? '500' : '800']}
         />
       </MapRoom>
-      {/*<MapIcon*/}
-      {/*  id='COFFEE'*/}
-      {/*  onPress={onSelectedResource}*/}
-      {/*  selectedResource={selectedResource}*/}
-      {/*  cx={492}*/}
-      {/*  cy={144}*/}
-      {/*  fill={extendedColors.amber['700']}*/}
-      {/*>*/}
-      {/*  <Path*/}
-      {/*    d='M477 147.336C478.384 148.406 480.462 149.031 482.834 149.003C485.206 149.031 487.285 148.406 488.668 147.336C490.052 146.266 492.13 145.64 494.502 145.669C496.874 145.64 498.953 146.266 500.336 147.336'*/}
-      {/*    stroke='white'*/}
-      {/*    strokeWidth={2.5}*/}
-      {/*    strokeLinecap='round'*/}
-      {/*    strokeLinejoin='round'*/}
-      {/*  />*/}
-      {/*  <Path*/}
-      {/*    d='M485.334 129C484.806 129.379 484.379 129.88 484.088 130.461C483.798 131.042 483.653 131.685 483.667 132.334C483.653 132.983 483.798 133.626 484.088 134.207C484.379 134.787 484.806 135.289 485.334 135.668'*/}
-      {/*    stroke='white'*/}
-      {/*    strokeWidth={2.5}*/}
-      {/*    strokeLinecap='round'*/}
-      {/*    strokeLinejoin='round'*/}
-      {/*  />*/}
-      {/*  <Path*/}
-      {/*    d='M492.002 129C491.474 129.379 491.047 129.88 490.756 130.461C490.466 131.042 490.321 131.685 490.335 132.334C490.321 132.983 490.466 133.626 490.756 134.207C491.047 134.787 491.474 135.289 492.002 135.668'*/}
-      {/*    stroke='white'*/}
-      {/*    strokeWidth={2.5}*/}
-      {/*    strokeLinecap='round'*/}
-      {/*    strokeLinejoin='round'*/}
-      {/*  />*/}
-      {/*  <Path*/}
-      {/*    d='M477 140.668H500.336V149.002C500.336 151.655 499.283 154.199 497.407 156.074C495.531 157.95 492.988 159.004 490.335 159.004H487.001C484.349 159.004 481.805 157.95 479.929 156.074C478.054 154.199 477 151.655 477 149.002V140.668Z'*/}
-      {/*    stroke='white'*/}
-      {/*    strokeWidth={2.5}*/}
-      {/*    strokeLinecap='round'*/}
-      {/*    strokeLinejoin='round'*/}
-      {/*  />*/}
-      {/*  <Path*/}
-      {/*    d='M499.912 151.88C500.657 152.221 501.474 152.375 502.291 152.327C503.109 152.279 503.902 152.031 504.602 151.604C505.301 151.178 505.885 150.586 506.302 149.881C506.719 149.176 506.957 148.38 506.994 147.561C507.031 146.743 506.867 145.928 506.515 145.189C506.163 144.449 505.635 143.807 504.978 143.319C504.32 142.831 503.552 142.512 502.742 142.39C501.932 142.268 501.104 142.347 500.332 142.62'*/}
-      {/*    stroke='white'*/}
-      {/*    strokeWidth={2.5}*/}
-      {/*    strokeLinecap='round'*/}
-      {/*    strokeLinejoin='round'*/}
-      {/*  />*/}
-      {/*</MapIcon>*/}
       <MapIcon
         id='COAT'
         onPress={onSelectedResource}

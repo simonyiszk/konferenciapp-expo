@@ -2,109 +2,20 @@ import { MapResource } from '../types/map.type';
 
 const Tables: MapResource[] = [
   {
-    id: '23',
-    title: {
-      hu: 'BME Solar Boat Team',
-    },
-    description: {
-      hu: 'Napenergiával működő, teljesen elektromos hajtású versenyhajót építő csapat.',
-      en: 'A team building a solar-powered, fully electric drive racing boat.',
-    },
-  },
-  {
-    id: '22',
-    title: {
-      hu: 'LEGO',
-    },
-    description: {
-      hu: 'A LEGO kör a Simonyi robotikával fogallkozó köre.',
-      en: 'The LEGO community dealing with robotics in Simonyi.',
-    },
-  },
-  {
-    id: '21',
-    title: {
-      hu: 'HA5KFU',
-    },
-    description: {
-      hu: 'Rádióamatőr klub.',
-      en: 'Radio amateur club.',
-    },
-  },
-  {
-    id: '20',
-    title: {
-      hu: 'SEM',
-    },
-    description: {
-      hu: 'A Schönherz elektronikai műhelye.',
-      en: 'The electronics workshop of Schönherz.',
-    },
-  },
-  {
-    id: '19',
-    title: {
-      hu: 'Kir-Dev',
-    },
-    description: {
-      hu: 'A kollégium webfejlesztő köre.',
-      en: 'The web developer community of the dormitory.',
-    },
-  },
-  {
-    id: '18',
-    title: {
-      hu: 'schdesign',
-    },
-    description: {
-      hu: 'A Simonyi kreatív alkotóműhelye.',
-      en: 'The creative community of Simonyi.',
-    },
-  },
-  {
-    id: '17',
-    title: {
-      hu: 'BME Formula Racing Team',
-    },
-    description: {
-      hu: 'Technológiailag fejlett autók építése.',
-      en: 'Building technologically advanced cars.',
-    },
-  },
-  {
-    id: '16',
-    title: {
-      hu: 'BME Suborbitals',
-    },
-    description: {
-      hu: 'Kísérleti rakéták fejlesztése versenyre és oktatási célokra.',
-      en: 'Developing research rockets for competition and educational purposes',
-    },
-  },
-  {
     id: '15',
     title: {
-      hu: 'Paripa',
+      hu: 'BME-VIK',
     },
     description: {
-      hu: 'Partnerség az iparral program.',
-      en: 'Partnership with industry program.',
+      hu: 'Villamosmérnöki és Informatikai Kar',
+      en: 'Faculty of Electrical Engineering and Informatics',
     },
   },
   {
     id: '14',
     title: {
-      hu: 'BME EELISA',
-    },
-    description: {
-      hu: 'Európai Mérnöki Tanulás Innováció és Tudomány Szövetség',
-      en: 'European Engineering Learning Innovation and Science Alliance',
-    },
-  },
-  {
-    id: '13',
-    title: {
       hu: 'Schönherz Iskolaszövetkezet',
+      en: 'Schönherz Student Cooperative',
     },
     description: {
       hu: 'Szakmai diákmunka.',
@@ -112,17 +23,7 @@ const Tables: MapResource[] = [
     },
   },
   {
-    id: '12',
-    title: {
-      hu: 'Knorr-Bremse Fékrendszerek Kft.',
-    },
-    description: {
-      hu: 'A mobilitás biztonságossá tétele.',
-      en: 'Making mobility safer.',
-    },
-  },
-  {
-    id: '11',
+    id: '13',
     title: {
       hu: 'OTP Bank Nyrt.',
     },
@@ -132,57 +33,17 @@ const Tables: MapResource[] = [
     },
   },
   {
-    id: '10',
+    id: '12',
     title: {
-      hu: 'KUKA Robotics Hungária Kft.',
+      hu: 'SEM',
     },
     description: {
-      hu: 'A robot- és automatizáció-technológia szakértője.',
-      en: 'Expert in robot and automation technology.',
+      hu: 'A Schönherz elektronikai műhelye.',
+      en: 'The electronics workshop of Schönherz.',
     },
   },
   {
-    id: '9',
-    title: {
-      hu: 'Nova Services Zrt.',
-    },
-    description: {
-      hu: 'Az új technológiák és az új IT trendek iránt elkötelezett innovatív IT megoldásokat nyújtó cég.',
-      en: 'An innovative IT solution provider company committed to new technologies and new IT trends.',
-    },
-  },
-  {
-    id: '8',
-    title: {
-      hu: 'Barré Technologies Zrt.',
-    },
-    description: {
-      hu: 'Nagyvállalati megoldásokra szakosodott szoftverfejlesztő és megoldásszállító vállalat.',
-      en: 'A software development and solution provider company specializing in enterprise solutions.',
-    },
-  },
-  {
-    id: '7',
-    title: {
-      hu: 'Paks II. Zrt.',
-    },
-    description: {
-      hu: 'Atomenergiával a fenntartható jövőért.',
-      en: 'With nuclear energy for a sustainable future.',
-    },
-  },
-  {
-    id: '6',
-    title: {
-      hu: 'Interactive Brokers Zrt.',
-    },
-    description: {
-      hu: 'Az egyik legnagyobb online brókercég az Egyesült Államok piacán',
-      en: 'One of the largest online brokerage firms in the United States market',
-    },
-  },
-  {
-    id: '5',
+    id: '11',
     title: {
       hu: 'Silicon Laboratories Hungary Kft.',
     },
@@ -192,33 +53,93 @@ const Tables: MapResource[] = [
     },
   },
   {
-    id: '4',
+    id: '10',
     title: {
-      hu: 'Sicontact Kft.',
+      hu: 'LEGO',
     },
     description: {
-      hu: 'Az ESET biztonsági megoldások hivatalos magyarországi disztribútora.',
-      en: 'The official distributor of ESET security solutions in Hungary.',
+      hu: 'A LEGO kör a Simonyi robotikával fogallkozó köre.',
+      en: 'The LEGO community dealing with robotics in Simonyi.',
+    },
+  },
+  {
+    id: '9',
+    title: {
+      hu: 'Barré Technologies Zrt.',
+    },
+    description: {
+      hu: 'Nagyvállalati megoldásokra szakosodott szoftverfejlesztő és megoldásszállító vállalat.',
+      en: 'A software development and solution provider company specializing in enterprise solutions.',
+    },
+  },
+  {
+    id: '8',
+    title: {
+      hu: 'Nova Services Zrt.',
+    },
+    description: {
+      hu: 'Az új technológiák és az új IT trendek iránt elkötelezett innovatív IT megoldásokat nyújtó cég.',
+      en: 'An innovative IT solution provider company committed to new technologies and new IT trends.',
+    },
+  },
+  {
+    id: '7',
+    title: {
+      hu: 'schdesign',
+    },
+    description: {
+      hu: 'A Simonyi kreatív alkotóműhelye.',
+      en: 'The creative community of Simonyi.',
+    },
+  },
+  {
+    id: '6',
+    title: {
+      hu: 'Kir-Dev',
+    },
+    description: {
+      hu: 'A kollégium webfejlesztő köre.',
+      en: 'The web developer community of the dormitory.',
+    },
+  },
+  {
+    id: '5',
+    title: {
+      hu: 'WorldQuant',
+    },
+    description: {
+      hu: 'Nemzetközi kvantitatív befektetési menedzsment cég.',
+      en: 'International quantitative investment management firm.',
+    },
+  },
+  {
+    id: '4',
+    title: {
+      hu: 'HA5KFU',
+    },
+    description: {
+      hu: 'Rádióamatőr klub.',
+      en: 'Radio amateur club.',
     },
   },
   {
     id: '3',
-    title: {
-      hu: 'ICF Tech Hungary Kft.',
-    },
-    description: {
-      hu: 'A technológiából ered minden, amit létrehozunk.',
-      en: 'Everything we create comes from technology.',
-    },
-  },
-  {
-    id: '2',
     title: {
       hu: 'Nokia Solutions and Networks Kft.',
     },
     description: {
       hu: 'A világ egyik legnagyobb telekommunikációs vállalata',
       en: "One of the world's largest telecommunications companies",
+    },
+  },
+  {
+    id: '2',
+    title: {
+      hu: 'ICF Tech Hungary Kft.',
+    },
+    description: {
+      hu: 'A technológiából ered minden, amit létrehozunk.',
+      en: 'Everything we create comes from technology.',
     },
   },
   {
@@ -243,17 +164,6 @@ export const MapResources: MapResource[] = [
     description: {
       hu: 'Itt jössz be!',
       en: 'This is the entrance!',
-    },
-  },
-  {
-    id: 'COFFEE',
-    title: {
-      hu: 'Chill sarok',
-      en: 'Chill corner',
-    },
-    description: {
-      hu: 'Kapcsolódj ki egy kávé mellett!',
-      en: 'Relax with a coffee!',
     },
   },
   {
