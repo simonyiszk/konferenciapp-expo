@@ -25,11 +25,11 @@ const Tables: MapResource[] = [
   {
     id: '13',
     title: {
-      hu: 'OTP Bank Nyrt.',
+      hu: 'Silicon Laboratories Hungary Kft.',
     },
     description: {
-      hu: 'Kelet-Közép-Európa meghatározó bankcsoportja.',
-      en: 'The leading bank group in Central and Eastern Europe.',
+      hu: 'Megbízható IoT fejlesztő platform.',
+      en: 'Trusted IoT Development Platform.',
     },
   },
   {
@@ -45,21 +45,21 @@ const Tables: MapResource[] = [
   {
     id: '11',
     title: {
-      hu: 'Silicon Laboratories Hungary Kft.',
-    },
-    description: {
-      hu: 'Megbízható IoT fejlesztő platform.',
-      en: 'Trusted IoT Development Platform.',
-    },
-  },
-  {
-    id: '10',
-    title: {
       hu: 'LEGO',
     },
     description: {
       hu: 'A LEGO kör a Simonyi robotikával fogallkozó köre.',
       en: 'The LEGO community dealing with robotics in Simonyi.',
+    },
+  },
+  {
+    id: '10',
+    title: {
+      hu: 'OTP Bank Nyrt.',
+    },
+    description: {
+      hu: 'Kelet-Közép-Európa meghatározó bankcsoportja.',
+      en: 'The leading bank group in Central and Eastern Europe.',
     },
   },
   {

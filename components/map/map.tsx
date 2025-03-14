@@ -71,45 +71,51 @@ export function Map({ onSelectedResource, selectedResource }: MapProps) {
       <MapRoom id='NOTUSED3' selectedResource={selectedResource} x={632} y={423} width={163} height={180} />
       <MapRoom id='NOTUSED2' selectedResource={selectedResource} x={632} y={613} width={163} height={181} />
       <MapRoom
-        id='VIP'
+        id='ORG'
         onPress={onSelectedResource}
         selectedResource={selectedResource}
         x={639}
         y={1082}
         width={156}
         height={180}
+      />
+      <MapRoom
+        id='VIP'
+        onPress={onSelectedResource}
+        selectedResource={selectedResource}
+        d='M392.5 1018L542.5 1045L523.5 1145.5L374.5 1104.5L392.5 1018Z'
       >
-        <MapIcon id='VIP' onPress={onSelectedResource} cx={717} cy={1172} r={25} fill={extendedColors.gray['500']}>
+        <MapIcon id='VIP' onPress={onSelectedResource} cx={467} cy={1082} r={25} fill={extendedColors.gray['500']}>
           <Path
-            d='M703.668 1161.17H731.168'
+            d='M453.668 1071.17H481.168'
             stroke='white'
             strokeWidth={2.29167}
             strokeLinecap='round'
             strokeLinejoin='round'
           />
           <Path
-            d='M703.668 1182.55H731.168'
+            d='M453.668 1092.55H481.168'
             stroke='white'
             strokeWidth={2.29167}
             strokeLinecap='round'
             strokeLinejoin='round'
           />
           <Path
-            d='M705.197 1167.28L708.253 1176.44H709.781L712.836 1167.28'
+            d='M455.197 1077.28L458.253 1086.44H459.781L462.836 1077.28'
             stroke='white'
             strokeWidth={2.29167}
             strokeLinecap='round'
             strokeLinejoin='round'
           />
           <Path
-            d='M717.418 1167.28V1176.44'
+            d='M467.418 1077.28V1086.44'
             stroke='white'
             strokeWidth={2.29167}
             strokeLinecap='round'
             strokeLinejoin='round'
           />
           <Path
-            d='M723.531 1176.44V1167.28H726.587C727.397 1167.28 728.174 1167.6 728.747 1168.17C729.32 1168.75 729.642 1169.52 729.642 1170.33C729.642 1171.14 729.32 1171.92 728.747 1172.49C728.174 1173.07 727.397 1173.39 726.587 1173.39H723.531'
+            d='M473.531 1086.44V1077.28H476.587C477.397 1077.28 478.174 1077.6 478.747 1078.17C479.32 1078.75 479.642 1079.52 479.642 1080.33C479.642 1081.14 479.32 1081.92 478.747 1082.49C478.174 1083.07 477.397 1083.39 476.587 1083.39H473.531'
             stroke='white'
             strokeWidth={2.29167}
             strokeLinecap='round'
@@ -117,12 +123,6 @@ export function Map({ onSelectedResource, selectedResource }: MapProps) {
           />
         </MapIcon>
       </MapRoom>
-      <MapRoom
-        id='ORG'
-        onPress={onSelectedResource}
-        selectedResource={selectedResource}
-        d='M392.5 1018L542.5 1045L523.5 1145.5L374.5 1104.5L392.5 1018Z'
-      />
       <G id='TABLES'>
         <MapTable
           id='15'
