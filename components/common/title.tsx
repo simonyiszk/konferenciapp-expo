@@ -5,7 +5,7 @@ import { StyledText } from '../base/text';
 
 export function Title({ children, className, ...props }: TextProps) {
   return (
-    <StyledText className={cn('text-4xl mt-5 font-grotesk', className)} {...props}>
+    <StyledText className={cn('text-2xl mt-5 font-grotesk', className)} {...props}>
       {children}
     </StyledText>
   );

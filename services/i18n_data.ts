@@ -12,8 +12,8 @@ export const resources = {
         presentationTitle: 'Presentations',
         newsTitle: 'News',
         error: 'Unable load presentations',
-        empty: 'No presentations available.',
-        noNews: 'No news available',
+        empty: 'The current program will appear here.',
+        noNews: 'No news available, check back later!',
         archive: 'This is an archived version of the Simonyi Conference. Some features may be disabled.',
       },
       presentations: {
@@ -73,8 +73,8 @@ export const resources = {
         presentationTitle: 'Előadások',
         newsTitle: 'Hírek',
         error: 'Nem sikerült betölteni az előadásokat',
-        empty: 'Nincs megjeleníthető előadás.',
-        noNews: 'Nincs megjeleníthető hír.',
+        empty: 'Az aktuális programok itt fognak megjelenni.',
+        noNews: 'Nincsenek hírek, nézz vissza később!',
         archive: 'Ez egy archivált verzió a Simonyi Konferenciáról. Néhány funkció letiltva lehet.',
       },
       presentations: {
