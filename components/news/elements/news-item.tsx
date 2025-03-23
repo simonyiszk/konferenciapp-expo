@@ -31,8 +31,10 @@ export function NewsItem({ newsItem, ...props }: NewsItemProps) {
       <StyledText className='text-xl' numberOfLines={2}>
         {newsItem.title}
       </StyledText>
-      <StyledText className='text-background-400'>{formatHu(new Date(newsItem.timestamp))}</StyledText>
-      <StyledText className='text-background-400' numberOfLines={2}>
+      <StyledText className='text-background-400 dark:text-background-400'>
+        {formatHu(new Date(newsItem.timestamp))}
+      </StyledText>
+      <StyledText className='text-background-400 dark:text-background-400' numberOfLines={2}>
         {newsItem.briefContent}
       </StyledText>
     </ItemCard>

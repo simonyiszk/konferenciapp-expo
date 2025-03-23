@@ -59,6 +59,7 @@ export default function TabsLayout() {
       <Tabs.Screen
         name='map'
         options={{
+          href: null,
           title: t('tabbar.map'),
           tabBarLabelPosition: 'below-icon',
           tabBarIcon: ({ focused }) => <TabbarIcon focused={focused} name='map' />,

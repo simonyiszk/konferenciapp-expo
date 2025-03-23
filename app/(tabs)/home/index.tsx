@@ -2,6 +2,7 @@ import { useFeatureFlag } from 'posthog-react-native';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { Logo } from '../../../components/base/logo/logo';
 import { Screen } from '../../../components/base/screen';
 import { ScrollContent } from '../../../components/base/scroll-content';
 import { ErrorMessage } from '../../../components/common/error-message';
@@ -9,14 +10,12 @@ import { Header } from '../../../components/common/header';
 import { SectionTitle } from '../../../components/common/sectiontitle';
 import { Separator } from '../../../components/common/separator';
 import { StatusMessage } from '../../../components/common/status-message';
-import { Title } from '../../../components/common/title';
 import { HomeNewsList } from '../../../components/news/layouts/home-news-list';
 import { NewsItemSkeletonList } from '../../../components/news/layouts/news-item-skeleton-list';
 import { HomePresentationList } from '../../../components/schedule/layouts/home-presentation-list';
 import { PresentationItemSkeletonList } from '../../../components/schedule/layouts/presentation-item-skeleton-list';
 import { useConference } from '../../../hooks/use-conference';
 import { useNews } from '../../../hooks/use-news';
-
 export default function HomePage() {
   const conference = useConference();
   const news = useNews();
@@ -26,7 +25,7 @@ export default function HomePage() {
   return (
     <Screen analyticsScreenName='home'>
       <Header>
-        <Title>{t('home.mainTitle')}</Title>
+        <Logo />
       </Header>
 
       <ScrollContent>

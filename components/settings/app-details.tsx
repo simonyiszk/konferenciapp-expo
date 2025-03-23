@@ -7,6 +7,8 @@ import { View } from 'react-native';
 import { MessagingService } from '../../services/messaging.service';
 import { StyledText } from '../base/text';
 
+const editionName: string | undefined = Constants.expoConfig?.extra?.editionName;
+
 export function AppDetails() {
   const [userId, setUserId] = useState<string | null>(null);
   const appVersion = useMemo(() => {
@@ -25,11 +27,18 @@ export function AppDetails() {
 
   return (
     <View className='items-center space-y-2'>
-      <StyledText className='text-background-400'>{appName}</StyledText>
-      <StyledText className='text-background-400'>{appVersion}</StyledText>
-      <StyledText className='text-background-400'>UID: {userId}</StyledText>
-      <StyledText className='text-background-400 text-center'>{t('settings.author')}</StyledText>
-      <StyledText className='text-background-400'>{new Date().getFullYear()}.</StyledText>
+      <StyledText className='text-background-400 dark:text-background-400'>{appName}</StyledText>
+      {editionName && (
+        <StyledText className='text-background-400 dark:text-background-400'>
+          {editionName} {t('settings.edition')}
+        </StyledText>
+      )}
+      <StyledText className='text-background-400 dark:text-background-400'>{appVersion}</StyledText>
+      <StyledText className='text-background-400 dark:text-background-400'>UID: {userId}</StyledText>
+      <StyledText className='text-background-400 dark:text-background-400 text-center'>
+        {t('settings.author')}
+      </StyledText>
+      <StyledText className='text-background-400 dark:text-background-400'>{new Date().getFullYear()}.</StyledText>
     </View>
   );
 }

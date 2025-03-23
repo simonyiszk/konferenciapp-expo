@@ -42,6 +42,7 @@ export const resources = {
         notifications: 'Notifications',
         userIdLabel: 'Anonymous user ID',
         author: 'Made with ❤ by\nKir-Dev & Simonyi Károly College for Advanced Studies',
+        edition: 'Edition',
       },
       unmatched: {
         main: 'You have reached an unmatched route',
@@ -103,6 +104,7 @@ export const resources = {
         notifications: 'Értesítések',
         userIdLabel: 'Anonim felhasználói azonosító',
         author: 'Készítette ❤-ből\na️ Kir-Dev és a Simonyi Károly Szakkollégium',
+        edition: 'Kiadás',
       },
       unmatched: {
         main: 'Ismeretlen képernyőre jutottál',
