@@ -21,9 +21,9 @@ export function NewsItem({ newsItem, ...props }: NewsItemProps) {
     router.navigate('news-details', { id: newsItem.url });
   };
   return (
-    <ItemCard className='space-y-2' onPress={onPress} {...props}>
+    <ItemCard className='gap-2' onPress={onPress} {...props}>
       {newsItem.highlighted && (
-        <View className='flex-row space-x-1 items-center'>
+        <View className='flex-row gap-1 items-center'>
           <Feather name='alert-circle' size={15} color={extendedColors.red['500']} />
           <StyledText className='text-red-500'>{t('news.highlight')}</StyledText>
         </View>

@@ -43,7 +43,7 @@ export function QnaButton({ slug, highlight }: QnaButtonProps) {
       {promptOpen && (
         <ItemCard
           onPress={onPress}
-          className='absolute top-full right-1/2 shadow-md w-40 rounded-tr-none flex-row items-center space-x-2'
+          className='absolute top-full right-1/2 shadow-md w-40 rounded-tr-none flex-row items-center gap-2'
         >
           <Pressable onPress={() => setPromptOpen(false)}>
             <Feather name='x' size={20} color={extendedColors.background[300]} />

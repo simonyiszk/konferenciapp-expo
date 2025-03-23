@@ -35,7 +35,7 @@ export function ResourceSheet({ resource, onClose, className, ...props }: Resour
           outputRange: [0, 400],
         }),
       }}
-      className={cn('bg-white -mt-10 dark:bg-background-800 pb-32 rounded-t-2xl px-5 pt-5 space-y-2', className)}
+      className={cn('bg-white -mt-10 dark:bg-background-800 pb-40 rounded-t-2xl px-5 pt-5 space-y-2', className)}
       {...props}
     >
       <StyledText className='text-2xl pr-10' numberOfLines={1}>

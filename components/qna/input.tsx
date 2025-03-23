@@ -36,7 +36,7 @@ export function Input({ placeholder, onSubmit, disabled = false }: InputProps) {
       className='justify-end absolute w-full bottom-0'
       enabled={Platform.OS === 'ios'}
     >
-      <View className='mx-5 flex-row space-x-3 rounded-xl bg-white dark:bg-background-800 px-3 py-2 shadow-md max-h-60'>
+      <View className='mx-5 flex-row gap-3 rounded-xl bg-white dark:bg-background-800 px-3 py-2 shadow-md max-h-60'>
         <TextInput
           ref={ref}
           returnKeyType='send'

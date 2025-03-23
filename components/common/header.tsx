@@ -26,7 +26,7 @@ export function Header({ children, className, corner, ...props }: HeaderProps) {
         </View>
       )}
       {children}
-      <Separator className='my-0' />
+      <Separator />
     </View>
   );
 }

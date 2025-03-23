@@ -34,7 +34,7 @@ export function Setting({ label, availableValues, currentValue, onChange, icon }
           </StyledText>
         </View>
         <View className='flex-row items-center'>
-          <StyledText testID='setting-current-label' className='text-xl text-background-400'>
+          <StyledText testID='setting-current-label' className='text-xl text-background-400 dark:text-background-400'>
             {currentOption?.label}
           </StyledText>
           <Feather

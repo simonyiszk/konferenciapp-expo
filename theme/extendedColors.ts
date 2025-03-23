@@ -6,15 +6,15 @@ const fullConfig = resolveConfig(tailwindConfig);
 
 export const extendedColors: Record<string, Record<number, string>> = {
   primary: {
-    100: '#f5f1cc',
-    200: '#ebe299',
-    300: '#e0d466',
-    400: '#d6c533',
-    500: '#ccb700',
-    600: '#a39200',
-    700: '#7a6e00',
-    800: '#524900',
-    900: '#292500',
+    100: '#fbccd4',
+    200: '#f799a9',
+    300: '#f3667e',
+    400: '#ef3353',
+    500: '#eb0028',
+    600: '#bc0020',
+    700: '#8d0018',
+    800: '#5e0010',
+    900: '#2f0008',
   },
   ...fullConfig.theme?.colors,
 };

@@ -1,5 +1,8 @@
 {
   "expo": {
+    "web": {
+      "bundler": "metro"
+    },
     "name": "KonferenciApp",
     "slug": "konferenciapp",
     "scheme": "konferenciapp",

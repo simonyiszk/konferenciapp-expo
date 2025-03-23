@@ -1,6 +1,9 @@
+import { default as nativewindPreset } from 'nativewind/preset';
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./**/*.tsx', './app/**/*.tsx', './app/**/*.ts'],
+  presets: [nativewindPreset],
   theme: {
     extend: {
       fontFamily: {
@@ -12,30 +15,30 @@ module.exports = {
       },
       colors: {
         primary: {
-          100: '#fce8dc',
-          200: '#f9d0b8',
-          300: '#f7b995',
-          400: '#f4a171',
-          500: '#f18a4e',
-          600: '#c16e3e',
-          700: '#91532f',
-          800: '#60371f',
-          900: '#301c10',
+          100: '#fbccd4',
+          200: '#f799a9',
+          300: '#f3667e',
+          400: '#ef3353',
+          500: '#eb0028',
+          600: '#bc0020',
+          700: '#8d0018',
+          800: '#5e0010',
+          900: '#2f0008',
         },
         background: {
-          50: '#eaeaea',
-          100: '#d6d4d5',
-          200: '#ada9ac',
-          300: '#837f82',
-          400: '#5a5459',
-          500: '#31292f',
-          600: '#272126',
-          700: '#1d191c',
-          800: '#141013',
-          900: '#0a0809',
+          50: '#f8fafc',
+          100: '#f1f5f9',
+          200: '#e2e8f0',
+          300: '#cbd5e1',
+          400: '#94a3b8',
+          500: '#64748b',
+          600: '#475569',
+          700: '#334155',
+          800: '#1e293b',
+          900: '#0f172a',
         },
-        'text-dark': '#31292F',
-        'text-light': '#DEE2D5',
+        'text-dark': '#ffffff',
+        'text-light': '#ffffff',
       },
     },
   },

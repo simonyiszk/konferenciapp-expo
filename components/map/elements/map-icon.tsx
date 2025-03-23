@@ -13,7 +13,7 @@ export function MapIcon({ id, onPress, children, selectedResource, r = 25, ...pr
   return (
     <G id={id} onPress={() => onPress(id)}>
       <Circle
-        stroke={selectedResource === id ? extendedColors.primary['500'] : undefined}
+        stroke={selectedResource === id ? extendedColors.primary['500'] : 'transparent'}
         strokeWidth={5}
         r={r}
         {...props}

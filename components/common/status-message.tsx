@@ -15,7 +15,7 @@ export function StatusMessage({ className, children, type }: StatusMessageProps)
   return (
     <View
       className={cn(
-        'rounded-md p-2 flex-row space-x-2 items-center',
+        'rounded-md p-2 flex-row gap-2 items-center',
         {
           'bg-green-100 dark:bg-green-900': type === 'success',
           'bg-red-100 dark:bg-red-900': type === 'error',
@@ -26,7 +26,7 @@ export function StatusMessage({ className, children, type }: StatusMessageProps)
       )}
     >
       <Feather size={20} name={StatusIcons[type]} color={iconColor} />
-      <StyledText className='text-black dark:text-white'>{children}</StyledText>
+      <StyledText className='text-black dark:text-white flex-1'>{children}</StyledText>
     </View>
   );
 }

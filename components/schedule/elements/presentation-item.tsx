@@ -46,10 +46,10 @@ export function PresentationItem({ presentation, className, ...props }: Presenta
           {presentation.title}
         </StyledText>
         <View className='flex-row overflow-hidden'>
-          <StyledText className='text-background-400 flex-shrink' numberOfLines={1}>
+          <StyledText className='text-background-400 dark:text-background-400 flex-shrink' numberOfLines={1}>
             {presentation.presenter.name}
           </StyledText>
-          <StyledText className='text-background-400' numberOfLines={1}>
+          <StyledText className='text-background-400 dark:text-background-400' numberOfLines={1}>
             {' '}
             • {startTime} - {endTime}
           </StyledText>

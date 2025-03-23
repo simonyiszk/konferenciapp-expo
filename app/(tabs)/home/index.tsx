@@ -33,7 +33,7 @@ export default function HomePage() {
         {isArchive && (
           <>
             <StatusMessage type='warning'>{t('home.archive')}</StatusMessage>
-            <Separator />
+            <Separator className='mb-5' />
           </>
         )}
 
@@ -43,7 +43,7 @@ export default function HomePage() {
         {!conference.isError && !conference.isLoading && (
           <HomePresentationList presentations={conference.data?.presentations ?? []} />
         )}
-        <Separator />
+        <Separator className='mb-5' />
         <SectionTitle>{t('home.newsTitle')}</SectionTitle>
         {news.isLoading && <NewsItemSkeletonList />}
         {news.data && <HomeNewsList news={news.data.news} />}

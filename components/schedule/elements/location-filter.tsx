@@ -16,7 +16,7 @@ export function LocationFilter({ current, options, onChange, className, ...props
   return (
     <View
       className={cn(
-        'flex flex-row space-x-2 bg-background-200 dark:bg-background-800 mx-5 rounded-lg justify-evenly p-1',
+        'flex flex-row gap-2 bg-background-200 dark:bg-background-800 mx-5 rounded-lg justify-evenly p-1',
         className
       )}
       {...props}

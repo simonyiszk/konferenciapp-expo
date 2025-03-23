@@ -34,7 +34,7 @@ const StyledButton = forwardRef<View, StyledButtonProps>(
           'rounded-md',
           'px-4',
           'py-2',
-          'items-center justify-center flex-row space-x-2',
+          'items-center justify-center flex-row gap-2',
           {
             'opacity-50': disabled,
           },
