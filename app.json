@@ -6,7 +6,7 @@
     "name": "KonferenciApp",
     "slug": "konferenciapp",
     "scheme": "konferenciapp",
-    "version": "2.0.1",
+    "version": "3.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon-light.png",
     "newArchEnabled": true,
@@ -27,7 +27,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#f18a4e"
+        "backgroundColor": "#FFFFFF"
       },
       "package": "com.kirdev.konferenciapp"
     },
@@ -48,17 +48,17 @@
         "expo-splash-screen",
         {
           "image": "./assets/splash-icon-light.png",
-          "backgroundColor": "#F18A4E",
+          "backgroundColor": "#FFFFFF",
           "dark": {
             "image": "./assets/splash-icon-dark.png",
-            "backgroundColor": "#31292F"
+            "backgroundColor": "#000000"
           }
         }
       ]
     ],
     "notification": {
       "icon": "./assets/notification-icon.png",
-      "color": "#31292F"
+      "color": "#000000"
     }
   }
 }
