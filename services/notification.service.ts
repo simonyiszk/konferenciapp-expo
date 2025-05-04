@@ -57,4 +57,13 @@ export class NotificationService {
     if (!notificationId) return;
     await Notifications.cancelScheduledNotificationAsync(notificationId);
   }
+
+  static async showNotification(notification: Notifications.NotificationRequestInput) {
+    await this.registerForPushNotifications();
+    if (!this.notificationEnabled) {
+      console.log('Notification permission not granted, not scheduling notification');
+      return;
+    }
+    return await Notifications.scheduleNotificationAsync(notification);
+  }
 }

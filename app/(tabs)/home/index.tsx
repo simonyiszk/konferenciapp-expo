@@ -2,7 +2,7 @@ import { useFeatureFlag } from 'posthog-react-native';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { Logo } from '../../../components/base/logo/logo';
+import { Logo } from '../../../components/base/logo';
 import { Screen } from '../../../components/base/screen';
 import { ScrollContent } from '../../../components/base/scroll-content';
 import { ErrorMessage } from '../../../components/common/error-message';

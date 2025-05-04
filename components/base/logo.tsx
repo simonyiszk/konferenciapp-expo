@@ -8,7 +8,7 @@ const logoHeight = 200;
 const logoResize = 1 / 7;
 
 export function Logo() {
-  const [assets, error] = useAssets([require('./logo-white.png'), require('./logo-black.png')]);
+  const [assets, error] = useAssets([require('../../assets/logo-white.png'), require('../../assets/logo-black.png')]);
   const colorScheme = useColorScheme();
   if (error || !assets) {
     return null;
@@ -16,16 +16,18 @@ export function Logo() {
 
   const asset = colorScheme === 'dark' ? assets[0] : assets[1];
 
+  if (!asset) {
+    return null;
+  }
+
   return (
-    assets && (
-      <Image
-        source={asset}
-        style={{
-          height: logoHeight * logoResize,
-          width: logoWidth * logoResize,
-          resizeMode: 'contain',
-        }}
-      />
-    )
+    <Image
+      source={asset}
+      style={{
+        height: logoHeight * logoResize,
+        width: logoWidth * logoResize,
+      }}
+      contentFit='contain'
+    />
   );
 }

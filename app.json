@@ -11,7 +11,7 @@
     "icon": "./assets/icon-light.png",
     "newArchEnabled": true,
     "userInterfaceStyle": "automatic",
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": ["./assets"],
     "ios": {
       "icon": {
         "dark": "./assets/icon-dark.png",
