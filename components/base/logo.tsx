@@ -1,4 +1,3 @@
-import { useAssets } from 'expo-asset';
 import { useColorScheme } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
 

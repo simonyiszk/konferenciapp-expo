@@ -14,7 +14,7 @@ beforeEach(() => {
 });
 
 function isOptionSelected(element: any) {
-  return element.props.style.some((sp: Record<string, number | string>) => sp.backgroundColor === '#fff');
+  return element.props.className.includes('bg-white');
 }
 
 it('should display available options', () => {
