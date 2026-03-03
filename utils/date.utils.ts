@@ -15,6 +15,6 @@ export function isConferenceDay(): boolean {
   if (isNaN(targetDate.getTime())) {
     return true;
   }
-  
+
   return isSameDay(new Date(), targetDate);
 }

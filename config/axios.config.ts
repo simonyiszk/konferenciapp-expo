@@ -22,18 +22,27 @@ posthog.onFeatureFlag(featureFlagName, () => {
   }
 });
 
-axiosInstance.interceptors.request.use((config) => {
-  console.log(`[Axios Request] ${config.method?.toUpperCase()} ${config.baseURL}${config.url}`, config.data ?? '');
-  return config;
-}, (error) => {
-  console.error(`[Axios Request Error]`, error);
-  return Promise.reject(error);
-});
+axiosInstance.interceptors.request.use(
+  (config) => {
+    console.log(`[Axios Request] ${config.method?.toUpperCase()} ${config.baseURL}${config.url}`, config.data ?? '');
+    return config;
+  },
+  (error) => {
+    console.error(`[Axios Request Error]`, error);
+    return Promise.reject(error);
+  }
+);
 
-axiosInstance.interceptors.response.use((response) => {
-  console.log(`[Axios Response] ${response.status} ${response.config.url}`, response.data);
-  return response;
-}, (error) => {
-  console.error(`[Axios Response Error] ${error.response?.status} ${error.config?.url}`, error.response?.data ?? error.message);
-  return Promise.reject(error);
-});
+axiosInstance.interceptors.response.use(
+  (response) => {
+    console.log(`[Axios Response] ${response.status} ${response.config.url}`, response.data);
+    return response;
+  },
+  (error) => {
+    console.error(
+      `[Axios Response Error] ${error.response?.status} ${error.config?.url}`,
+      error.response?.data ?? error.message
+    );
+    return Promise.reject(error);
+  }
+);

@@ -14,12 +14,12 @@ import { StatusMessage } from '../../../components/common/status-message';
 import { HomePresentationList } from '../../../components/schedule/layouts/home-presentation-list';
 import { PresentationItemSkeletonList } from '../../../components/schedule/layouts/presentation-item-skeleton-list';
 import { useConference } from '../../../hooks/use-conference';
-import { useNews } from '../../../hooks/use-news';
+// import { useNews } from '../../../hooks/use-news';
 import { isConferenceDay } from '../../../utils/date.utils';
 
 export default function HomePage() {
   const conference = useConference();
-  const news = useNews();
+  // const news = useNews();
   const { t } = useTranslation();
   const isArchive = useFeatureFlag('archive_mode');
   const showPresentations = isConferenceDay();
@@ -49,7 +49,7 @@ export default function HomePage() {
             <Separator className='mb-5' />
           </>
         )}
-        
+
         {!showPresentations && <HomePrText />}
 
         {/* 

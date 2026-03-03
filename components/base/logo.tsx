@@ -8,8 +8,7 @@ const logoResize = 70 / logoHeight;
 
 export function Logo() {
   const colorScheme = useColorScheme();
-  const logoSource =
-    colorScheme === 'dark' ? require('../../assets/FullSand.svg') : require('../../assets/Full.svg');
+  const logoSource = colorScheme === 'dark' ? require('../../assets/FullSand.svg') : require('../../assets/Full.svg');
 
   return (
     <Image
