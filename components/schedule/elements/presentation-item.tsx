@@ -7,6 +7,7 @@ import { useFavoritePresentations } from '../../../contexts/favorite-presentatio
 import { ConferenceService } from '../../../services/conference.service';
 import { PresentationDto } from '../../../types/conference-api.type';
 import { cn } from '../../../utils/common.utils';
+import { isConferenceDay } from '../../../utils/date.utils';
 import { isPresentationPast } from '../../../utils/presentation.utils';
 import { ItemCard } from '../../base/item-card';
 import { StyledText } from '../../base/text';
@@ -21,7 +22,8 @@ export function PresentationItem({ presentation, className, ...props }: Presenta
   const { isFavoritePresentation } = useFavoritePresentations();
   const isArchive = useFeatureFlag('archive_mode');
   const router = useNavigation<NativeStackNavigationProp<{ 'presentation-details': { id: string } }>>();
-  const isPast = isPresentationPast(presentation) && !isArchive;
+  const isConference = isConferenceDay();
+  const isPast = isPresentationPast(presentation) && !isArchive && isConference;
   const isFavorite = isFavoritePresentation(presentation.slug);
   const startTime = ConferenceService.getFormattedTimestamp(presentation.startTime);
   const endTime = ConferenceService.getFormattedTimestamp(presentation.endTime);
