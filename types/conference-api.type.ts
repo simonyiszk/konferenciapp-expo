@@ -45,7 +45,7 @@ export type PresentationDto = {
   endTime: string;
   description: string;
   questionsUrl: string;
-  presenter: PresenterDto;
+  presenter: PresenterDto | null;
 };
 
 export type PresenterDto = {

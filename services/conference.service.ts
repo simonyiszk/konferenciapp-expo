@@ -2,6 +2,7 @@ import { format, isAfter, isBefore } from 'date-fns';
 
 import { axiosInstance } from '../config/axios.config';
 import { FullConferenceDto } from '../types/conference-api.type';
+import { parseTime } from '../utils/presentation.utils';
 
 export class ConferenceService {
   static async getConferenceData(): Promise<FullConferenceDto> {
@@ -13,8 +14,8 @@ export class ConferenceService {
 
   private static sortPresentationsByStartDate(conference: FullConferenceDto) {
     return conference.presentations.sort((a, b) => {
-      const aStartDate = new Date(a.startTime);
-      const bStartDate = new Date(b.startTime);
+      const aStartDate = parseTime(a.startTime);
+      const bStartDate = parseTime(b.startTime);
       if (isBefore(aStartDate, bStartDate)) {
         return -1;
       }
@@ -26,16 +27,21 @@ export class ConferenceService {
   }
 
   static getFormattedTimestamp(timestamp: string) {
+    if (/^\d{2}:\d{2}$/.test(timestamp)) {
+      return timestamp;
+    }
     try {
       return format(new Date(timestamp), 'HH:mm');
     } catch {
-      return 'n/a';
+      return timestamp || 'n/a';
     }
   }
 
   static prefixConferenceImages(conference: FullConferenceDto) {
     conference.presentations.forEach((p) => {
-      p.presenter.pictureUrl = ConferenceService.prefixPresenterImage(p.presenter);
+      if (p.presenter) {
+        p.presenter.pictureUrl = ConferenceService.prefixPresenterImage(p.presenter);
+      }
     });
     return conference;
   }

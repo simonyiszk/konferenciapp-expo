@@ -40,18 +40,22 @@ export function PresentationItem({ presentation, className, ...props }: Presenta
       onPress={onPress}
       {...props}
     >
-      <Image source={{ uri: presentation.presenter.pictureUrl }} className='rounded-full h-14 w-14' />
+      {presentation.presenter && (
+        <Image source={{ uri: presentation.presenter.pictureUrl }} className='rounded-full h-14 w-14' />
+      )}
       <View className='flex-col gap-2 flex-1 mx-2'>
         <StyledText className='text-xl' numberOfLines={1}>
           {presentation.title}
         </StyledText>
         <View className='flex-row overflow-hidden'>
-          <StyledText className='text-background-400 dark:text-background-400 flex-shrink' numberOfLines={1}>
-            {presentation.presenter.name}
-          </StyledText>
+          {presentation.presenter && (
+            <StyledText className='text-background-400 dark:text-background-400 flex-shrink' numberOfLines={1}>
+              {presentation.presenter.name}
+            </StyledText>
+          )}
           <StyledText className='text-background-400 dark:text-background-400' numberOfLines={1}>
-            {' '}
-            • {startTime} - {endTime}
+            {presentation.presenter && ' • '}
+            {startTime} - {endTime}
           </StyledText>
         </View>
       </View>
