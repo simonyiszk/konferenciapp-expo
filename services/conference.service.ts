@@ -33,7 +33,7 @@ export class ConferenceService {
     }
     const d = new Date(timestamp);
     if (isNaN(d.getTime())) return 'n/a';
-    
+
     try {
       return format(d, 'HH:mm');
     } catch {

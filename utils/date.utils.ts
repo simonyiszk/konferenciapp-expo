@@ -1,4 +1,4 @@
-import { format, isSameDay, parseISO } from 'date-fns';
+import { format, isSameDay, parse } from 'date-fns';
 import { hu } from 'date-fns/locale';
 
 export function formatHu(date: Date): string {
@@ -11,7 +11,7 @@ export function isConferenceDay(): boolean {
     return true;
   }
 
-  const targetDate = parseISO(targetDateStr);
+  const targetDate = parse(targetDateStr, 'yyyy-MM-dd', new Date());
   if (isNaN(targetDate.getTime())) {
     return true;
   }
