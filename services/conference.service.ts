@@ -27,13 +27,17 @@ export class ConferenceService {
   }
 
   static getFormattedTimestamp(timestamp: string) {
+    if (!timestamp) return 'n/a';
     if (/^\d{2}:\d{2}$/.test(timestamp)) {
       return timestamp;
     }
+    const d = new Date(timestamp);
+    if (isNaN(d.getTime())) return 'n/a';
+    
     try {
-      return format(new Date(timestamp), 'HH:mm');
+      return format(d, 'HH:mm');
     } catch {
-      return timestamp || 'n/a';
+      return 'n/a';
     }
   }
 
