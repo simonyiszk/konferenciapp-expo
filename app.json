@@ -6,12 +6,13 @@
     "name": "KonferenciApp",
     "slug": "konferenciapp",
     "scheme": "konferenciapp",
-    "version": "3.0.0",
+    "version": "4.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon-light.png",
-    "newArchEnabled": true,
     "userInterfaceStyle": "automatic",
-    "assetBundlePatterns": ["./assets"],
+    "assetBundlePatterns": [
+      "./assets"
+    ],
     "ios": {
       "icon": {
         "dark": "./assets/icon-dark.png",
@@ -54,11 +55,12 @@
             "backgroundColor": "#000000"
           }
         }
-      ]
-    ],
-    "notification": {
-      "icon": "./assets/notification-icon.png",
-      "color": "#000000"
-    }
+      ],
+      "expo-asset",
+      "expo-localization",
+      "expo-router",
+      "expo-image",
+      "expo-font"
+    ]
   }
 }

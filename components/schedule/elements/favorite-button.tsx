@@ -1,4 +1,4 @@
-import { AntDesign } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons';
 import { useMemo } from 'react';
 import { Pressable } from 'react-native';
 
@@ -25,8 +25,8 @@ export function FavoriteButton({ presentation }: FavoriteButtonProps) {
 
   return (
     <Pressable testID='favorite-button' onPress={onPress} className='mr-3'>
-      <AntDesign
-        name={isFavorite ? 'star' : 'staro'}
+      <FontAwesome
+        name={isFavorite ? 'star' : 'star-o'}
         color={isFavorite ? extendedColors.primary['500'] : extendedColors.background['500']}
         size={30}
       />

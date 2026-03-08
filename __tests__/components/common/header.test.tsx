@@ -10,6 +10,7 @@ jest.mock('expo-router', () => ({
     canGoBack: jest.fn().mockReturnValue(true),
     goBack: jest.fn(),
   }),
+  useSegments: jest.fn().mockReturnValue(['(tabs)', 'presentation', 'presentation-details']),
 }));
 
 beforeEach(() => {
@@ -31,9 +32,18 @@ it("should not render the back button if it can't go back", () => {
   jest.spyOn(router, 'useNavigation').mockReturnValue({
     canGoBack: jest.fn().mockReturnValue(false),
   });
-
   const { queryByTestId } = render(<Header />);
   expect(queryByTestId('header-container')).toBeTruthy();
+  expect(queryByTestId('back-button')).toBeFalsy();
+});
+
+it('should not render the back button on stack root', () => {
+  jest.spyOn(router, 'useSegments').mockReturnValue(['(tabs)']);
+  const { queryByTestId } = render(
+    <Header>
+      <Title testID='title'>Root Screen</Title>
+    </Header>
+  );
   expect(queryByTestId('back-button')).toBeFalsy();
 });
 
