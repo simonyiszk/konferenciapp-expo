@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       EXPO_PUBLIC_POSTHOG_API_KEY: ${{ secrets.EXPO_PUBLIC_POSTHOG_API_KEY }}
+      EXPO_PUBLIC_CONFERENCE_DATE: ${{ vars.EXPO_PUBLIC_CONFERENCE_DATE }}
     permissions:
       contents: read
       pull-requests: write
@@ -27,6 +28,9 @@ jobs:
             echo "EXPO_PUBLIC_POSTHOG_API_KEY is not set"
             exit 1
           fi
+      - name: Print conference date
+        run: |
+          echo "Conference date: ${{ vars.EXPO_PUBLIC_CONFERENCE_DATE }}"
       - name: Checkout repository
         uses: actions/checkout@v3
 
@@ -48,4 +52,4 @@ jobs:
       - name: Create preview
         uses: expo/expo-github-action/preview@v8
         with:
-          command: eas update --auto
+          command: eas update --auto --environment preview

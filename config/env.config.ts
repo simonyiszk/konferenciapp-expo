@@ -1,3 +1,4 @@
 import Constants from 'expo-constants';
 
 export const POSTHOG_API_KEY = Constants.expoConfig?.extra?.posthogApiKey ?? '';
+export const CONFERENCE_DATE = Constants.expoConfig?.extra?.conferenceDate ?? '';

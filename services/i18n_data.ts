@@ -15,6 +15,10 @@ export const resources = {
         empty: 'The current program will appear here.',
         noNews: 'No news available, check back later!',
         archive: 'This is an archived version of the Simonyi Conference. Some features may be disabled.',
+        prText: 'The Simonyi Conference will be held on March 24, 2026! We look forward to seeing you there!',
+        prRegistrationPre: 'Want to join us? Register now!',
+        prRegistrationLink: 'https://konferencia.simonyi.bme.hu',
+        prRegistrationBtn: 'Go to registration',
       },
       presentations: {
         title: 'Schedule',
@@ -77,6 +81,10 @@ export const resources = {
         empty: 'Az aktuális programok itt fognak megjelenni.',
         noNews: 'Nincsenek hírek, nézz vissza később!',
         archive: 'Ez egy archivált verzió a Simonyi Konferenciáról. Néhány funkció letiltva lehet.',
+        prText: 'A Simonyi Konferencia 2026. március 24-én kerül megrendezésre! Várunk sok szeretettel!',
+        prRegistrationPre: 'Szeretnél részt venni az eseményen? Regisztrálj még ma!',
+        prRegistrationLink: 'https://konferencia.simonyi.bme.hu',
+        prRegistrationBtn: 'Tovább a regisztrációra',
       },
       presentations: {
         title: 'Programterv',

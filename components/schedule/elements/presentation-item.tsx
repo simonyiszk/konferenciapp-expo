@@ -7,6 +7,7 @@ import { useFavoritePresentations } from '../../../contexts/favorite-presentatio
 import { ConferenceService } from '../../../services/conference.service';
 import { PresentationDto } from '../../../types/conference-api.type';
 import { cn } from '../../../utils/common.utils';
+import { isConferenceDay } from '../../../utils/date.utils';
 import { isPresentationPast } from '../../../utils/presentation.utils';
 import { ItemCard } from '../../base/item-card';
 import { StyledText } from '../../base/text';
@@ -21,7 +22,8 @@ export function PresentationItem({ presentation, className, ...props }: Presenta
   const { isFavoritePresentation } = useFavoritePresentations();
   const isArchive = useFeatureFlag('archive_mode');
   const router = useNavigation<NativeStackNavigationProp<{ 'presentation-details': { id: string } }>>();
-  const isPast = isPresentationPast(presentation) && !isArchive;
+  const isConference = isConferenceDay();
+  const isPast = isPresentationPast(presentation) && !isArchive && isConference;
   const isFavorite = isFavoritePresentation(presentation.slug);
   const startTime = ConferenceService.getFormattedTimestamp(presentation.startTime);
   const endTime = ConferenceService.getFormattedTimestamp(presentation.endTime);
@@ -40,18 +42,22 @@ export function PresentationItem({ presentation, className, ...props }: Presenta
       onPress={onPress}
       {...props}
     >
-      <Image source={{ uri: presentation.presenter.pictureUrl }} className='rounded-full h-14 w-14' />
+      {presentation.presenter && (
+        <Image source={{ uri: presentation.presenter.pictureUrl }} className='rounded-full h-14 w-14' />
+      )}
       <View className='flex-col gap-2 flex-1 mx-2'>
         <StyledText className='text-xl' numberOfLines={1}>
           {presentation.title}
         </StyledText>
         <View className='flex-row overflow-hidden'>
-          <StyledText className='text-background-400 dark:text-background-400 flex-shrink' numberOfLines={1}>
-            {presentation.presenter.name}
-          </StyledText>
+          {presentation.presenter && (
+            <StyledText className='text-background-400 dark:text-background-400 flex-shrink' numberOfLines={1}>
+              {presentation.presenter.name}
+            </StyledText>
+          )}
           <StyledText className='text-background-400 dark:text-background-400' numberOfLines={1}>
-            {' '}
-            • {startTime} - {endTime}
+            {presentation.presenter && ' • '}
+            {startTime} - {endTime}
           </StyledText>
         </View>
       </View>

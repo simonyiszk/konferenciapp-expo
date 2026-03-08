@@ -1,5 +1,5 @@
 import { Feather } from '@expo/vector-icons';
-import { useNavigation } from 'expo-router';
+import { useNavigation, useSegments } from 'expo-router';
 import { Pressable, View, ViewProps } from 'react-native';
 
 import { extendedColors } from '../../theme/extendedColors';
@@ -12,7 +12,9 @@ interface HeaderProps extends ViewProps {
 
 export function Header({ children, className, corner, ...props }: HeaderProps) {
   const navigation = useNavigation();
-  const showBackButton = navigation.canGoBack();
+  const segments = useSegments();
+  const isStackRoot = segments.length <= 2;
+  const showBackButton = navigation.canGoBack() && !isStackRoot;
   return (
     <View testID='header-container' className={cn('space-y-5 mx-5', className)} {...props}>
       {(showBackButton || corner) && (

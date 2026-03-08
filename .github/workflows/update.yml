@@ -12,6 +12,7 @@ jobs:
     env:
       EXPO_PUBLIC_POSTHOG_API_KEY: ${{ secrets.EXPO_PUBLIC_POSTHOG_API_KEY }}
       EXPO_PUBLIC_EDITION_NAME: ${{ vars.EXPO_PUBLIC_EDITION_NAME }}
+      EXPO_PUBLIC_CONFERENCE_DATE: ${{ vars.EXPO_PUBLIC_CONFERENCE_DATE }}
     steps:
       - name: Check for EXPO_TOKEN
         run: |
@@ -28,6 +29,9 @@ jobs:
       - name: Print edition name
         run: |
           echo "Edition name: ${{ vars.EXPO_PUBLIC_EDITION_NAME }}"
+      - name: Print conference date
+        run: |
+          echo "Conference date: ${{ vars.EXPO_PUBLIC_CONFERENCE_DATE }}"
       - name: Checkout repository
         uses: actions/checkout@v3
 
@@ -47,4 +51,12 @@ jobs:
         run: yarn install
 
       - name: Publish update
-        run: eas update --auto
+        run: |
+          if [[ "${GITHUB_REF}" == "refs/heads/main" ]]; then
+            eas update --auto --environment production
+          elif [[ "${GITHUB_REF}" == "refs/heads/staging" ]]; then
+            eas update --auto --environment staging
+          else
+            echo "This workflow only runs EAS update on 'main' or 'staging' branches."
+            exit 0
+          fi

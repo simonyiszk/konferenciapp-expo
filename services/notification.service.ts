@@ -3,6 +3,7 @@ import * as Notifications from 'expo-notifications';
 import { Platform } from 'react-native';
 
 import { PresentationDto } from '../types/conference-api.type';
+import { getFullDate } from '../utils/date.utils';
 
 export class NotificationService {
   static notificationEnabled = false;
@@ -25,6 +26,7 @@ export class NotificationService {
 
   static async scheduleEventNotification(presentation: PresentationDto) {
     await this.registerForPushNotifications();
+    console.log('Registering for push notifications', presentation);
     if (!presentation.startTime) {
       console.log('Event start time is not defined, not scheduling notification');
       return;
@@ -33,12 +35,28 @@ export class NotificationService {
       console.log('Notification permission not granted, not scheduling notification');
       return;
     }
-    if (isBefore(new Date(presentation.startTime), new Date())) {
+    const now = new Date();
+    const startDate = getFullDate(presentation.startTime);
+    console.log('Start date', startDate);
+    if (isBefore(startDate, now)) {
       console.log('Event is in the past, not scheduling notification');
       return;
     }
 
-    const triggerDate = subMinutes(new Date(presentation.startTime), 5);
+    let triggerDate = subMinutes(startDate, 5);
+    if (isBefore(triggerDate, now)) {
+      triggerDate = new Date(now.getTime() + 1000);
+    }
+
+    const trigger: Notifications.DateTriggerInput = {
+      type: Notifications.SchedulableTriggerInputTypes.DATE,
+      date: triggerDate.getTime(),
+    };
+    if (Platform.OS === 'android') {
+      trigger.channelId = 'default';
+    }
+
+    console.log('Scheduling notification', trigger);
 
     return await Notifications.scheduleNotificationAsync({
       content: {
@@ -46,10 +64,7 @@ export class NotificationService {
         body: `Hamarosan kezdődik a(z) ${presentation.room} teremben!`,
         data: { tab: 'presentation', screen: 'presentation-details', id: presentation.slug },
       },
-      trigger: {
-        type: Notifications.SchedulableTriggerInputTypes.DATE,
-        date: triggerDate,
-      },
+      trigger,
     });
   }
 
