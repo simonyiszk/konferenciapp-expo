@@ -13,10 +13,14 @@ export function PresentationStatusIndicator({ presentation }: PresentationStatus
   const isConference = isConferenceDay();
   const isCurrent = isConference && isPresentationCurrent(presentation);
   const isUpcoming = isConference && isPresentationUpcoming(presentation);
+
+  if (!isCurrent && !isUpcoming) {
+    return null;
+  }
+
   return (
     <View
       className={cn('p-1 rounded-full', {
-        hidden: !isCurrent && !isUpcoming,
         'bg-yellow-400/30': isUpcoming,
         'bg-green-400/30': isCurrent,
       })}
